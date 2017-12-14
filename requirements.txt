@@ -5,8 +5,11 @@ Jinja2==2.10
 livereload==2.5.1
 Markdown==2.6.10
 MarkupSafe==1.0
-material==0.1
 mkdocs==0.17.2
+mkdocs-material==2.2.3
+pkg-resources==0.0.0
+Pygments==2.2.0
+pymdown-extensions==4.7
 PyYAML==3.12
 singledispatch==3.4.0.3
 six==1.11.0

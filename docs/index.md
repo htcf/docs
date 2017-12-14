@@ -1,0 +1,43 @@
+## High Throughput Computing Facility @ CGS_SB
+* * * 
+
+The Center for Genome Sciences and Systems Biology is the proud home of The High Througput Computing Facility, a Washington University [recharge center](http://research.wustl.edu/ComplianceAreas/RechargeCenters/Pages/default.aspx).  The HTCF provides high-throughput computational resources for researchers within the CGS_SB.
+
+A HTCF description for grant writing purposes
+
+
+> The CGSSB provides a computational cluster for high-throughput bioinformatics. The cluster consists of over 2250 processors and supports the Center's Illumina sequencing platforms and real time sequencing analysis. Long term data storage is handled by our 10 GbE connected storage array. This array is currently over 2 petabytes in size. All user data is backed up and stored daily, weekly and monthly. A disaster recovery copy of select data is stored offsite.
+>
+> The HTCF also includes a high-speed distributed file system that is capable of throughput up 19GB/s. This, coupled with its 40Gb network backbone, delivering 10Gb of bandwidth to cluster nodes, the HTCF can provide exceptionally high-speed transfer of large amounts of data.
+
+##### [Genomes](genomes.md)
+
+Listing of our frequently used Illumina references sequences and annotation files.
+
+##### [Getting Started](getstarted.md)
+
+A quick overview to get up and running quickly.
+
+##### [Policies](policies.md)
+
+General HTCF policies.
+
+##### [Running Jobs](runningjobs.md)
+
+Example job scripts and use cases.
+
+##### [SLURM](queue.md)
+
+Description and introduction to the queueing system used by the HTCF.  
+
+##### [Software](software.md)
+
+Introduction to lmod and software modules provided.  
+
+##### [Storage](storage.md)
+
+Overview of storage systems and best practices for data.
+
+##### [Support](support.md)
+
+Contact us for any questions regarding the HTCF.

@@ -3,7 +3,7 @@ theme: 'material'
 extra:
   font:
     text: 'Roboto'
-pages:
+nav:
 - Home: 'index.md'
 - About:
   - 'Policies': 'policies.md'

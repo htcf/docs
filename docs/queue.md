@@ -33,7 +33,7 @@ The steps needed to submit batch jobs are:
 ### Partitions
 Partition    |  Max Memory | Duration    | Max CPUs in Queue |
 :----------- |  :----------: | :---------: | :---------------: |
-debug        |      256GB    |  no limit   |         1824      |
+general        |      256GB    |  no limit   |         1824      |
 interactive  |      256GB      |   8 hours   |         1824      |
 
 ### Job Management
@@ -70,7 +70,7 @@ JobId=846115 JobName=sleep.sh
    SubmitTime=2016-03-09T09:47:08 EligibleTime=2016-03-09T09:47:08
    StartTime=2016-03-09T09:47:09 EndTime=Unknown
    PreemptTime=None SuspendTime=None SecsPreSuspend=0
-   Partition=debug AllocNode:Sid=n082:21380
+   Partition=general AllocNode:Sid=n082:21380
    ReqNodeList=(null) ExcNodeList=(null)
    NodeList=n082
    BatchHost=n082

@@ -31,7 +31,7 @@ lts03:/lts/lab/data2                          15T   14T  1.1T  93% /lts/lab/data
 
 ### HTS: High Throughput Storage (/scratch)
 
-HTCF high throughput storage is a 210TB, BeeGFS distrubuted file system able to handle more than 6GB/second of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  We absolutely **cannot** recover anything in /scratch once removed.
+HTCF high throughput storage is a 360TB, BeeGFS distrubuted file system able to handle more than 6GB/second of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  We absolutely **cannot** recover anything in /scratch once removed.
 
 *Data stored in /scratch is subject to the [Scratch Data Cleaning Policy](https://htcf.wustl.edu/docs/policies/#scratch-data-cleaning).
 

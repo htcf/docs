@@ -9,7 +9,7 @@ To request an account on the HTCF computational cluster, please email for more i
 ### Access
 
  * The HTCF is directly accessible via WUCON (wired network on the Medical campus) or WUSM-Secure wireless
- * External Access/Off Campus/Eduroam will require use of the WUSM VPN ([https://msvpn.wusm.wustl.edu](https://msvpn.wusm.wustl.edu)), please email for instructions
+ * External Access/Off Campus/Eduroam will require use of the WUSM VPN ([https://msvpn.wusm.wustl.edu](https://msvpn.wusm.wustl.edu)), please contact WashU IT for access at (314) 933-3333 or ithelp@wustl.edu.
  * Uses WUSTL KEY for authentication ([http://wustlkey.wustl.edu/](http://wustlkey.wustl.edu))
 
 ### Using the HTCF Submit Node

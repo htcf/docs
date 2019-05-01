@@ -20,11 +20,11 @@ By default, home directories will not be readable or writeable by other users of
 Long term storage is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed yearly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  To see how much space your lab is using, use the example command below, replace lab with your labname.  
 
 ~~~~{.language-bash}
-~$ df -h | grep lab
+~$ df -h $( cat /etc/fstab | grep -v '^#' | awk '{ print $2 }' | grep '/lts/mylab' )
 Filesystem                                   Size  Used Avail Use% Mounted on
-lts01:/lts/lab/seq                           1.0T  165G  860G  17% /lts/lab/seq
-lts02:/lts/lab/data1                          10T  6.4T  3.7T  64% /lts/lab/data1
-lts03:/lts/lab/data2                          15T   14T  1.1T  93% /lts/lab/data2
+/dev/mylab/seq                           1.0T  165G  860G  17% /lts/lab/seq
+/dev/mylab/data1                          10T  6.4T  3.7T  64% /lts/lab/data1
+/dev/mylab/data2                          15T   14T  1.1T  93% /lts/lab/data2
 ~~~~
 
 * * *

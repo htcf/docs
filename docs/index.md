@@ -3,7 +3,7 @@
 
 The Center for Genome Sciences and Systems Biology is the proud home of The High Throughput Computing Facility, a Washington University [recharge center](http://research.wustl.edu/ComplianceAreas/RechargeCenters/Pages/default.aspx).  The HTCF provides high-throughput computational resources for researchers within the CGS_SB.
 
-A HTCF description for grant writing purposes
+An HTCF description for grant writing purposes
 
 
 > The CGSSB provides a computational cluster for high-throughput bioinformatics. The cluster consists of over 2750 processors and over 20TB of RAM.  It supports the Center's Illumina sequencing platforms and real time sequencing analysis. Long term data storage is handled by our 10/40 GbE connected storage arrays. These arrays are currently over 2 petabytes in size. All user data is backed up and stored daily, weekly and monthly. A disaster recovery copy of select data is stored offsite.

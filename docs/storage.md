@@ -31,7 +31,7 @@ Filesystem                                   Size  Used Avail Use% Mounted on
 
 ### HTS: High Throughput Storage (/scratch)
 
-HTCF high throughput storage is over 550TB, BeeGFS distrubuted file system able to handle more than 19GB/second of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  We absolutely **cannot** recover anything in /scratch once removed.
+HTCF high throughput storage is over 700TB, BeeGFS distrubuted file system able to handle more than 19GB/second of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  We absolutely **cannot** recover anything in /scratch once removed.
 
 *Data stored in /scratch is subject to the [Scratch Data Cleaning Policy](https://htcf.wustl.edu/docs/policies/#scratch-data-cleaning).
 

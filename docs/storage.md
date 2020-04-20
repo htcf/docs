@@ -16,7 +16,7 @@ By default, home directories will not be readable or writeable by other users of
 You can check the amount of home directory with the `du` command.  It may take a few moments for the command to complete.  For example:
 
 ~~~~{.language-bash}
-du -csh $HOME
+~$ du -csh $HOME
 10G /home/<username>
 10G total
 ~~~~

@@ -13,6 +13,15 @@ Each HTCF user account has 20GB home directory.  This directory can be used to s
 
 By default, home directories will not be readable or writeable by other users of HTCF.  If you wish to change this default, you can use the chmod command to give the appropriate level of access to your lab members or other collaborative users.
 
+You can check the amount of home directory with the `du` command.  It may take a few moments for the command to complete.  For example:
+
+~~~~{.language-bash}
+du -csh $HOME
+10G /home/<username>
+10G total
+~~~~
+
+
 * * *
 
 ### LTS: Long Term Storage (/lts)
@@ -57,6 +66,7 @@ We have a general quota of 2TB per user in /scratch to prevent the filesystem fr
 --------------|------||------------|------------||---------|---------
        support|  1000|| 325.48 GiB |   2.00 TiB ||        0|        0
 ~~~~
+
 
 ### Quota Increase Requests
 
@@ -106,3 +116,8 @@ The above example would put the directory named "transfer" into the directory na
 ~~~~
 
 The above example would put the contents of the directory named "transfer" into the directory named "location".
+
+### Disk Quota Exceeded Errors
+
+If you receive `disk quota exceeded` messages, please check each storage location to ensure you have enough disk space available.  Examples of the `du`, `df`, and `beegfs-ctl` commands to view utilization are provided for each storage type above. 
+

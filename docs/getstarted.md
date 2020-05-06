@@ -61,7 +61,7 @@ To request additional software modules, please contact us.
 
 #### GUI Software
 
-As the HTCF primarily a batch queuing system for high-throughput processing of large amounts of data,  GUI application are not directly supported by the HTCF.  GUI application installation and setup on the HTCF are left to the end user.
+As the HTCF is primarily a batch queuing system for high-throughput processing of large amounts of data,  GUI application are not directly supported by the HTCF.  GUI application installation and setup on the HTCF are left to the end user.
 
 ### Workflow
 

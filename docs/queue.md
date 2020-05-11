@@ -38,11 +38,19 @@ interactive  |      256GB      |   8 hours   |         1824      |
 
 ### Job Management
 
-scancel
+#### squeue
 
-squeue
+To view your job status in the queue
 
-sinfo
+
+#### scancel
+
+Users can use scancel command to cancel their jobs or job arrays.  You may see job states of CA or CG during this processes.
+
+~~~~{.language-bash}
+scancel JOBID 
+scancel -u $USER
+~~~~
 
 ### Job Accounting
 

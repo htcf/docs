@@ -60,3 +60,7 @@ Currently Loaded Modules:
   2) infernal/1.1.1   4) ncbi-blast/2.2.31+   6) bio-perl/1.6.923   8) barrnap/0.6
 ~~~~
 
+### GUI Software
+
+As the HTCF is primarily a batch queuing system for high-throughput processing of large amounts of data,  GUI application are not directly supported by the HTCF.  GUI application installation and setup on the HTCF are left to the end user.
+

@@ -78,9 +78,8 @@ Jobs typically follow a generic workflow.
 
 Partition    |  Max Memory | Duration    | Max CPUs in Queue |
 :----------- |  :----------: | :---------: | :---------------: |
-debug        |      256GB    |  no limit   |         2250      |
-interactive  |      256GB      |   8 hours   |         2250      |
-
+debug        |      250GB    |  no limit   |         3004      |
+interactive  |      250GB      |   8 hours   |         3004      |
 
 ### Jobs
 
@@ -137,5 +136,16 @@ user@htcf:~$ squeue
 
 JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
 106  debug  example  example R   0:13   1    n067
+~~~~
+
+### GPUs
+
+The HTCF currently has a small number of NVIDIA Tesla V100 GPUs.
+
+A GPU is accessible using the following slurm parameters:
+
+~~~~{.language-bash}
+#SBATCH -p gpu
+#SBATCH --gres=gpu
 ~~~~
 

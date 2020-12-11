@@ -22,7 +22,7 @@ Therefore, **Any data in `/ref` that cannot be recreated should be copied to lon
 ### /data
 
 The data directory is well suited for modestly sized reference data such as [NCBI blast databases](ftp://ftp.ncbi.nlm.nih.gov/blast/db/).
-Larger datasets (> 500GB) are probably better suited for [LTS Object Storage](/storage/os.md)
+Larger datasets (> 500GB) are probably better suited for [Long Term Object Storage](/storage/ltos.md)
 
 ### /software
 

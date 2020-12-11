@@ -1,7 +1,7 @@
 # Software on the HTCF
 
 Software building and installation on the HTCF is primarily self-service.
-Labs are free to use their [/ref](ref.md) space to install software using whatever means is most comfortable.
+Labs are free to use their [/ref](/storage/ref.md) space to install software using whatever means is most comfortable.
 Use of [Spack](#spack) to install common software is recommended.
 
 

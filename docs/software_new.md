@@ -18,3 +18,14 @@ To create a lab instance of the spack package manager:
 2.  Rename (or make a symlink from) `/ref/<lab>/software/spack-VERSION` to `/ref/<lab>/software/spack`.
 
 3.  Logout and log back in.  This will ensure the `spack` command is available in the PATH.
+
+
+### Using Spack-generated modules
+
+Example sbatch job
+
+```
+#!/bin/bash
+
+source <(spack module lmod loads 
+```

@@ -41,7 +41,7 @@ HTCF high throughput storage is a large, distrubuted file system able to handle 
 
 *Data stored in /scratch is subject to the [Scratch Data Cleaning Policy](https://htcf.wustl.edu/docs/policies/#scratch-data-cleaning).
 
-*More information is available on our [Data & Data Storage Page](storage.md)*
+*More information is available on our [Data & Data Storage Page](/storage/index.md)*
 
 ### Software
 

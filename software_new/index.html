@@ -390,6 +390,26 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-software" class="md-nav__link">
+    Using the software
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#software-modules" class="md-nav__link">
+    Software Modules
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#using-spack-generated-modules" class="md-nav__link">
     Using Spack-generated modules
@@ -416,6 +436,9 @@
                 
                 
                 <h1 id="software-on-the-htcf">Software on the HTCF</h1>
+<p>When it comes to software, the HTCF starts as a blank slate for each lab.  However, this doesn't mean labs can't get up and running in a matter of minutes.</p>
+<p>Each lab has its very own dedicated space to install and manage software.  This <a href="../storage/ref/">reference space</a> is located in <a href="../storage/ref/#software">/ref/<em>\&lt;lab></em>/software</a>.</p>
+<p>After software is installed a <a href="#software-modules">software modules</a> system is available for convenient way to <em>load</em> and <em>unload</em> software, as needed. </p>
 <h2 id="self-service-installation">Self-service Installation</h2>
 <p>Software building and installation on the HTCF is primarily self-service.</p>
 <p>Labs are free to use their <a href="../storage/ref/">/ref software</a> directory to install software using whatever means is most comfortable.</p>
@@ -440,15 +463,17 @@
 <ol>
 <li><strong>Following the installation instructions from the software creator.</strong></li>
 </ol>
-<p>Sometimes this can be very quick and straightforward.</p>
-<p>Sometimes this can be very painful.</p>
-<p>Sometimes it can be good to judge the quality of software by the quality of the installation process and documentation.</p>
+<p>Sometimes, this can be very quick and straightforward.</p>
+<p>Sometimes, this can be very painful.</p>
+<p>Sometimes, it can be a good idea to pass judgement on the quality of software by the quality of the installation process and documentation. :wink:</p>
 <ol>
 <li><strong>Create a custom spack package</strong></li>
 </ol>
 <p>Spack can be a wonderful tool for creating and maintaining software. <a href="https://spack.readthedocs.io/en/latest/packaging_guide.html">Plenty of documentation is provided for creating and maintaining custom packages</a>, though a firm understanding of python is needed.</p>
 <h3 id="virtual-environments">Virtual Environments</h3>
 <p>(links to python virtual environments go here)</p>
+<h2 id="using-the-software">Using the software</h2>
+<h3 id="software-modules">Software Modules</h3>
 <h3 id="using-spack-generated-modules">Using Spack-generated modules</h3>
 <p>Example sbatch job</p>
 <pre><code>#!/bin/bash

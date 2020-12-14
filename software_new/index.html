@@ -363,6 +363,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-spack-generated-modules" class="md-nav__link">
+    Using Spack-generated modules
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -400,6 +407,12 @@ Use of <a href="#spack">Spack</a> to install common software is recommended.</p>
 <p>Logout and log back in.  This will ensure the <code>spack</code> command is available in the PATH.</p>
 </li>
 </ol>
+<h3 id="using-spack-generated-modules">Using Spack-generated modules</h3>
+<p>Example sbatch job</p>
+<pre><code>#!/bin/bash
+
+source &lt;(spack module lmod loads 
+</code></pre>
                 
               
               

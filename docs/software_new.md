@@ -1,5 +1,11 @@
 # Software on the HTCF
 
+When it comes to software, the HTCF starts as a blank slate for each lab.  However, this doesn't mean labs can't get up and running in a matter of minutes.
+
+Each lab has its very own dedicated space to install and manage software.  This [reference space](storage/ref.md) is located in [/ref/*\<lab\>*/software](storage/ref.md#software).
+
+After software is installed a [software modules](#software-modules) system is available for convenient way to *load* and *unload* software, as needed. 
+
 ## Self-service Installation
 
 Software building and installation on the HTCF is primarily self-service.
@@ -28,11 +34,11 @@ When needed software is not readily accessible via Spack, there are a few option
 
 1. **Following the installation instructions from the software creator.**
  
-   Sometimes this can be very quick and straightforward.
+   Sometimes, this can be very quick and straightforward.
    
-   Sometimes this can be very painful.
+   Sometimes, this can be very painful.
    
-   Sometimes it can be good to judge the quality of software by the quality of the installation process and documentation.
+   Sometimes, it can be a good idea to pass judgement on the quality of software by the quality of the installation process and documentation. :wink:
 
 2. **Create a custom spack package**
 
@@ -43,6 +49,10 @@ When needed software is not readily accessible via Spack, there are a few option
 
 (links to python virtual environments go here)
 
+
+## Using the software
+
+### Software Modules
 
 ### Using Spack-generated modules
 

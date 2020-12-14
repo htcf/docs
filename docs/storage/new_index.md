@@ -1,1 +1,1 @@
-![storage table](/storage/Slide1.jpg)
+![storage table](storage/Slide1.jpg)

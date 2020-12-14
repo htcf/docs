@@ -21,7 +21,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout main
-        uses: actions/checkout@2.3.4
+        uses: actions/checkout@master
       - name: Deploy MkDocs
         # You may pin to the exact commit or the version.
         # uses: mhausenblas/mkdocs-deploy-gh-pages@66340182cb2a1a63f8a3783e3e2146b7d151a0bb

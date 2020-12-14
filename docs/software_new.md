@@ -4,7 +4,7 @@ When it comes to software, the HTCF starts as a blank slate for each lab.  Howev
 
 Each lab has its very own dedicated space to install and manage software.  This [reference space](storage/ref.md) is located in [/ref/*\<lab\>*/software](storage/ref.md#software).
 
-After software is installed a [software modules](#software-modules) system is available for convenient way to *load* and *unload* software, as needed. 
+After software is installed, a [software modules](#software-modules) system is available as a convenient way to *load* and *unload* software, as needed. 
 
 ## Self-service Installation
 

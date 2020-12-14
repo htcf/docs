@@ -349,6 +349,14 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#self-service-installation" class="md-nav__link">
+    Self-service Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Self-service Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#spack" class="md-nav__link">
     Spack
   </a>
@@ -357,8 +365,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#spack-setup" class="md-nav__link">
-    Spack setup
+  <a href="#spack-setup-for-your-lab-or-group" class="md-nav__link">
+    Spack Setup for Your Lab or Group
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-software-i-want-is-not-available-through-spack" class="md-nav__link">
+    The software I want is not available through Spack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-environments" class="md-nav__link">
+    Virtual Environments
   </a>
   
 </li>
@@ -389,12 +416,13 @@
                 
                 
                 <h1 id="software-on-the-htcf">Software on the HTCF</h1>
-<p>Software building and installation on the HTCF is primarily self-service.
-Labs are free to use their <a href="/storage/ref.md">/ref</a> space to install software using whatever means is most comfortable.
-Use of <a href="#spack">Spack</a> to install common software is recommended.</p>
-<h2 id="spack">Spack</h2>
+<h2 id="self-service-installation">Self-service Installation</h2>
+<p>Software building and installation on the HTCF is primarily self-service.</p>
+<p>Labs are free to use their <a href="../storage/ref/">/ref software</a> directory to install software using whatever means is most comfortable.</p>
+<p>At the lab level, use of <a href="#spack">Spack</a> to install common software is encouraged.  <a href="#virtual-environments">Virtual environments</a> can also be used if the software is well suited.</p>
+<h3 id="spack">Spack</h3>
 <p><a href="https://spack.readthedocs.io">Spack</a> is a package management tool designed to support multiple versions and configurations of software on a wide variety of platforms and environments.</p>
-<h3 id="spack-setup">Spack setup</h3>
+<h4 id="spack-setup-for-your-lab-or-group">Spack Setup for Your Lab or Group</h4>
 <p>To create a lab instance of the spack package manager:</p>
 <ol>
 <li>
@@ -407,6 +435,20 @@ Use of <a href="#spack">Spack</a> to install common software is recommended.</p>
 <p>Logout and log back in.  This will ensure the <code>spack</code> command is available in the PATH.</p>
 </li>
 </ol>
+<h4 id="the-software-i-want-is-not-available-through-spack">The software I want is not available through Spack</h4>
+<p>When needed software is not readily accessible via Spack, there are a few options.</p>
+<ol>
+<li><strong>Following the installation instructions from the software creator.</strong></li>
+</ol>
+<p>Sometimes this can be very quick and straightforward.</p>
+<p>Sometimes this can be very painful.</p>
+<p>Sometimes it can be good to judge the quality of software by the quality of the installation process and documentation.</p>
+<ol>
+<li><strong>Create a custom spack package</strong></li>
+</ol>
+<p>Spack can be a wonderful tool for creating and maintaining software. <a href="https://spack.readthedocs.io/en/latest/packaging_guide.html">Plenty of documentation is provided for creating and maintaining custom packages</a>, though a firm understanding of python is needed.</p>
+<h3 id="virtual-environments">Virtual Environments</h3>
+<p>(links to python virtual environments go here)</p>
 <h3 id="using-spack-generated-modules">Using Spack-generated modules</h3>
 <p>Example sbatch job</p>
 <pre><code>#!/bin/bash

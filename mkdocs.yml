@@ -14,5 +14,5 @@ nav:
   - 'SLURM': 'queue.md'
   - 'Software List': 'softwarelist.md'
   - 'Software Modules': 'software.md'
-  - 'Storage': '/storage/index.md'
+  - 'Storage': 'storage/index.md'
   - 'Support': 'support.md'

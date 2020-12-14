@@ -54,6 +54,8 @@ When needed software is not readily accessible via Spack, there are a few option
 
 ### Software Modules
 
+A *Software modules system* may sound fancy, but it's really just a small set of convenience functions that help to make selected software readily available to your [shell environment]() by modifying environment variables such as [$PATH]() and [$LD_LIBRARY_PATH]().
+
 ### Using Spack-generated modules
 
 Example sbatch job

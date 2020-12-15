@@ -1,5 +1,9 @@
 site_name: HTCF
-theme: 'material'
+theme: 
+  name: material
+  features:
+    - navigation.instant
+    
 extra:
   font:
     text: 'Roboto'

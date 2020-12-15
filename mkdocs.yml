@@ -3,6 +3,20 @@ theme: 'material'
 extra:
   font:
     text: 'Roboto'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - attr_list
+
+plugins:
+  - macros
+  
 nav:
 - Home: 'index.md'
 - About:

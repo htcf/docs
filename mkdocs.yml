@@ -5,6 +5,8 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
+  palette:
+    scheme: preference
     
 extra:
   font:

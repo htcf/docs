@@ -13,3 +13,4 @@ PyYAML
 singledispatch
 six
 tornado
+mkdocs-macros-plugin

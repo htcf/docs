@@ -2,6 +2,19 @@
   --md-primary-fg-color:        #6c7373;
   --md-primary-fg-color--light: #c8c8c8;
   --md-primary-fg-color--dark:  #90030C;
+  --md-typeset-a-color:  #a51417;
+  /*--md-admonition-bg-color: rgba(184, 83, 35, 0.25);*/
+}
+.md-typeset .note .admonition-title {
+  background-color: rgba(184, 83, 35, 0.25);
+
+}
+.md-typeset .admonition.note {
+  border-color: rgba(184, 83, 35, 1);
+}
+
+.md-typeset .note > .admonition-title::before {
+  background-color: rgba(184, 83, 35, 1);
 }
 [data-md-color-scheme="wustl_red"] {
   --md-primary-fg-color:        #a51417;

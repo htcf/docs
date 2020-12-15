@@ -1,0 +1,10 @@
+[data-md-color-scheme="wustl_gray"] {
+  --md-primary-fg-color:        #6c7373;
+  --md-primary-fg-color--light: #c8c8c8;
+  --md-primary-fg-color--dark:  #90030C;
+}
+[data-md-color-scheme="wustl_red"] {
+  --md-primary-fg-color:        #a51417;
+  --md-primary-fg-color--light: #ECB7B7;
+  --md-primary-fg-color--dark:  #90030C;
+}

@@ -24,15 +24,8 @@ plugins:
   - macros
   
 nav:
-- Home: 'index.md'
-- About:
-  - 'Policies': 'policies.md'
-- Resources:
-  - 'Genomes': 'genomes.md'
-  - 'Getting Started': 'getstarted.md'
-  - 'Running Jobs' : 'runningjobs.md'
-  - 'SLURM': 'queue.md'
-  - 'Software List': 'softwarelist.md'
-  - 'Software Modules': 'software.md'
-  - 'Storage': 'storage/index.md'
-  - 'Support': 'support.md'
+- Getting Started: 'getstarted.md'
+- Policies: 'policies.md'
+- Storage: 'storage/index.md'
+- Software: 'software.md'
+- Support: 'support.md'

@@ -1,6 +1,7 @@
 site_name: HTCF
 theme: 
   name: material
+  logo: logo.png
   features:
     - navigation.instant
     - navigation.tabs

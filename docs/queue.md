@@ -33,8 +33,8 @@ The steps needed to submit batch jobs are:
 ### Partitions
 Partition    |  Max Memory | Duration    | Max CPUs in Queue |
 :----------- |  :----------: | :---------: | :---------------: |
-general        |      256GB    |  no limit   |         1824      |
-interactive  |      256GB      |   8 hours   |         1824      |
+general        |      250GB    |  no limit   |         3004      |
+interactive  |      250GB      |   8 hours   |         3004      |
 
 ### Job Management
 

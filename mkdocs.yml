@@ -7,8 +7,11 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
   palette:
-    scheme: preference
+    scheme: wustl_gray
     
+extra_css:
+  - stylesheets/extra.css
+
 extra:
   font:
     text: 'Roboto'
@@ -22,13 +25,32 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - attr_list
+  - meta
 
 plugins:
   - macros
+  - search
   
+extra:
+  lts:
+    price: 6.73
+
 nav:
+- The HTCF: 'index.md'
 - Getting Started: 'getstarted.md'
+- Doing Work:
+    - queue.md
+    - runningjobs.md
 - Policies: 'policies.md'
-- Storage: 'storage/index.md'
-- Software: 'software.md'
-- Support: 'support.md'
+- Storage: 
+    - Overview: 'storage/index.md'
+    - HTS: 'storage/hts.md'
+    - REF: 'storage/ref.md'
+    - LTS: 'storage/lts.md'
+    - LTOS: 'storage/ltos.md'
+    - Beta: 'storage/new_index.md'
+- Software: 
+  - Overview: software.md
+  - Beta: software_new.md
+- Support: 
+  - 'Where to find Help': 'support.md'

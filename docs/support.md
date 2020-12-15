@@ -1,6 +1,3 @@
-# Support
-* * * 
-
 Please contact your department for general IT support, including email and desktop support.
 
 Reset your WUSTL KEY password using the [WUSTL Connect](https://connect.wustl.edu/) website.

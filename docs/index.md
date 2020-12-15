@@ -1,7 +1,9 @@
-## High Throughput Computing Facility @ CGS_SB
-* * * 
+---
+title: High Throughput Computing Facility @ CGS_SB
+---
 
 The Center for Genome Sciences and Systems Biology is the proud home of The High Throughput Computing Facility, a Washington University [recharge center](http://research.wustl.edu/ComplianceAreas/RechargeCenters/Pages/default.aspx).  The HTCF provides high-throughput computational resources for researchers within the CGS_SB.
+
 
 An HTCF description for grant writing purposes
 
@@ -41,3 +43,5 @@ Overview of storage systems and best practices for data.
 ##### [Support](support.md)
 
 Contact us for any questions regarding the HTCF.
+
+--8<-- "includes/abbreviations.md"

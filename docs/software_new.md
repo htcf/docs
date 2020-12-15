@@ -47,8 +47,11 @@ When needed software is not readily accessible via Spack, there are a few option
 
 ### Virtual Environments
 
+####  Python considerations
+
 (links to python virtual environments go here)
 
+#### R considerations
 
 ## Using the software
 

@@ -1,7 +1,7 @@
 site_name: HTCF
 theme: 
   name: material
-  logo: light-logo.png
+  logo: shield-light.png
   features:
     - navigation.instant
     - navigation.tabs

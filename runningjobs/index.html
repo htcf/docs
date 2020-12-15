@@ -94,36 +94,6 @@
       
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
 </header>
@@ -433,7 +403,7 @@
                   <h1>Running Jobs</h1>
                 
                 <p>Many times you might have a command that you’d like to run on a lot of samples.  To run these sequentially, you might have a script like this:</p>
-<pre><code class="language-bash">#!/bin/bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 module load spades
 
@@ -441,7 +411,7 @@ spades.py --careful --pe1-1 samp1-r1.fastq --pe1-2 samp1-r2.fastq -o assembly_1
 spades.py --careful --pe1-1 samp2-r1.fastq --pe1-2 samp2-r2.fastq -o assembly_2
 …
 spades.py --careful --pe1-1 samp2000-r1.fastq --pe1-2 samp2000-r2.fastq -o assembly_2000
-</code></pre>
+</code></pre></div>
 <p>By submitting this on the HTCF as an “array job”, you have the potential of running each of these commands in parallel (all at the same time) rather than sequentially (one at a time).  The best case scenario could be that all 2000 commands finish in the time it takes 1 command to run!  More information regarding SLURM job arrays is available at <a href="http://slurm.schedmd.com/job_array.html">http://slurm.schedmd.com/job_array.html</a>.</p>
 <hr />
 <h5 id="run-a-command-or-set-of-commands-on-file-names-that-are-sequentially-numbered">Run a command or set of commands on file names that are sequentially numbered</h5>
@@ -477,16 +447,16 @@ spades.py --careful --pe1-1 samp2000-r1.fastq --pe1-2 samp2000-r2.fastq -o assem
 </tbody>
 </table>
 <p>Step 1:  Create an sbatch file</p>
-<pre><code class="language-bash">#!/bin/bash
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run
+<span class="c1">#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run</span>
 
 module load spades
 
-ID=${SLURM_ARRAY_TASK_ID}  # Number between 1 and 2000 
+<span class="nv">ID</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>  <span class="c1"># Number between 1 and 2000 </span>
 
-spades.py --careful --pe1-1 samp${ID}-r1.fastq --pe1-2 samp${ID}-r2.fastq -o assembly_${ID}
-</code></pre>
+spades.py --careful --pe1-1 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r1.fastq --pe1-2 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r2.fastq -o assembly_<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>
+</code></pre></div>
 <h5 id="run-a-command-or-set-of-commands-on-file-names-that-arent-numbered-sequentially">Run a command or set of commands on file names that aren’t numbered sequentially</h5>
 <hr />
 <table>
@@ -520,50 +490,50 @@ spades.py --careful --pe1-1 samp${ID}-r1.fastq --pe1-2 samp${ID}-r2.fastq -o ass
 </tr>
 </tbody>
 </table>
-<p>Step 1:  Create a “lookup” file, lookup.txt</p>
-<pre><code class="language-bash">AAA
+<p>Step 1:  Create a “lookup” file, lookup.txt
+<div class="highlight"><pre><span></span><code>AAA
 AAB
 …
 ZZZ
-</code></pre>
+</code></pre></div></p>
 <p>Step 2: Find the number of lines in lookup file.  This will be the number of tasks in your array job.</p>
-<pre><code>$ wc -l lookup.txt
+<p><div class="highlight"><pre><span></span><code>$ wc -l lookup.txt
 2000 lookup.txt
-</code></pre>
-<p>Step 2: Create an sbatch file, grabbing the “ID” in line $SLURM_ARRAY_TASK_ID from the lookup file</p>
-<pre><code class="language-bash">#!/bin/bash
+</code></pre></div>
+Step 2: Create an sbatch file, grabbing the “ID” in line $SLURM_ARRAY_TASK_ID from the lookup file
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run
+<span class="c1">#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run</span>
 
 module load spades
 
-ID=$( sed -n ${SLURM_ARRAY_TASK_ID}p lookup.txt )
+<span class="nv">ID</span><span class="o">=</span><span class="k">$(</span> sed -n <span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>p lookup.txt <span class="k">)</span>
 
-spades.py --careful --pe1-1 samp${ID}-r1.fastq --pe1-2 samp${ID}-r2.fastq -o assembly_${ID}
-</code></pre>
+spades.py --careful --pe1-1 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r1.fastq --pe1-2 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r2.fastq -o assembly_<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>
+</code></pre></div></p>
 <h5 id="run-a-command-or-set-of-commands-using-a-complex-lookup-file">Run a command or set of commands using a complex lookup file</h5>
 <hr />
-<p>Step 1:  Create a “lookup” file, lookup.txt</p>
-<pre><code>5 sampleAAA_R1 0.0001 5000 
+<p>Step 1:  Create a “lookup” file, lookup.txt
+<div class="highlight"><pre><span></span><code>5 sampleAAA_R1 0.0001 5000 
 5 sampleAAA_R2 0.0001 5000
 5 sampleBBB_R1 0.0005 1000 
 5 sampleBBB_R2 0.0005 1000 
-</code></pre>
+</code></pre></div></p>
 <p>Step 2:  Find the number of lines in lookup file.  This will be the number of tasks in your array job.</p>
-<pre><code>$ wc -l lookup.txt
+<p><div class="highlight"><pre><span></span><code>$ wc -l lookup.txt
 2000 lookup.txt
-</code></pre>
-<p>Step 3: Create an sbatch file, each job is created using the template with information from the lookup file.</p>
-<pre><code class="language-bash">#!/bin/bash
+</code></pre></div>
+Step 3: Create an sbatch file, each job is created using the template with information from the lookup file.
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run
+<span class="c1">#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run</span>
 
 module load seqtk
 
-read part1 part2 part3 part4 &lt; &lt;( sed -n ${SLURM_ARRAY_TASK_ID}p lookup.txt )
+<span class="nb">read</span> part1 part2 part3 part4 &lt; &lt;<span class="o">(</span> sed -n <span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>p lookup.txt <span class="o">)</span>
 
-seqtk sample -s${part1} /path/to/file.${part2}.fastq ${part3} &gt; /path/to/file.${part2}_${part4}.fastq
-</code></pre>
+seqtk sample -s<span class="si">${</span><span class="nv">part1</span><span class="si">}</span> /path/to/file.<span class="si">${</span><span class="nv">part2</span><span class="si">}</span>.fastq <span class="si">${</span><span class="nv">part3</span><span class="si">}</span> &gt; /path/to/file.<span class="si">${</span><span class="nv">part2</span><span class="si">}</span>_<span class="si">${</span><span class="nv">part4</span><span class="si">}</span>.fastq
+</code></pre></div></p>
                 
               
               

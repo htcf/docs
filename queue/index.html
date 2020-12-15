@@ -94,36 +94,6 @@
       
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
   </nav>
 </header>
@@ -539,12 +509,12 @@
 <li>Launch the job using the "sbatch" command</li>
 </ol>
 <p><strong>salloc</strong> - Obtains a job allocation.</p>
-<pre><code>--cpu-per-task - Number of CPUs required per task
+<div class="highlight"><pre><span></span><code>--cpu-per-task - Number of CPUs required per task
 --dependency=&lt;state:jobid&gt;
 --job-name=&lt;name&gt;
 --mem=&lt;MB&gt; Memory required per node.
 --mem-per-cpu=&lt;MB&gt; Memory required per allocated CPU.
-</code></pre>
+</code></pre></div>
 <p><strong>sbatch</strong> - Submits batch scripts for execution.</p>
 <p><strong>srun</strong> - Obtains job allocation and executes an application.</p>
 <h3 id="partitions">Partitions</h3>
@@ -577,18 +547,18 @@
 <p>To view your job status in the queue</p>
 <h4 id="scancel">scancel</h4>
 <p>Users can use scancel command to cancel their jobs or job arrays.  You may see job states of CA or CG during this processes.</p>
-<pre><code class="language-language-bash">scancel JOBID 
+<div class="highlight"><pre><span></span><code>scancel JOBID 
 scancel -u $USER
-</code></pre>
+</code></pre></div>
 <h3 id="job-accounting">Job Accounting</h3>
 <p>sacct is the command to view all previously run job information.  You can get a list of viewable fields by running the command</p>
-<pre><code>sacct -e
-</code></pre>
-<p>To view a past jobs maximum used memory and duration</p>
-<pre><code class="language-language-bash">sacct -j JOBID --format=JobID,JobName,MaxRSS,Elapsed
-</code></pre>
-<p>Scontrol can be used to view detailed information about your running job including the job script that was submitted.  Please send the output of this command if your currently running job is having issues. </p>
-<pre><code>~$ scontrol show jobid -dd 846115
+<div class="highlight"><pre><span></span><code>sacct -e
+</code></pre></div>
+<p>To view a past jobs maximum used memory and duration
+<div class="highlight"><pre><span></span><code>sacct -j JOBID --format=JobID,JobName,MaxRSS,Elapsed
+</code></pre></div></p>
+<p>Scontrol can be used to view detailed information about your running job including the job script that was submitted.  Please send the output of this command if your currently running job is having issues. 
+<div class="highlight"><pre><span></span><code>~$ scontrol show jobid -dd 846115
 JobId=846115 JobName=sleep.sh
    UserId=ericmartin(1002) GroupId=ericmartin(1002)
    Priority=3070 Nice=0 Account=htcfadmin QOS=normal
@@ -623,7 +593,7 @@ JobId=846115 JobName=sleep.sh
 module load bowtie2
 
 sleep 100
-</code></pre>
+</code></pre></div></p>
 <p>More information on usage is available at <a href="http://slurm.schedmd.com/sacct.html">http://slurm.schedmd.com/sacct.html</a>.</p>
 <hr />
 <p>More information available here:

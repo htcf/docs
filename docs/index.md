@@ -12,35 +12,35 @@ An HTCF description for grant writing purposes
 >
 > The HTCF also includes a 600TB high-speed distributed file system that is capable of throughput up to 19GB/s. This, coupled with its 40Gb network backbone, delivering 10Gb of bandwidth to cluster nodes, the HTCF can provide exceptionally high-speed transfer of large amounts of data.
 
-##### [Genomes](genomes.md)
+[Genomes](genomes.md)
 
 Listing of our frequently used Illumina references sequences and annotation files.
 
-##### [Getting Started](getstarted.md)
+[Getting Started](getstarted.md)
 
 A quick overview to get up and running quickly.
 
-##### [Policies](policies.md)
+[Policies](policies.md)
 
 General HTCF policies.
 
-##### [Running Jobs](runningjobs.md)
+[Running Jobs](runningjobs.md)
 
 Example job scripts and use cases.
 
-##### [SLURM](queue.md)
+[SLURM](queue.md)
 
 Description and introduction to the queueing system used by the HTCF.  
 
-##### [Software](software.md)
+[Software](software.md)
 
 Introduction to lmod and software modules provided.  
 
-##### [Storage](storage/index.md)
+[Storage](storage/index.md)
 
 Overview of storage systems and best practices for data.
 
-##### [Support](support.md)
+[Support](support.md)
 
 Contact us for any questions regarding the HTCF.
 

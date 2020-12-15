@@ -1,32 +1,34 @@
-### Getting Started
-* * *
+## Your HTCF Account
 
-### Getting an Account
+### Account Creation
 
-To request an account on the HTCF computational cluster, please email for more information.
+To request a user account on the HTCF, please send an email with your request, along with your WUSTLKey username and your department ID (for billing purposes).
 
+!!! Note
+    As stated in the [WUSTL and HTCF Policies](policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
 
-### Access
+### Logging In
 
- * The HTCF is directly accessible via WUCON (wired network on the Medical campus) or WUSM-Secure wireless
- * External Access/Off Campus/Eduroam will require use of the WUSM VPN ([https://msvpn.wusm.wustl.edu](https://msvpn.wusm.wustl.edu)), please contact WashU IT for access at (314) 933-3333 or ithelp@wustl.edu.
- * Uses WUSTL KEY for authentication ([http://wustlkey.wustl.edu/](http://wustlkey.wustl.edu))
+The HTCF is directly accessible via WUCON (wired network on the Medical campus) or WUSM-Secure wireless.
 
-### Using the HTCF Submit Node
-* * *
+External access (off campus or via eduroam) will require use of the **WUSM VPN** ([https://msvpn.wusm.wustl.edu](https://msvpn.wusm.wustl.edu)), please contact WashU IT for access at (314) 933-3333 or ithelp@wustl.edu.
 
-The login server is htcf.wustl.edu
+Your **WUSTLKey credentials** are used for authentication ([http://wustlkey.wustl.edu/](http://wustlkey.wustl.edu))
 
-~~~~{.language-bash}
-~$ ssh WUSTL_KEY_ID@htcf.wustl.edu
-~~~~
+The login server, `htcf.wustl.edu` is accessible via ssh.  
 
-If you’re using an X server locally, you can connect with -Y for *some* graphical applications.
-Once logged in, you can create an interactive workspace or submit batch jobs.
+!!! Note
+    As stated in the [WUSTL and HTCF Policies](policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
 
-~~~~{.language-bash}
-~$ ssh -Y WUSTL_KEY_ID@htcf.wustl.edu 
-~~~~
+### Using your account
+
+Before using the HTCF, it's important to familiarize yourself with:
+
+1. The [HTCF Storage](storage/index.md) including [home directories](storage/home.md), [long term storage](storage/lts.md), and [reference storage](storage/ref.md)
+
+2. Using [software](software.md) on the HTCF
+
+3. The Slurm Workload Manager [queue](queue.md) and [running jobs](runningjobs.md)
 
 ### Data & Data Storage
 * * * 
@@ -61,7 +63,8 @@ To request additional software modules, please contact us.
 
 #### GUI Software
 
-As the HTCF is primarily a batch queuing system for high-throughput processing of large amounts of data,  GUI application are not directly supported by the HTCF.  GUI application installation and setup on the HTCF are left to the end user.
+!!! Note
+    As the HTCF is primarily a batch queuing system for high-throughput processing of data, use of GUI applications are not directly supported.  While use of GUI applications is possible using X forwarding, this can sometimes require significant desktop preparation and configuration which is beyond the scope of support.
 
 ### Workflow
 

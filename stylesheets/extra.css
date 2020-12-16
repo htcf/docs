@@ -5,7 +5,8 @@
   --md-typeset-a-color:  #a51417;
   /*--md-admonition-bg-color: rgba(184, 83, 35, 0.25);*/
 }
-.md-typeset .note .admonition-title {
+
+/*.md-typeset .note .admonition-title {
   background-color: rgba(184, 83, 35, 0.25);
 
 }
@@ -15,7 +16,7 @@
 
 .md-typeset .note > .admonition-title::before {
   background-color: rgba(184, 83, 35, 1);
-}
+}*/
 [data-md-color-scheme="wustl_red"] {
   --md-primary-fg-color:        #a51417;
   --md-primary-fg-color--light: #ECB7B7;

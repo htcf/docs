@@ -14,7 +14,7 @@
     
     
       
-        <title>Home - High Throughput Computing Facility @ CGSSB</title>
+        <title>Batch Jobs - High Throughput Computing Facility @ CGSSB</title>
       
     
     
@@ -83,7 +83,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Home
+              Batch Jobs
             
           </span>
         </div>
@@ -130,7 +130,9 @@
         
           
 
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -138,9 +140,7 @@
   <li class="md-tabs__item">
     
     
-      
-    
-    <a href="../.." class="md-tabs__link md-tabs__link--active">
+    <a href="../.." class="md-tabs__link">
       The HTCF
     </a>
   </li>
@@ -154,7 +154,9 @@
     <li class="md-tabs__item">
       
       
-      <a href="../../runningjobs/" class="md-tabs__link">
+        
+      
+      <a href="../../runningjobs/" class="md-tabs__link md-tabs__link--active">
         Doing Work
       </a>
     </li>
@@ -169,7 +171,7 @@
     <li class="md-tabs__item">
       
       
-      <a href="../" class="md-tabs__link">
+      <a href="../../storage/" class="md-tabs__link">
         Storage
       </a>
     </li>
@@ -256,10 +258,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       Doing Work
       <span class="md-nav__icon md-icon"></span>
@@ -290,7 +294,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../using/queue/" class="md-nav__link">
+    <a href="../queue/" class="md-nav__link">
       The Queue
     </a>
   </li>
@@ -302,7 +306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../using/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       Using the HTCF
     </a>
   </li>
@@ -312,11 +316,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../using/batch/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Batch Jobs
     </a>
+    
   </li>
 
         
@@ -326,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../using/interactive/" class="md-nav__link">
+    <a href="../interactive/" class="md-nav__link">
       Interactive Jobs
     </a>
   </li>
@@ -338,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../using/accounting/" class="md-nav__link">
+    <a href="../accounting/" class="md-nav__link">
       Job Accounting
     </a>
   </li>
@@ -387,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" class="md-nav__link">
+    <a href="../../storage/" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -399,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../hts/" class="md-nav__link">
+    <a href="../../storage/hts/" class="md-nav__link">
       HTS
     </a>
   </li>
@@ -411,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ref/" class="md-nav__link">
+    <a href="../../storage/ref/" class="md-nav__link">
       REF
     </a>
   </li>
@@ -423,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../lts/" class="md-nav__link">
+    <a href="../../storage/lts/" class="md-nav__link">
       LTS
     </a>
   </li>
@@ -435,7 +446,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ltos/" class="md-nav__link">
+    <a href="../../storage/ltos/" class="md-nav__link">
       LTOS
     </a>
   </li>
@@ -447,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../new_index/" class="md-nav__link">
+    <a href="../../storage/new_index/" class="md-nav__link">
       Beta
     </a>
   </li>
@@ -557,14 +568,13 @@
               
                 
                 
-                  <h1>Home</h1>
+                  <h1>Batch Jobs</h1>
                 
                 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This page is a work-in-progress.</p>
 <p>New documentation for 2021 coming soon!</p>
 </div>
-<p>Each HTCF user account has a 20GB home directory. This directory can be used to store scripts, development tools, etc. Home directories are located in <em>/home/WUSTLKEY_NAME</em>" and are available on all nodes. They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss. Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.</p>
                 
               
               
@@ -579,6 +589,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using the HTCF
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../interactive/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Interactive Jobs
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

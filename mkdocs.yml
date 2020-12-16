@@ -39,8 +39,14 @@ nav:
 - The HTCF: 'index.md'
 - Getting Started: 'getstarted.md'
 - Doing Work:
-    - queue.md
-    - runningjobs.md
+    - Running Jobs: runningjobs.md
+    - The Queue: using/queue.md
+    - Using the HTCF: 'using/index.md'
+    - Batch Jobs: 'using/batch.md'
+    - Interactive Jobs: 'using/interactive.md'
+    - Job Accounting: 'using/accounting.md'
+      #- queue.md
+      #- runningjobs.md
 - Policies: 'policies.md'
 - Storage: 
     - Overview: 'storage/index.md'

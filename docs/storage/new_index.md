@@ -1,9 +1,3 @@
----
-hide:
-  - navigation
-  - toc
----
-
 <style type="text/css">
 
 .md-typeset table:not([class]) th:nth-child(2) {
@@ -101,6 +95,9 @@ max-width: 100%;
 }
 
 </style>
+
+
+--8<-- "includes/coming_soon.md"
 
 
 |  | Home | HTS | LTS | LTS | LTS |

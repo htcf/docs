@@ -792,37 +792,37 @@
 </thead>
 <tbody>
 <tr>
-<td>Jan 4</td>
-<td>New slurm partition <strong><code>beta</code></strong> will be made available for trying out jobs on a small number of nodes that use the upgraded OS.</td>
+<td>Jan 11</td>
+<td>New slurm partition <strong><code>beta</code></strong> will be made available for trying out jobs on a small number of nodes that use the upgraded OS. <br/> To use, add: <code>#SBATCH -p beta</code> to your sbatch files</td>
 <td>5%</td>
 </tr>
 <tr>
-<td>Jan 11</td>
+<td>Jan 18</td>
 <td>Login Server will be upgraded to new OS</td>
 <td>5%</td>
 </tr>
 <tr>
-<td>Jan 11 - 25</td>
+<td>Jan 18 - 25</td>
 <td>Rolling OS upgrades of idle nodes (up to 50% of nodes) will continue.</td>
 <td>5% - 50%</td>
 </tr>
 <tr>
-<td>Jan 25</td>
+<td>Feb 1</td>
 <td>Slurm partition <strong><code>general</code></strong> will be renamed <strong><code>legacy</code></strong> and <strong><code>beta</code></strong> will be renamed to <strong><code>general</code></strong>.</td>
 <td>50%</td>
 </tr>
 <tr>
-<td>Jan 25</td>
+<td>Feb 1</td>
 <td>Slurm partition <strong><code>general</code></strong> will become the default interactive and batch job partition.</td>
 <td>50%</td>
 </tr>
 <tr>
-<td>Jan 25 - Feb 8</td>
+<td>Feb 1 - 15</td>
 <td>Rolling OS upgrades of idle nodes (up to 95% of nodes) will continue.</td>
 <td>50% - 95%</td>
 </tr>
 <tr>
-<td>Mar 1</td>
+<td>Mar 8</td>
 <td>All nodes upgraded</td>
 <td><img alt="💯" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4af.svg" title=":100:" /></td>
 </tr>
@@ -845,23 +845,23 @@
 </thead>
 <tbody>
 <tr>
-<td>Jan 4</td>
-<td>Each lab given 1TB of /ref space which will be <a href="#cluster-wide-operating-system-upgrade"><strong>availabe on all OS-upgraded nodes</strong></a> to begin testing: <br/> <code>srun --mem=X000 -c X -p beta --pty /bin/bash -l</code></td>
-</tr>
-<tr>
 <td>Jan 11</td>
-<td>/opt/apps and /opt/htcf will go read-only to encourage use of /ref</td>
+<td>Each lab given 1TB of /ref space which will be <a href="#cluster-wide-operating-system-upgrade"><strong>availabe on all OS-upgraded nodes</strong></a>.  <br /> To begin testing: <br/> <code>srun --mem=X000 -c X -p beta --pty /bin/bash -l</code></td>
 </tr>
 <tr>
 <td>Jan 18</td>
+<td>/opt/apps and /opt/htcf will go read-only to encourage use of /ref</td>
+</tr>
+<tr>
+<td>Jan 25</td>
 <td>modules loaded from /opt/apps and /opt/htcf will contain a Deprecation Warning to encourage use of /ref</td>
 </tr>
 <tr>
-<td>Jan 25 - Mar 1</td>
+<td>Mar 1 - 8</td>
 <td>modules for software in /opt/apps and /opt/htcf will be incrementally removed</td>
 </tr>
 <tr>
-<td>Mar 1</td>
+<td>Mar 8</td>
 <td>/opt/apps and /opt/htcf directories will be decommissioned.</td>
 </tr>
 </tbody>
@@ -880,15 +880,15 @@
 </thead>
 <tbody>
 <tr>
-<td>Jan 4</td>
+<td>Jan 11</td>
 <td>Each lab given 1TB of /ref space which will be <a href="#cluster-wide-operating-system-upgrade"><strong>availabe on all OS-upgraded nodes</strong></a> to begin testing: <br/> <code>srun --mem=X000 -c X -p beta --pty /bin/bash -l</code></td>
 </tr>
 <tr>
-<td>Jan 25</td>
+<td>Feb 1</td>
 <td>The <code>/scratch/ref</code> data directory will be renamed <code>/scratch/old-ref</code> to encourage use of <code>/ref/&lt;lab&gt;/data/</code> instead.</td>
 </tr>
 <tr>
-<td>Mar 1</td>
+<td>Mar 8</td>
 <td><code>/scratch/old-ref</code> directory will be decommissioned.</td>
 </tr>
 </tbody>
@@ -903,11 +903,11 @@
 </thead>
 <tbody>
 <tr>
-<td>Jan 4</td>
+<td>Jan 11</td>
 <td>LTOS open for business</td>
 </tr>
 <tr>
-<td>Jan 25</td>
+<td>Feb 1</td>
 <td>Labs with traditional /lts buckets &gt;= 15TB will be encouraged to consider LTOS for some of their bulky data (such as raw sequence data)</td>
 </tr>
 </tbody>

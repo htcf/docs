@@ -605,8 +605,33 @@
                 
                 
                 <h1 id="q1-2021-changes">Q1 - 2021 Changes</h1>
+<p>The beginning of 2021 will see quite a few (pretty cool, we think) changes within the HTCF.  Much effort has been made to ease the transitions that are necessary to make these changes.  Please contact us with any questions or concerns.</p>
+<p>Here's what's changing: </p>
+<dl>
+<dt><strong>OS Upgrade</strong></dt>
+<dd>
+<p>While the HTCF <em>backend</em> servers have been continually upgraded over the years, the cluster nodes and login server are long overdue for an OS upgrade.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Many of the current software modules rely on system libraries.  These libraries will be upgraded when the OS is upgraded.</p>
+<p>It it likely that some software packages will have errors due to the change in system libraries.  Don't worry though, we've got a solution for that.... <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
+</div>
+</dd>
+<dt><strong>Self-Service Software</strong></dt>
+<dd>
+<p>As the HTCF user base grows, so do the software installation needs.  Maintaining the software and modules for all labs can leave a web of dependency, version, and architecture conflicts that are difficult to untangle.  The most sensible, sustainable, and flexible approach going forward is for HTCF support to move over to the passenger seat and leave the driving to the labs.  Labs should now feel empowered to install and manage their own software (with us in the passenger seat to help navigate).</p>
+<p>Infrastructure is in place to ease in this, including an <strong>initial 1TB of space per lab</strong> for software storage called /ref.  Speaking of which.... <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
+</dd>
+<dt><strong>/ref</strong></dt>
+<dd>A new storage location called /ref will be introduced.  /ref is storage space for software and reference databases (think NCBI databases or software-provided reference sequences).  Each lab will be given an initial 1TB of reference space, this space can be grown at LTS prices.</dd>
+</dl>
 <h2 id="cluster-wide-operating-system-upgrade">Cluster-wide Operating System Upgrade</h2>
 <p>All nodes (including the login server) will be upgraded from Ubuntu 16.04 to Ubuntu 20.04.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Many of the current software modules rely on system libraries.  These libraries will be upgraded when the OS is upgraded.</p>
+<p>It it likely that some software packages will have errors due to the change in system libraries.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -619,6 +644,11 @@
 <tr>
 <td>January XX</td>
 <td>New slurm partition <strong><code>beta</code></strong> will be made available for trying out jobs on a small number of nodes that use the upgraded OS.</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>January XX</td>
+<td>Login Server will be upgraded to new OS</td>
 <td>5%</td>
 </tr>
 <tr>
@@ -656,6 +686,23 @@
 <p class="admonition-title">Help</p>
 <p>We are here to help with the migration from the deprecated modules system to your labs' new /ref software.  Rest assured that the deprecated software will not be removed until migration is complete.</p>
 </div>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Change</th>
+<th>% nodes containing upgraded OS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>January XX</td>
+<td>Each lab given 1TB of /ref space (<a href="#cluster-wide-operating-system-upgrade"><strong>availabe on all OS-upgraded nodes</strong></a>) to begin testing: <br/> <code>srun --mem=X000 -c X -p beta --pty /bin/bash -l</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>| </p>
 <h2 id="lts">LTS</h2>
                 
               

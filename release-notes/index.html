@@ -571,23 +571,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cluster-wide-operating-system-upgrade" class="md-nav__link">
-    Cluster-wide Operating System Upgrade
+  <a href="#whats-changing" class="md-nav__link">
+    What's changing?
+  </a>
+  
+    <nav class="md-nav" aria-label="What's changing?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-upgrade" class="md-nav__link">
+    OS Upgrade
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#self-service-software-and-modules" class="md-nav__link">
     Self-service software and modules
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#lts" class="md-nav__link">
-    LTS
+        
+          <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    /ref
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ltos" class="md-nav__link">
+    LTOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -606,7 +626,8 @@
                 
                 <h1 id="q1-2021-changes">Q1 - 2021 Changes</h1>
 <p>The beginning of 2021 will see quite a few (pretty cool, we think) changes within the HTCF.  Much effort has been made to ease the transitions that are necessary to make these changes.  Please contact us with any questions or concerns.</p>
-<p>Here's what's changing: </p>
+<h2 id="whats-changing">What's changing?</h2>
+<p>There are essentially 4 changes (with more detail below that): </p>
 <dl>
 <dt><strong>OS Upgrade</strong></dt>
 <dd>
@@ -617,15 +638,26 @@
 <p>It it likely that some software packages will have errors due to the change in system libraries.  Don't worry though, we've got a solution for that.... <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
 </div>
 </dd>
-<dt><strong>Self-Service Software</strong></dt>
+<dt><strong>Self-Service Software</strong> <img alt="🚐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f690.svg" title=":minibus:" /></dt>
 <dd>
 <p>As the HTCF user base grows, so do the software installation needs.  Maintaining the software and modules for all labs can leave a web of dependency, version, and architecture conflicts that are difficult to untangle.  The most sensible, sustainable, and flexible approach going forward is for HTCF support to move over to the passenger seat and leave the driving to the labs.  Labs should now feel empowered to install and manage their own software (with us in the passenger seat to help navigate).</p>
 <p>Infrastructure is in place to ease in this, including an <strong>initial 1TB of space per lab</strong> for software storage called /ref.  Speaking of which.... <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
 </dd>
 <dt><strong>/ref</strong></dt>
-<dd>A new storage location called /ref will be introduced.  /ref is storage space for software and reference databases (think NCBI databases or software-provided reference sequences).  Each lab will be given an initial 1TB of reference space, this space can be grown at LTS prices.</dd>
+<dd>A new form of LTS storage called /ref will be introduced.  /ref is storage space for software and reference databases (think NCBI databases or software-provided reference sequences).  Each lab will be given an initial 1TB of reference space, this space can be expanded at LTS prices.  Speaking of new forms of LTS.... <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></dd>
+<dt><strong>LTOS</strong> <img alt="☁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2601.svg" title=":cloud:" /></dt>
+<dd>
+<p><strong>Object Storage LTS</strong> as been quietly available for a while, but now it's official.  This is the <em>cloud storage</em> form of local (ie. high speed) LTS (ie. not Amazon) that uses the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html">Amazon S3 API</a> for access.  It's well suited for large amounts of data that don't change much (e.g. raw sequencing runs).</p>
+<p><strong>Unlike traditional LTS</strong>:</p>
+<ul>
+<li>LTOS buckets don't have a size limit</li>
+<li>They're available from each node (no more login server copying back and forth!)  Aggregate transfer rates can be much faster than traditional /lts.</li>
+<li>Before you get too excited, there's a learning curve...because it's more like cloud storage, you won't find it in a traditional filesystem directory.  With the right use case though, we're confident that the learning curve will be worth it!</li>
+</ul>
+<p>More info can be found <a href="">here</a>.</p>
+</dd>
 </dl>
-<h2 id="cluster-wide-operating-system-upgrade">Cluster-wide Operating System Upgrade</h2>
+<h3 id="os-upgrade">OS Upgrade</h3>
 <p>All nodes (including the login server) will be upgraded from Ubuntu 16.04 to Ubuntu 20.04.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -678,7 +710,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="self-service-software-and-modules">Self-service software and modules</h2>
+<h3 id="self-service-software-and-modules">Self-service software and modules</h3>
 <p>The system-wide software and modules in directories <code>/opt/apps</code> and <code>/opt/htcf</code> will be frozen (read-only) and use of software in these directories is <strong>deprecated.</strong></p>
 <p>Replacing these directories will be a form of LTS call /ref, lab reference space located in <code>/ref/&lt;lab&gt;/software</code> and <code>/ref/&lt;lab&gt;/modulefiles</code>.  Each lab will receive 1TB of space in /ref for storage of reference material including software and reference sequence databases.  <a href="../storage/ref/">More information about /ref can be found here.</a></p>
 <p>Software installation will now be self-service.  To aid in this, <a href="../software_new/">documentation has been added</a> and infrastructue is in place for lab-managed <a href="../software_new/#spack">spack installations</a>.  Thousands of packages are available for installation using <a href="https://spack.readthedocs.io/">spack</a>.</p>
@@ -703,7 +735,12 @@
 </tbody>
 </table>
 <p>| </p>
-<h2 id="lts">LTS</h2>
+<h3 id="ref">/ref</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind, while /ref is a form of LTS, it <strong>is not /lts</strong> (e.g. it isn't backed up)</p>
+</div>
+<h3 id="ltos">LTOS</h3>
                 
               
               

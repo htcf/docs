@@ -571,15 +571,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#operating-system" class="md-nav__link">
-    Operating System
+  <a href="#cluster-wide-operating-system-upgrade" class="md-nav__link">
+    Cluster-wide Operating System Upgrade
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    Software
+  <a href="#self-service-software-and-modules" class="md-nav__link">
+    Self-service software and modules
   </a>
   
 </li>
@@ -605,10 +605,51 @@
                 
                 
                 <h1 id="q1-2021-changes">Q1 - 2021 Changes</h1>
-<h2 id="operating-system">Operating System</h2>
+<h2 id="cluster-wide-operating-system-upgrade">Cluster-wide Operating System Upgrade</h2>
 <p>All nodes (including the login server) will be upgraded from Ubuntu 16.04 to Ubuntu 20.04.</p>
-<h2 id="software">Software</h2>
-<p>The system-wide software and modules in directories /opt/apps and /opt/htcf will be frozen (read-only) and use of software in these directories is <strong>deprecated.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Change</th>
+<th>% nodes containing upgraded OS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>January XX</td>
+<td>New slurm partition <strong><code>beta</code></strong> will be made available for trying out jobs on a small number of nodes that use the upgraded OS.</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>January XX - XX</td>
+<td>Rolling OS upgrades of idle nodes (up to 50% of nodes) will continue.</td>
+<td>5% - 50%</td>
+</tr>
+<tr>
+<td>January XX</td>
+<td>Slurm partition <strong><code>general</code></strong> will be renamed <strong><code>legacy</code></strong> and <strong><code>beta</code></strong> will be renamed to <strong><code>general</code></strong>.</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>January XX</td>
+<td>Slurm partition <strong><code>general</code></strong> will become the default interactive and batch job partition.</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>January XX - XX</td>
+<td>Rolling OS upgrades of idle nodes (up to 95% of nodes) will continue.</td>
+<td>50% - 95%</td>
+</tr>
+<tr>
+<td>February XX</td>
+<td></td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="self-service-software-and-modules">Self-service software and modules</h2>
+<p>The system-wide software and modules in directories <code>/opt/apps</code> and <code>/opt/htcf</code> will be frozen (read-only) and use of software in these directories is <strong>deprecated.</strong></p>
 <p>Replacing these directories will be a form of LTS call /ref, lab reference space located in <code>/ref/&lt;lab&gt;/software</code> and <code>/ref/&lt;lab&gt;/modulefiles</code>.  Each lab will receive 1TB of space in /ref for storage of reference material including software and reference sequence databases.  <a href="../storage/ref/">More information about /ref can be found here.</a></p>
 <p>Software installation will now be self-service.  To aid in this, <a href="../software_new/">documentation has been added</a> and infrastructue is in place for lab-managed <a href="../software_new/#spack">spack installations</a>.  Thousands of packages are available for installation using <a href="https://spack.readthedocs.io/">spack</a>.</p>
 <div class="admonition help">

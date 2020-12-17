@@ -111,4 +111,5 @@ max-width: 100%;
 | Access Type | Standard Filesystem | Standard Filesystem | Standard Filesystem  / lts /<lab>/<bucket> | HTTP interface  compatible with (but not  using) Amazon S3 API | Standard Filesystem  /ref/<lab>/data  /ref/<lab>/software  /ref/<lab>/modules |
 | Access Speed | Slow | 10+ GB/s (aggregate) | Max 200 MB/s | 1000+ MB/s (aggregate) | 100 MB/s (aggregate) |
 | Backup Policy | Onsite  daily/weekly/monthly  snapshots as resources  allow  Offsite backup daily | NO BACKUPS | Onsite  daily/weekly/mont hly snapshots as  resources allow  Offsite backup  daily | continually synced  offsite     user customizable:  versioning of objects   schedule removal of  old objects | NO BACKUPS |
+| Cleaning Policy | - | [See the scratch data cleaning policy](../policies.md#scratch-data-cleaning) | - | - | - |
 

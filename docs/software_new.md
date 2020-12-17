@@ -53,7 +53,7 @@ When needed software is not readily accessible via Spack, there are a few option
    
      Sometimes, this can be very painful.
    
-     Sometimes, it can be a good idea to pass judgement on the quality of software by the quality of the installation process and documentation. :wink:
+     Sometimes, it can be a good idea to pass judgement on the quality of software based on the quality of the installation process and documentation. :wink:
 
 2. **Create a custom spack package**
 

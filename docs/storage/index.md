@@ -86,6 +86,9 @@ To temporarily increase your scratch quota, please email with the following info
 
 To temporarily generate a URL for a collaborator to download files, you can use the following commands.  If there are any errors, please ensure the directory and file permissions on the files you wish to share allow all users read access.  The URL will be valid for 90 days, if a shorter duration is required please contact us.
 
+!!! Note
+    Please ensure the you are the "owner" or a member of the "group" of the path.
+
 To share a directory:
 ~~~~
 ~$ module load htcf

@@ -26,7 +26,7 @@ You can check the amount of home directory with the `du` command.  It may take a
 
 ### LTS: Long Term Storage (/lts)
 
-Long term storage is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed yearly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  To see how much space your lab is using, use the example command below, replace lab with your labname.  
+Long term storage is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  To see how much space your lab is using, use the example command below, replace lab with your labname.  
 
 ~~~~{.language-bash}
 ~$ df -h $( grep -v '^#' /etc/fstab | awk '{ print $2 }' | grep '/lts/mylab' )

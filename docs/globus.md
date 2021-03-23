@@ -2,7 +2,7 @@
 **To register a personal HTCF endpoint with Globus.  (only needs to be run once)**
 
 ```
-$ globusconntectpersonal -setup
+$ globusconnectpersonal -setup
 ```
 
 Open the link presented in a web browser and follow the on screen instructions.

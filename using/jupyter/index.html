@@ -14,7 +14,7 @@
     
     
       
-        <title>Home - High Throughput Computing Facility @ CGSSB</title>
+        <title>Jupyter - High Throughput Computing Facility @ CGSSB</title>
       
     
     
@@ -85,7 +85,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Jupyter
             
           </span>
         </div>
@@ -186,7 +186,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../../storage/" class="md-tabs__link">
         Storage
       </a>
     </li>
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using/queue/" class="md-nav__link">
+      <a href="../queue/" class="md-nav__link">
         The Queue
       </a>
     </li>
@@ -335,7 +335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Using the HTCF
       </a>
     </li>
@@ -347,7 +347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using/batch/" class="md-nav__link">
+      <a href="../batch/" class="md-nav__link">
         Batch Jobs
       </a>
     </li>
@@ -359,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using/interactive/" class="md-nav__link">
+      <a href="../interactive/" class="md-nav__link">
         Interactive Jobs
       </a>
     </li>
@@ -371,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using/accounting/" class="md-nav__link">
+      <a href="../accounting/" class="md-nav__link">
         Job Accounting
       </a>
     </li>
@@ -428,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../storage/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -440,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hts/" class="md-nav__link">
+      <a href="../../storage/hts/" class="md-nav__link">
         HTS
       </a>
     </li>
@@ -452,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ref/" class="md-nav__link">
+      <a href="../../storage/ref/" class="md-nav__link">
         REF
       </a>
     </li>
@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lts/" class="md-nav__link">
+      <a href="../../storage/lts/" class="md-nav__link">
         LTS
       </a>
     </li>
@@ -476,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ltos/" class="md-nav__link">
+      <a href="../../storage/ltos/" class="md-nav__link">
         LTOS
       </a>
     </li>
@@ -488,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../new_index.md" class="md-nav__link">
+      <a href="../../storage/new_index.md" class="md-nav__link">
         Beta
       </a>
     </li>
@@ -610,14 +610,33 @@
               
                 
                 
-                  <h1>Home</h1>
+                  <h1>Jupyter</h1>
                 
-                <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This page is a work-in-progress.</p>
-<p>New documentation for 2021 coming soon!</p>
-</div>
-<p>Each HTCF user account has a 20GB home directory. This directory can be used to store scripts, development tools, etc. Home directories are located in <em>/home/WUSTLKEY_NAME</em>" and are available on all nodes. They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss. Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.</p>
+                <div class="highlight"><pre><span></span><code>#!/bin/bash
+
+#SBATCH --mem=1G
+#SBATCH --cpus-per-task=1
+#SBATCH --time 8:00:00
+#SBATCH --output jupyter-lab-%J.out 
+
+. env/bin/activate
+
+unset XDG_RUNTIME_DIR
+port=$(shuf -i9000-9999 -n1)
+
+
+echo -e &quot;
+    Run in a new local terminal window to create an SSH tunnel to $host
+    -----------------------------------------------------------------
+    ssh -N -L $port:$host:$port $USER@htcf.wustl.edu
+    -----------------------------------------------------------------
+
+    Then in the desktop browser, follow the http://127.0.0.1..... address shown at the bottom of the jupyter lab command
+    &quot;
+
+# Launch jupyter lab
+jupyter lab --no-browser --port=$port --ip=$HOSTNAME
+</code></pre></div>
                 
               
               

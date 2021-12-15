@@ -34,32 +34,21 @@ A list of your garbage-collected files can be found in /scratch/trash/&lt;date_o
 
 ### Data Limits
 
-Each member of the HTCF belongs to at least two Unix groups.  The primary group is your personal group, having the same name as your HTCF username.  The secondary group is the laboratory or similar entity that you are primarily associated with.  Both of these groups have independent quotas.
+Each member of the HTCF belongs to at least two Unix groups.  The primary group is your personal group, having the same name as your HTCF username.  The secondary group is the laboratory or similar entity that you are primarily associated with.
 
 **Policy: Scratch user data limits**
 
-Files owned by your primary group - 2TB
-
-**Policy: Scratch lab data limits**
-
-Files owned by your shared, secondary (laboratory) group - 2TB
+Size Limit - 2TB
+Inode Limit (Number of files) - 2,000,000
 
 Example
 
 **Username:**  johnsmith
 
-**Lab:**  smithlab
-
 To determine your personal scratch usage:
 
 ~~~~
    $ beegfs-ctl --getquota --uid johnsmith
-~~~~
-
-To determine your share lab usage:
-
-~~~~
-   $ beegfs-ctl --getquota --gid smithlab
 ~~~~
 
 ## Login Node Policy

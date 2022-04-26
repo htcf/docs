@@ -9,13 +9,9 @@ To request a user account on the HTCF, please send an email with your request, a
 
 ### Logging In
 
-The HTCF is directly accessible via WUCON (wired network on the Medical campus) or WUSM-Secure wireless.
-
-External access (off campus or via eduroam) will require use of the **WUSM VPN** ([https://msvpn.wusm.wustl.edu](https://msvpn.wusm.wustl.edu)), please contact WashU IT for access at (314) 933-3333 or ithelp@wustl.edu.
-
 Your **WUSTLKey credentials** are used for authentication ([http://wustlkey.wustl.edu/](http://wustlkey.wustl.edu))
 
-The login server, `htcf.wustl.edu` is accessible via ssh.  
+The login server, `login.htcf.wustl.edu` is accessible via ssh.  
 
 !!! Note
     As stated in the [WUSTL and HTCF Policies](policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**

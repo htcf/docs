@@ -92,16 +92,16 @@ Interactive sessions are for running interactive scripts, vizualization, any tas
     The HTCF is primarily a batch queuing system.
 
     Interactive jobs are meant to function as daily workspaces.
-    Because interactive jobs are, by their nature, very inefficient, they are not meant to be running continuously for more than 1 day.
+    Because interactive jobs are by their nature, inefficient, they are not meant to be running continuously for more than 1 day.
 
     When using interactive tools such as rstudio or jupyter, please make sure the jobs are using the "interactive" queue  (using sbatch/srun parameters `-J interactive -p interactive`)
 
-    **Jobs using interactive tools that not in the interactive queue will be subject to cancellation in order to free up resources for batch jobs.**
+    **Jobs using interactive tools that are not in the interactive queue will be subject to cancellation in order to free up resources for batch jobs.**
 
     Tools such as Rscript can be used to run R programs in a batch fashion.
     It appears that jupyter notebooks can also be run in a [batch fashion](http://tritemio.github.io/smbits/2016/01/02/execute-notebooks/).
 
-    Thanks for your cooperation in ensuring fairness for all folks on the HTCF.
+    Thanks for helping to ensure fairness for all folks on the HTCF.
 
 You can create an interactive session by running:
 

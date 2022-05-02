@@ -96,7 +96,7 @@ Interactive sessions are for running interactive scripts, vizualization, any tas
 
     When using interactive tools such as rstudio or jupyter, please make sure the jobs are using the "interactive" queue  (using sbatch/srun parameters `-J interactive -p interactive`)
 
-    Jobs using interactive tools that not in the interactive queue will be subject to cancellation in order to free up resources for batch jobs.
+    **Jobs using interactive tools that not in the interactive queue will be subject to cancellation in order to free up resources for batch jobs.**
 
     Tools such as Rscript can be used to run R programs in a batch fashion.
     It appears that jupyter notebooks can also be run in a [batch fashion](http://tritemio.github.io/smbits/2016/01/02/execute-notebooks/).

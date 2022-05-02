@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1045,6 +1045,17 @@
 <hr />
 <h4 id="interactive">Interactive</h4>
 <p>Interactive sessions are for running interactive scripts, vizualization, any tasks that are too computational intensive to run on the login node not submitted via sbatch.  The defaults are: 1 CPU core, 1 GB RAM, and a time limit of 8 hours.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The HTCF is primarily a batch queuing system.</p>
+<p>Interactive jobs are meant to function as daily workspaces.
+Because interactive jobs are, by their nature, very inefficient, they not meant to be running continuously for more than 1 day.</p>
+<p>When using interactive tools such as rstudio or jupyter, please make sure the jobs are using the "interactive" queue  (using sbatch parameters "-J interactive -p interactive")</p>
+<p>Jobs using interactive tools that are not using the interactive queue will be subject to cancellation in order to free up resources for batch jobs.</p>
+<p>Tools such as Rscript can be used to run R programs in a batch fashion.
+It appears that jupyter notebooks can also be run in a batch fashion (http://tritemio.github.io/smbits/2016/01/02/execute-notebooks/)</p>
+<p>Thanks for your cooperation in ensuring fairness for all folks on the HTCF.</p>
+</div>
 <p>You can create an interactive session by running:</p>
 <div class="highlight"><pre><span></span><code>~$ interactive
 </code></pre></div>
@@ -1153,7 +1164,7 @@ JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
     
   </body>

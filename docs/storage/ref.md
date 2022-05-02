@@ -15,9 +15,6 @@ Therefore, **Any data in `/ref` that cannot be recreated should be copied to lon
 /ref
 ├── <lab>
     ├── data
-    ├── modulefiles
-    │   ├── custom
-    │   └── spack
     └── software
 ```
 
@@ -27,5 +24,3 @@ The data directory is well suited for modestly sized reference data such as [NCB
 Larger datasets (> 500GB) are probably better suited for [Long Term Object Storage](/storage/ltos.md)
 
 ### /software
-
-### /modulefiles

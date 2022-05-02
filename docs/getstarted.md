@@ -94,7 +94,7 @@ Interactive sessions are for running interactive scripts, vizualization, any tas
     Interactive jobs are meant to function as daily workspaces.
     Because interactive jobs are, by their nature, very inefficient, they not meant to be running continuously for more than 1 day.
 
-    When using interactive tools such as rstudio or jupyter, please make sure the jobs are using the "interactive" queue  (using sbatch parameters "-J interactive -p interactive")
+    When using interactive tools such as rstudio or jupyter, please make sure the jobs are using the "interactive" queue  (using sbatch/srun parameters `-J interactive -p interactive`)
 
     Jobs using interactive tools that are not using the interactive queue will be subject to cancellation in order to free up resources for batch jobs.
 

@@ -38,8 +38,8 @@ Each member of the HTCF belongs to at least two Unix groups.  The primary group 
 
 **Policy: Scratch user data limits**
 
-Size Limit - 2TB
-Inode Limit (Number of files) - 2,000,000
+- Size Limit - 2TB
+- Inode Limit (Number of files) - 2,000,000
 
 Example
 

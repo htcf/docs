@@ -88,6 +88,21 @@ interactive  |      250GB      |   8 hours   |         3004      |
 
 Interactive sessions are for running interactive scripts, vizualization, any tasks that are too computational intensive to run on the login node not submitted via sbatch.  The defaults are: 1 CPU core, 1 GB RAM, and a time limit of 8 hours.
 
+!!! Note
+    The HTCF is primarily a batch queuing system.
+
+    Interactive jobs are meant to function as daily workspaces.
+    Because interactive jobs are, by their nature, very inefficient, they not meant to be running continuously for more than 1 day.
+
+    When using interactive tools such as rstudio or jupyter, please make sure the jobs are using the "interactive" queue  (using sbatch parameters "-J interactive -p interactive")
+
+    Jobs using interactive tools that are not using the interactive queue will be subject to cancellation in order to free up resources for batch jobs.
+
+    Tools such as Rscript can be used to run R programs in a batch fashion.
+    It appears that jupyter notebooks can also be run in a batch fashion (http://tritemio.github.io/smbits/2016/01/02/execute-notebooks/)
+
+    Thanks for your cooperation in ensuring fairness for all folks on the HTCF.
+
 You can create an interactive session by running:
 
 ~~~~{.language-bash}

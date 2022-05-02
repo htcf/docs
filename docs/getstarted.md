@@ -106,13 +106,7 @@ Interactive sessions are for running interactive scripts, vizualization, any tas
 You can create an interactive session by running:
 
 ~~~~{.language-bash}
-~$ interactive
-~~~~
-
-or you can modify the following command to fit your requirements:
-
-~~~~{.language-bash}
-srun --mem=2000 --cpus-per-task=1 -J interactive -p interactive --pty /bin/bash -l
+~$ srun --mem=<MBs> --cpus-per-task=<num> -J interactive -p interactive --pty /bin/bash -l
 ~~~~
 
 #### Batch Job Submission

@@ -1,11 +1,11 @@
-site_name: The HTCF
+site_name: HTCF
 theme: 
   name: material
   logo: htcf_rev_sm.png
   features:
     - navigation.instant
     #- navigation.tabs
-    - navigation.tracking
+    #- navigation.tracking
     - navigation.sections
     - toc.integrate
   palette:
@@ -43,9 +43,9 @@ extra:
 
 nav:
 - About: 'index.md'
-- 'getstarted.md'
+- 'using.md'
 #- Doing Work:
-#    - 'getstarted.md'
+#    - 'using.md'
     #- Running Jobs: runningjobs.md
     #- The Queue: using/queue.md
     #- Using the HTCF: 'using/index.md'

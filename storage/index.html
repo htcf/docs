@@ -195,7 +195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using/" class="md-nav__link">
+      <a href="../using/getstarted/" class="md-nav__link">
         Your HTCF Account
       </a>
     </li>
@@ -277,25 +277,31 @@
     HTS: High Throughput Storage (/scratch)
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="HTS: High Throughput Storage (/scratch)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#quota-increase-requests" class="md-nav__link">
     Quota Increase Requests
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#recommendations" class="md-nav__link">
     Recommendations
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#publishing-files" class="md-nav__link">
-    Publishing Files
+  <a href="#sharing-files-publicly" class="md-nav__link">
+    Sharing Files Publicly
   </a>
   
 </li>
@@ -355,83 +361,65 @@
 <p>The HTCF provides three types of storage:</p>
 <h3 id="hds-home-directory-storage-home">HDS: Home Directory Storage (/home)</h3>
 <p>Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.</p>
-<p>Each HTCF user account has 20GB home directory.  This directory can be used to store scripts, development tools, etc.  Home directories are located in "/home/<strong>WUSTL_KEY_ID</strong>" and are available on all nodes.</p>
-<p><em>Please keep your home directory access to a minimum in your jobs.</em></p>
-<p>By default, home directories will not be readable or writeable by other users of HTCF.  If you wish to change this default, you can use the chmod command to give the appropriate level of access to your lab members or other collaborative users.</p>
-<p>You can check the amount of home directory with the <code>du</code> command.  It may take a few moments for the command to complete.  For example:</p>
-<div class="highlight"><pre><span></span><code>~$ du -csh $HOME
-10G /home/&lt;username&gt;
-10G total
+<p>Each HTCF account has a 20GB home directory.  This directory can be used to store scripts, development tools, etc.  Home directories are located in <code>/home/&lt;WUSTLKEY_ID&gt;</code> and are available on all nodes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Home directory space is not a high-speed resource like /scratch space.</p>
+<p>Please keep home directory access to a minimum in batch jobs.</p>
+</div>
+<p>By default, home directories will not be readable or writeable by other users of HTCF.  Feel free to change this default, if desired.</p>
+<p>To check home directory usage:</p>
+<div class="highlight"><pre><span></span><code>$ du -sh $HOME
 </code></pre></div>
-<hr />
 <h3 id="lts-long-term-storage-lts">LTS: Long Term Storage (/lts)</h3>
 <p>Long term storage is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  To see how much space your lab is using, use the example command below, replace lab with your labname.  </p>
-<div class="highlight"><pre><span></span><code>~$ df -h $( grep -v &#39;^#&#39; /etc/fstab | awk &#39;{ print $2 }&#39; | grep &#39;/lts/mylab&#39; )
-Filesystem                                   Size  Used Avail Use% Mounted on
-/dev/mylab/seq                           1.0T  165G  860G  17% /lts/lab/seq
-/dev/mylab/data1                          10T  6.4T  3.7T  64% /lts/lab/data1
-/dev/mylab/data2                          15T   14T  1.1T  93% /lts/lab/data2
+<p>To check LTS usage:</p>
+<div class="highlight"><pre><span></span><code>$ df -h /lts/&lt;lab_name&gt;/&lt;bucket_name&gt;
 </code></pre></div>
-<hr />
 <h3 id="hts-high-throughput-storage-scratch">HTS: High Throughput Storage (/scratch)</h3>
-<p>HTCF high throughput storage is over 700TB, BeeGFS distrubuted file system able to handle more than 19GB/second of total throughput.  This storage is <em>temporary scratch space</em> and is <strong>not</strong> backed up.  We absolutely <strong>cannot</strong> recover anything in /scratch once removed.</p>
-<p>*Data stored in /scratch is subject to the <a href="https://htcf.wustl.edu/docs/policies/#scratch-data-cleaning">Scratch Data Cleaning Policy</a>.</p>
-<p>Jobs must utilize this space for inputs and outputs to provide the best performance possible.  Running jobs that read/write from your home directory will cause slowness and login issues for all users.</p>
-<p>We will ask users to clean up older files on /scratch if it is needed to improve system performance.</p>
-<p>The best use of the HTS is to follow a workflow similar to this:</p>
+<p>High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is <em>temporary scratch space</em> and is <strong>not</strong> backed up.  Once data is removed from /scratch, it cannot be recovered.</p>
+<p><em>Data stored in /scratch is subject to the <a href="/policies/#scratch-data-cleaning">Scratch Data Cleaning Policy</a>.</em></p>
+<p>Jobs utilize this space for inputs and outputs to provide the best performance possible.  Running jobs that read/write from the home directory will cause slowness and login issues for all users.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Users will be asked to clean up older files on /scratch if it is needed to improve system performance.</p>
+</div>
+<p>The best use of the HTS is to use a workflow similar to the following:</p>
 <ol>
-<li>Copy your starting (raw) data from LTS over to HTS.</li>
-<li>Submit jobs to the cluster that process your data, creating intermediate or final data.</li>
-<li>Copy your final data (and job files used to create that data) over to LTS.</li>
+<li>Copy starting (raw) data from LTS to HTS.</li>
+<li>Submit jobs to the cluster that process the data, creating intermediate and/or finished data.</li>
+<li>Copy the finished data (and job files used to create that data) over to LTS.</li>
 <li>Remove all working data from HTS</li>
 </ol>
 <p>Results that are generated on this storage need to be promptly copied to LTS. </p>
-<p>We have a general quota of 2TB per user in /scratch to prevent the filesystem from filling up.  At ~95% /scratch becomes very slow, at 100%, all operations on the cluster stop.  To check the amount of space you're using in /scratch, you can use the command below as an example, replace the support username with your username.</p>
-<div class="highlight"><pre><span></span><code>~$ beegfs-ctl --getquota --uid support
-      user/group     ||           size          ||    chunk files
-     name     |  id  ||    used    |    hard    ||  used   |  hard
---------------|------||------------|------------||---------|---------
-       support|  1000|| 325.48 GiB |   2.00 TiB ||        0|        0
+<p>There is a quota of 2TB per user in /scratch to prevent the filesystem from filling up.  At &gt;85% /scratch can become very slow.  To check the amount of space being used, use the following command:</p>
+<div class="highlight"><pre><span></span><code>$ beegfs-ctl --getquota --uid $USER
 </code></pre></div>
-<h3 id="quota-increase-requests">Quota Increase Requests</h3>
-<p>To temporarily increase your scratch quota, please email with the following information:</p>
+<h4 id="quota-increase-requests">Quota Increase Requests</h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A quota increase is not garaunteed.  If excess capacity is not available, a quota increase cannot be granted.</p>
+</div>
+<p>If excess capacity is available.  A temporary increase in the scratch quota can be requested.  To request more scratch space, email following information:</p>
 <ol>
 <li>Reason for the increase</li>
 <li>Amount of additional space</li>
 <li>Duration additional space will be required</li>
 </ol>
-<h3 id="recommendations">Recommendations</h3>
+<h4 id="recommendations">Recommendations</h4>
 <ul>
-<li>No important source code, scripts, libraries, executables should be kept in /scratch</li>
-<li>Do not make symlinks from your home directory to folders in /scratch</li>
-<li>Work with large files before breaking up into smaller files</li>
+<li>No important source code, scripts, libraries, executables should be kept in <code>/scratch</code></li>
+<li>Do not make symlinks from your home directory to folders in <code>/scratch</code></li>
 </ul>
-<h3 id="publishing-files">Publishing Files</h3>
-<p>To temporarily generate a URL for a collaborator to download files, you can use the following commands.  If there are any errors, please ensure the directory and file permissions on the files you wish to share allow all users read access.  The URL will be valid for 90 days, if a shorter duration is required please contact us.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Please ensure the you are the "owner" or a member of the "group" of the path.</p>
-</div>
-<p>To share a directory:
-<div class="highlight"><pre><span></span><code>~$ module load htcf
-~$ serve /path/to/directory
-</code></pre></div>
-To share a specific file:
-<div class="highlight"><pre><span></span><code>~$ module load htcf
-~$ serve /path/to/file
-</code></pre></div></p>
-<p>For long term hosting of publicly accessible data, please contact your department IT.</p>
+<h3 id="sharing-files-publicly">Sharing Files Publicly</h3>
+<p>Globus can be used to share data from LTS or Home directories.  The Globus "Collection" is called "HTCF Home Directories". Please see <a href="https://docs.globus.org/how-to/get-started/">the globus documentation for more information</a></p>
+<p>For long term hosting of publicly accessible data, please contact WUSTL IT.</p>
 <h3 id="copying-files-using-rsync">Copying Files Using Rsync</h3>
 <p>Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if you need to verify that all files have been successfully copied.</p>
-<p>When using this command, please note that the absense of a trailing slash means the directory, with a trailing slash means the contents of that directory.  Here are a few examples:</p>
-<div class="highlight"><pre><span></span><code>~$ rsync -aHv --progress /directory/to/transfer /destination/directory/location/
-</code></pre></div>
-<p>The above example would put the directory named "transfer" into the directory named "location"</p>
-<div class="highlight"><pre><span></span><code>~$ rsync -aHv --progress /directory/to/transfer/ /destination/directory/location/
-</code></pre></div>
-<p>The above example would put the contents of the directory named "transfer" into the directory named "location".</p>
+<p>When using this command, please note that the absense of a trailing slash means the directory, with a trailing slash means the contents of that directory.  Here are a few examples:
+<a href="https://stackoverflow.com/questions/31278098/slashes-and-the-rsync-command">More info...</a></p>
 <h3 id="disk-quota-exceeded-errors">Disk Quota Exceeded Errors</h3>
-<p>If you receive <code>disk quota exceeded</code> messages, please check each storage location to ensure you have enough disk space available.  Examples of the <code>du</code>, <code>df</code>, and <code>beegfs-ctl</code> commands to view utilization are provided for each storage type above. </p>
+<p>If you receive <code>disk quota exceeded</code> messages, please check each storage location to ensure you have enough disk space available.</p>
 
               
             </article>

@@ -40,7 +40,7 @@ To check LTS usage:
 
 High Throughput Storage (`/scratch`) is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  Once data is removed from /scratch, it cannot be recovered.
 
-*Data stored in /scratch is subject to the [Scratch Data Cleaning Policy](/policies/#scratch-data-cleaning).*
+*Data stored in /scratch is subject to the [Scratch Data Cleaning Policy](../policies.md#scratch-data-cleaning).*
 
 Jobs utilize this space for inputs and outputs to provide the best performance possible.  Running jobs that read/write from the home directory will cause slowness and login issues for all users.
 

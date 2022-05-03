@@ -20,24 +20,24 @@ The login server, `login.htcf.wustl.edu` is accessible via ssh.
 
 Before using the HTCF, it's important to read through and understand:
 
-1. The [HTCF Storage](/storage/)
+1. The [HTCF Storage](../storage/index.md)
 
-2. Using [software](/software/) on the HTCF
+2. Using [software](../software.md) on the HTCF
 
 ## Data & Data Storage
 
 ### Home Directories
 Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  
-[More info...](/storage/#hds)
+[More info...](../storage/index.md#hds)
 
 ### Long Term Storage
 LTS is used to store raw and "finished" project data.  The LTS directories are not available on the cluster nodes.  It is kept on fault-tolerant storage with snapshops.  
-[More info...](/storage/#lts)
+[More info...](../storage/index.md#lts)
 
 ### High Throughput Storage
 High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.
 
-[More info...](/storage/#hts)
+[More info...](../storage/index.md#hts)
 
 
 ### GUI Software

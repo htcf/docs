@@ -42,7 +42,7 @@ extra:
     price: 6.73
 
 nav:
-- 'index.md'
+- About: 'index.md'
 - Doing Work:
     - 'getstarted.md'
     #- Running Jobs: runningjobs.md

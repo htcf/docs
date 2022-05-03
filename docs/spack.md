@@ -20,7 +20,7 @@ To create a lab instance of the spack package manager:
 
 ## Install Software Using Spack
 
-see [the official spack documentation](https://spack.readthedocs.io/en/latest/command_index.html#spack-install)
+see [the official spack documentation](https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install)
 
 
 ## Using software built by spack (ie. preparing the environment)

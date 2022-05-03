@@ -43,7 +43,7 @@ extra:
 
 nav:
 - About: 'index.md'
-- 'using.md'
+- 'using/getstarted.md'
 #- Doing Work:
 #    - 'using.md'
     #- Running Jobs: runningjobs.md

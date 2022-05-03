@@ -1,5 +1,4 @@
-
---8<-- "includes/coming_soon.md"
+# Your HTCF Account
 
 Once your [software](../software.md) is set up and your data is placed in the proper [storage location](../storage/index.md) you are ready to get down to work.
 

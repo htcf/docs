@@ -1,13 +1,13 @@
 # Storage
 
-The HTCF provides three types of storage:
+The HTCF provides five types of storage:
 
 
-### HDS: Home Directory Storage (/home)
+### HDS
 
-Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.
+Home Directory Storage (HDS) can be used to store scripts, development tools, etc.  Home directories are located in `/home/<WUSTLKEY_ID>` and are available on all nodes.
 
-Each HTCF account has a 20GB home directory.  This directory can be used to store scripts, development tools, etc.  Home directories are located in `/home/<WUSTLKEY_ID>` and are available on all nodes.
+HDS is kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.
 
 !!!Note
     Home directory space is not a high-speed resource like /scratch space.
@@ -20,18 +20,25 @@ To check home directory usage:
 
     $ du -sh $HOME
 
-### LTS: Long Term Storage (/lts)
+### LTS
 
-Long term storage is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  To see how much space your lab is using, use the example command below, replace lab with your labname.  
+Long Term Storage (LTS) is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes. 
 
 To check LTS usage:
 
     $ df -h /lts/<lab_name>/<bucket_name>
 
+### LTOS
 
-### HTS: High Throughput Storage (/scratch)
+*Coming Soon*
 
-High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  Once data is removed from /scratch, it cannot be recovered.
+### REF
+
+*Coming Soon*
+
+### HTS
+
+High Throughput Storage (`/scratch`) is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  Once data is removed from /scratch, it cannot be recovered.
 
 *Data stored in /scratch is subject to the [Scratch Data Cleaning Policy](/policies/#scratch-data-cleaning).*
 
@@ -68,7 +75,7 @@ If excess capacity is available.  A temporary increase in the scratch quota can 
 #### Recommendations
 
 * No important source code, scripts, libraries, executables should be kept in `/scratch`
-* Do not make symlinks from your home directory to folders in `/scratch`
+* Do not make symlinks from the home directory to folders in `/scratch`
 
 ### Sharing Files Publicly
 
@@ -78,11 +85,11 @@ For long term hosting of publicly accessible data, please contact WUSTL IT.
 
 ### Copying Files Using Rsync
 
-Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if you need to verify that all files have been successfully copied.
+Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if it is necessary to verify that all files have been successfully copied.
 
 When using this command, please note that the absense of a trailing slash means the directory, with a trailing slash means the contents of that directory.  Here are a few examples:
 [More info...](https://stackoverflow.com/questions/31278098/slashes-and-the-rsync-command)
 
 ### Disk Quota Exceeded Errors
 
-If you receive `disk quota exceeded` messages, please check each storage location to ensure you have enough disk space available.
+If a `disk quota exceeded` error messages is encountered, please check each storage location to ensure there is enough disk space available.

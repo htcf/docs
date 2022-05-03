@@ -16,30 +16,28 @@ The login server, `login.htcf.wustl.edu` is accessible via ssh.
 !!! Note
     As stated in the [WUSTL and HTCF Policies](/policies/#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
 
-## Storage, Software, and Jobs
+## First things first...
 
-Before using the HTCF, it's important to understand:
+Before using the HTCF, it's important to read through and understand:
 
-1. The [HTCF Storage](/storage/index.md) including [home directories](/storage/home/), [long term storage](/storage/lts/), and [reference storage](/storage/ref/)
+1. The [HTCF Storage](/storage/)
 
 2. Using [software](/software/) on the HTCF
-
-3. The Slurm Workload Manager [queue](queue) and [running jobs](runningjobs)
 
 ## Data & Data Storage
 
 ### Home Directories
 Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  
-[More info...](/storage/#hds-home-directory-storage-home)
+[More info...](/storage/#hds)
 
 ### Long Term Storage
 LTS is used to store raw and "finished" project data.  The LTS directories are not available on the cluster nodes.  It is kept on fault-tolerant storage with snapshops.  
-[More info...](/storage/#lts-long-term-storage-lts)
+[More info...](/storage/#lts)
 
 ### High Throughput Storage
 High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.
 
-[More info...](/storage/#hts-high-throughput-storage-scratch)
+[More info...](/storage/#hts)
 
 
 ### GUI Software
@@ -48,13 +46,13 @@ High Throughput Storage is a distrubuted file system able to handle tens of GBs/
     As the HTCF is primarily a batch queuing system for high-throughput processing of data, use of GUI applications are not directly supported.  While use of GUI applications is possible using X forwarding, this can sometimes require significant desktop preparation and configuration which is beyond the scope of support.
 
 
-## Resources
+## Jobs
+
+### Resources
 
 The number of CPUs and MBs of RAM per node can be found using the Slurm sinfo command:
 
     $ sinfo -N -p general -o '%n %c %m'
-
-## Jobs
 
 ### Interactive 
 

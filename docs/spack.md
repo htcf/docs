@@ -11,9 +11,9 @@ See: https://spack-tutorial.readthedocs.io/en/latest/
 
 To create a lab instance of the spack package manager:
 
-1.  Download and untar a spack release (https://github.com/spack/spack/releases) into /ref/<lab>/software
+1.  Download and untar a spack release (https://github.com/spack/spack/releases) into `/ref/<lab_name>/software`
 
-2.  Rename (or make a symlink from) /ref/<lab>/software/spack-VERSION to /ref/<lab>/software/spack.
+2.  Rename (or make a symlink from) `/ref/<lab_name>/software/spack-VERSION` to `/ref/<lab_name>/software/spack`.
 
 3.  Logout and log back in.  This will ensure the spack command is available in the PATH.
 
@@ -26,7 +26,7 @@ see: https://spack.readthedocs.io/en/latest/command_index.html#spack-install
 ## Using software built by spack (ie. preparing the environment)
 
 Once spack has built software, the bash shell needs to have the proper environment variables set to access the software.
-This is accomplished using the `spack loads` command.
+This is accomplished using the `spack load` command.
 
 ### Using spack to set the environment
 
@@ -61,6 +61,7 @@ eval `spack load --sh <spec>`
 
 ## Example: install biom-format
 
+```
 $ spack list biom
 ==> 7 packages.
 microbiomeutil  py-biomine    r-biomart   r-biomformat
@@ -75,3 +76,4 @@ $ spack install py-biom-format@2.1.6
 ...
 
 $ eval `spack load --sh py-biom-format@2.1.8`
+```

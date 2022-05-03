@@ -43,8 +43,9 @@ extra:
 
 nav:
 - About: 'index.md'
-- Doing Work:
-    - 'getstarted.md'
+- 'getstarted.md'
+#- Doing Work:
+#    - 'getstarted.md'
     #- Running Jobs: runningjobs.md
     #- The Queue: using/queue.md
     #- Using the HTCF: 'using/index.md'
@@ -53,12 +54,13 @@ nav:
     #- Job Accounting: 'using/accounting.md'
     #  #- queue.md
     #  #- runningjobs.md
-- Policies: 'policies.md'
-- Storage: 
-    - Overview: 'storage/index.md'
+- 'policies.md'
+- 'storage/index.md'
+#- Storage: 
+    #- Overview: 'storage/index.md'
     #- HTS: 'storage/hts.md'
     #- REF: 'storage/ref.md'
     #- LTS: 'storage/lts.md'
     #- LTOS: 'storage/ltos.md'
     #- Beta: 'storage/new_index.md'
-- Software: 'software.md'
+- 'software.md'

@@ -1,4 +1,4 @@
-# Software on the HTCF
+# Software
 
 Software-wise, the HTCF starts as a blank slate for each lab.  However, this doesn't mean labs can't get up and running in a matter of minutes.
 

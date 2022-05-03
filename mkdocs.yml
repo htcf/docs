@@ -1,7 +1,7 @@
 site_name: The HTCF
 theme: 
   name: material
-  logo: GSSB1linerev(CMYK)SM.png
+  logo: htcf_rev_sm.png
   features:
     - navigation.instant
     #- navigation.tabs

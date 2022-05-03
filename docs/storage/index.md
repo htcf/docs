@@ -1,4 +1,4 @@
-# Storage at the HTCF
+# Storage
 
 The HTCF provides three types of storage:
 

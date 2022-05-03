@@ -259,25 +259,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hds-home-directory-storage-home" class="md-nav__link">
-    HDS: Home Directory Storage (/home)
+  <a href="#hds" class="md-nav__link">
+    HDS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#lts-long-term-storage-lts" class="md-nav__link">
-    LTS: Long Term Storage (/lts)
+  <a href="#lts" class="md-nav__link">
+    LTS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hts-high-throughput-storage-scratch" class="md-nav__link">
-    HTS: High Throughput Storage (/scratch)
+  <a href="#ltos" class="md-nav__link">
+    LTOS
   </a>
   
-    <nav class="md-nav" aria-label="HTS: High Throughput Storage (/scratch)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ref" class="md-nav__link">
+    REF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hts" class="md-nav__link">
+    HTS
+  </a>
+  
+    <nav class="md-nav" aria-label="HTS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -358,10 +372,10 @@
 
 
 <h1 id="storage">Storage</h1>
-<p>The HTCF provides three types of storage:</p>
-<h3 id="hds-home-directory-storage-home">HDS: Home Directory Storage (/home)</h3>
-<p>Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.</p>
-<p>Each HTCF account has a 20GB home directory.  This directory can be used to store scripts, development tools, etc.  Home directories are located in <code>/home/&lt;WUSTLKEY_ID&gt;</code> and are available on all nodes.</p>
+<p>The HTCF provides five types of storage:</p>
+<h3 id="hds">HDS</h3>
+<p>Home Directory Storage (HDS) can be used to store scripts, development tools, etc.  Home directories are located in <code>/home/&lt;WUSTLKEY_ID&gt;</code> and are available on all nodes.</p>
+<p>HDS is kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Home directory space is not a high-speed resource like /scratch space.</p>
@@ -371,13 +385,17 @@
 <p>To check home directory usage:</p>
 <div class="highlight"><pre><span></span><code>$ du -sh $HOME
 </code></pre></div>
-<h3 id="lts-long-term-storage-lts">LTS: Long Term Storage (/lts)</h3>
-<p>Long term storage is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  To see how much space your lab is using, use the example command below, replace lab with your labname.  </p>
+<h3 id="lts">LTS</h3>
+<p>Long Term Storage (LTS) is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes. </p>
 <p>To check LTS usage:</p>
 <div class="highlight"><pre><span></span><code>$ df -h /lts/&lt;lab_name&gt;/&lt;bucket_name&gt;
 </code></pre></div>
-<h3 id="hts-high-throughput-storage-scratch">HTS: High Throughput Storage (/scratch)</h3>
-<p>High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is <em>temporary scratch space</em> and is <strong>not</strong> backed up.  Once data is removed from /scratch, it cannot be recovered.</p>
+<h3 id="ltos">LTOS</h3>
+<p><em>Coming Soon</em></p>
+<h3 id="ref">REF</h3>
+<p><em>Coming Soon</em></p>
+<h3 id="hts">HTS</h3>
+<p>High Throughput Storage (<code>/scratch</code>) is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is <em>temporary scratch space</em> and is <strong>not</strong> backed up.  Once data is removed from /scratch, it cannot be recovered.</p>
 <p><em>Data stored in /scratch is subject to the <a href="/policies/#scratch-data-cleaning">Scratch Data Cleaning Policy</a>.</em></p>
 <p>Jobs utilize this space for inputs and outputs to provide the best performance possible.  Running jobs that read/write from the home directory will cause slowness and login issues for all users.</p>
 <div class="admonition note">
@@ -409,17 +427,17 @@
 <h4 id="recommendations">Recommendations</h4>
 <ul>
 <li>No important source code, scripts, libraries, executables should be kept in <code>/scratch</code></li>
-<li>Do not make symlinks from your home directory to folders in <code>/scratch</code></li>
+<li>Do not make symlinks from the home directory to folders in <code>/scratch</code></li>
 </ul>
 <h3 id="sharing-files-publicly">Sharing Files Publicly</h3>
 <p>Globus can be used to share data from LTS or Home directories.  The Globus "Collection" is called "HTCF Home Directories". Please see <a href="https://docs.globus.org/how-to/get-started/">the globus documentation for more information</a></p>
 <p>For long term hosting of publicly accessible data, please contact WUSTL IT.</p>
 <h3 id="copying-files-using-rsync">Copying Files Using Rsync</h3>
-<p>Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if you need to verify that all files have been successfully copied.</p>
+<p>Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if it is necessary to verify that all files have been successfully copied.</p>
 <p>When using this command, please note that the absense of a trailing slash means the directory, with a trailing slash means the contents of that directory.  Here are a few examples:
 <a href="https://stackoverflow.com/questions/31278098/slashes-and-the-rsync-command">More info...</a></p>
 <h3 id="disk-quota-exceeded-errors">Disk Quota Exceeded Errors</h3>
-<p>If you receive <code>disk quota exceeded</code> messages, please check each storage location to ensure you have enough disk space available.</p>
+<p>If a <code>disk quota exceeded</code> error messages is encountered, please check each storage location to ensure there is enough disk space available.</p>
 
               
             </article>

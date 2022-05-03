@@ -243,8 +243,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storage-software-and-jobs" class="md-nav__link">
-    Storage, Software, and Jobs
+  <a href="#first-things-first" class="md-nav__link">
+    First things first...
   </a>
   
 </li>
@@ -291,19 +291,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    Resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#jobs" class="md-nav__link">
     Jobs
   </a>
   
     <nav class="md-nav" aria-label="Jobs">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#interactive" class="md-nav__link">
@@ -432,39 +432,36 @@
 <p class="admonition-title">Note</p>
 <p>As stated in the <a href="/policies/#account-usage">WUSTL and HTCF Policies</a>, <strong>accounts and passwords cannot be shared. All users must have their own account.</strong></p>
 </div>
-<h2 id="storage-software-and-jobs">Storage, Software, and Jobs</h2>
-<p>Before using the HTCF, it's important to understand:</p>
+<h2 id="first-things-first">First things first...</h2>
+<p>Before using the HTCF, it's important to read through and understand:</p>
 <ol>
 <li>
-<p>The <a href="/storage/index.md">HTCF Storage</a> including <a href="/storage/home/">home directories</a>, <a href="/storage/lts/">long term storage</a>, and <a href="/storage/ref/">reference storage</a></p>
+<p>The <a href="/storage/">HTCF Storage</a></p>
 </li>
 <li>
 <p>Using <a href="/software/">software</a> on the HTCF</p>
-</li>
-<li>
-<p>The Slurm Workload Manager <a href="queue">queue</a> and <a href="runningjobs">running jobs</a></p>
 </li>
 </ol>
 <h2 id="data-data-storage">Data &amp; Data Storage</h2>
 <h3 id="home-directories">Home Directories</h3>
 <p>Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.<br />
-<a href="/storage/#hds-home-directory-storage-home">More info...</a></p>
+<a href="/storage/#hds">More info...</a></p>
 <h3 id="long-term-storage">Long Term Storage</h3>
 <p>LTS is used to store raw and "finished" project data.  The LTS directories are not available on the cluster nodes.  It is kept on fault-tolerant storage with snapshops.<br />
-<a href="/storage/#lts-long-term-storage-lts">More info...</a></p>
+<a href="/storage/#lts">More info...</a></p>
 <h3 id="high-throughput-storage">High Throughput Storage</h3>
 <p>High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.</p>
-<p><a href="/storage/#hts-high-throughput-storage-scratch">More info...</a></p>
+<p><a href="/storage/#hts">More info...</a></p>
 <h3 id="gui-software">GUI Software</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>As the HTCF is primarily a batch queuing system for high-throughput processing of data, use of GUI applications are not directly supported.  While use of GUI applications is possible using X forwarding, this can sometimes require significant desktop preparation and configuration which is beyond the scope of support.</p>
 </div>
-<h2 id="resources">Resources</h2>
+<h2 id="jobs">Jobs</h2>
+<h3 id="resources">Resources</h3>
 <p>The number of CPUs and MBs of RAM per node can be found using the Slurm sinfo command:</p>
 <div class="highlight"><pre><span></span><code>$ sinfo -N -p general -o &#39;%n %c %m&#39;
 </code></pre></div>
-<h2 id="jobs">Jobs</h2>
 <h3 id="interactive">Interactive</h3>
 <p>Interactive sessions are for running interactive scripts, vizualization, any tasks that are too computational intensive to run on the login node not submitted via sbatch.  The defaults are: 1 CPU core, 1 GB RAM, and a time limit of 8 hours.</p>
 <div class="admonition note">

@@ -689,12 +689,12 @@
 <p><strong>Please NOTE:</strong>
 Installation of software on the login node is unsupported.  Please build/install software from an interactive job.</p>
 <h2 id="tutorial">Tutorial</h2>
-<p>See: https://spack-tutorial.readthedocs.io/en/latest/</p>
+<p>See <a href="https://spack-tutorial.readthedocs.io/en/latest/">the official spack tutorial</a></p>
 <h2 id="spack-initialization">Spack Initialization</h2>
 <p>To create a lab instance of the spack package manager:</p>
 <ol>
 <li>
-<p>Download and untar a spack release (https://github.com/spack/spack/releases) into <code>/ref/&lt;lab_name&gt;/software</code></p>
+<p>Download and untar <a href="https://github.com/spack/spack/releases">a spack release</a> into <code>/ref/&lt;lab_name&gt;/software</code></p>
 </li>
 <li>
 <p>Rename (or make a symlink from) <code>/ref/&lt;lab_name&gt;/software/spack-VERSION</code> to <code>/ref/&lt;lab_name&gt;/software/spack</code>.</p>
@@ -704,7 +704,7 @@ Installation of software on the login node is unsupported.  Please build/install
 </li>
 </ol>
 <h2 id="install-software-using-spack">Install Software Using Spack</h2>
-<p>see: https://spack.readthedocs.io/en/latest/command_index.html#spack-install</p>
+<p>see <a href="https://spack.readthedocs.io/en/latest/command_index.html#spack-install">the official spack documentation</a></p>
 <h2 id="using-software-built-by-spack-ie-preparing-the-environment">Using software built by spack (ie. preparing the environment)</h2>
 <p>Once spack has built software, the bash shell needs to have the proper environment variables set to access the software.
 This is accomplished using the <code>spack load</code> command.</p>
@@ -718,7 +718,7 @@ This is accomplished using the <code>spack load</code> command.</p>
 <div class="highlight"><pre><span></span><code>$ eval `spack load --sh &lt;spec&gt;`
 </code></pre></div>
 <p>This command is similar in function to the older <code>module load &lt;spec&gt;</code> commands.</p>
-<p>See https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies for more information on specs.</p>
+<p>See <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">the official spack documentation</a> for more information on specs.</p>
 <p>These commands can be placed in an sbatch file to be used in a job.</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 

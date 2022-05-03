@@ -5,9 +5,11 @@
   --md-typeset-a-color:  #a51417;
   /*--md-admonition-bg-color: rgba(184, 83, 35, 0.25);*/
 }
-.md-header__button.md-logo {
+.md-header__button.md-logo :is(img, svg) {
   height: 100%;
   width: 100%;
+}
+.md-header__button.md-logo {
   margin: 0;
   padding: 0;
 }

@@ -5,7 +5,7 @@
 To request a user account on the HTCF, please send an email containing the WUSTLKey username and department ID (Workday 'CC' number), for billing purposes.
 
 !!! Note
-    As stated in the [WUSTL and HTCF Policies](/policies/#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
+    As stated in the [WUSTL and HTCF Policies](../policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
 
 ## Logging In
 
@@ -14,7 +14,7 @@ To request a user account on the HTCF, please send an email containing the WUSTL
 The login server, `login.htcf.wustl.edu` is accessible via ssh.  
 
 !!! Note
-    As stated in the [WUSTL and HTCF Policies](/policies/#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
+    As stated in the [WUSTL and HTCF Policies](../policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
 
 ## First things first...
 

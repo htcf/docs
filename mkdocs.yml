@@ -59,7 +59,4 @@ nav:
     - LTS: 'storage/lts.md'
     - LTOS: 'storage/ltos.md'
     - Beta: 'storage/new_index.md'
-- Software: 
-  - Overview: software.md
-  - Spack: spack.md
-  - Beta: software_new.md
+- Software: 'software.md'

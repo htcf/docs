@@ -52,7 +52,7 @@ For example, if a piece of software is not available via Spack, but requires sam
     $ spack install samtools
 
     # load samtools before installation
-    $ module load samtools
+    $ eval $( spack load --sh samtools )
     
     (proceed with the manual installation)
 

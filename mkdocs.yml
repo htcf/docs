@@ -7,7 +7,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
   palette:
-    scheme: wustl_gray
+    scheme: wustl_red
     
 extra_css:
   - stylesheets/extra.css

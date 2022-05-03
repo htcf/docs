@@ -43,7 +43,7 @@ $ spack load --sh <spec>
 To actually set the environment varibles:
 
 ```
-$ eval `spack load --sh <spec>`
+$ eval $( spack load --sh <spec> )
 ```
 
 This command is similar in function to the older `module load <spec>` commands.
@@ -55,7 +55,7 @@ These commands can be placed in an sbatch file to be used in a job.
 ```
 #!/bin/bash
 
-eval `spack load --sh <spec>`
+eval $( spack load --sh <spec> )
 
 ```
 
@@ -75,5 +75,5 @@ $ spack versions py-biom-format
 $ spack install py-biom-format@2.1.6
 ...
 
-$ eval `spack load --sh py-biom-format@2.1.8`
+$ eval $( spack load --sh py-biom-format@2.1.8 )
 ```

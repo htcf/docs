@@ -69,11 +69,11 @@ py-biom-format  r-biom-utils  r-biomartr
 
 $ spack versions py-biom-format
 ==> Safe versions (already checksummed):
-  2.1.6
+  2.1.10  2.1.9  2.1.7  2.1.6
 ...
 
-$ spack install py-biom-format@2.1.6
+$ spack install py-biom-format@2.1.10
 ...
 
-$ eval $( spack load --sh py-biom-format@2.1.8 )
+$ eval $( spack load --sh py-biom-format@2.1.10 )
 ```

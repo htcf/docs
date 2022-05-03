@@ -42,7 +42,7 @@ extra:
     price: 6.73
 
 nav:
-- The HTCF: 'index.md'
+- 'index.md'
 - Doing Work:
     - Getting Started: 'getstarted.md'
     - Running Jobs: runningjobs.md

@@ -715,14 +715,14 @@ This is accomplished using the <code>spack load</code> command.</p>
 <div class="highlight"><pre><span></span><code>$ spack load --sh &lt;spec&gt;
 </code></pre></div>
 <p>To actually set the environment varibles:</p>
-<div class="highlight"><pre><span></span><code>$ eval `spack load --sh &lt;spec&gt;`
+<div class="highlight"><pre><span></span><code>$ eval $( spack load --sh &lt;spec&gt; )
 </code></pre></div>
 <p>This command is similar in function to the older <code>module load &lt;spec&gt;</code> commands.</p>
 <p>See <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">the official spack documentation</a> for more information on specs.</p>
 <p>These commands can be placed in an sbatch file to be used in a job.</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 
-eval `spack load --sh &lt;spec&gt;`
+eval $( spack load --sh &lt;spec&gt; )
 </code></pre></div>
 <h2 id="example-install-biom-format">Example: install biom-format</h2>
 <div class="highlight"><pre><span></span><code>$ spack list biom
@@ -738,7 +738,7 @@ $ spack versions py-biom-format
 $ spack install py-biom-format@2.1.6
 ...
 
-$ eval `spack load --sh py-biom-format@2.1.8`
+$ eval $( spack load --sh py-biom-format@2.1.8 )
 </code></pre></div>
 
               

@@ -1,6 +1,6 @@
 site_name: High Throughput Computing Facility @ CGSSB
 theme: 
-  name: material
+  name: gitbook
   logo: shield-light.png
   features:
     - navigation.instant

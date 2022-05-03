@@ -5,13 +5,13 @@ Installation of software on the login node is unsupported.  Please build/install
 
 ## Tutorial
 
-See: https://spack-tutorial.readthedocs.io/en/latest/
+See [the official spack tutorial](https://spack-tutorial.readthedocs.io/en/latest/)
 
 ## Spack Initialization
 
 To create a lab instance of the spack package manager:
 
-1.  Download and untar a spack release (https://github.com/spack/spack/releases) into `/ref/<lab_name>/software`
+1.  Download and untar [a spack release](https://github.com/spack/spack/releases) into `/ref/<lab_name>/software`
 
 2.  Rename (or make a symlink from) `/ref/<lab_name>/software/spack-VERSION` to `/ref/<lab_name>/software/spack`.
 
@@ -20,7 +20,7 @@ To create a lab instance of the spack package manager:
 
 ## Install Software Using Spack
 
-see: https://spack.readthedocs.io/en/latest/command_index.html#spack-install
+see [the official spack documentation](https://spack.readthedocs.io/en/latest/command_index.html#spack-install)
 
 
 ## Using software built by spack (ie. preparing the environment)
@@ -48,7 +48,7 @@ $ eval `spack load --sh <spec>`
 
 This command is similar in function to the older `module load <spec>` commands.
 
-See https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies for more information on specs.
+See [the official spack documentation](https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies) for more information on specs.
 
 These commands can be placed in an sbatch file to be used in a job.
 

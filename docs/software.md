@@ -16,8 +16,8 @@ At the lab level, **use of [Spack](#spack) to install common software is encoura
 
 [Spack](https://spack.readthedocs.io) is a package management tool designed to support multiple versions and configurations of software on a wide variety of platforms and environments.
 
-**Please NOTE:**
-Installation of software on the login node is unsupported.  Please build/install software from an interactive job.
+!!! Note
+    Installation of software on the login node is unsupported.  Please build/install software from an interactive job.
 
 #### Tutorial
 

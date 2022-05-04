@@ -51,13 +51,19 @@ To view the environment variables that would be set:
 $ spack load --sh <spec>
 ```
 
-To actually set the environment varibles:
+To actually set the environment varibles (and "load" the software):
 
 ```
 $ eval $( spack load --sh <spec> )
 ```
 
-This command is similar in function to the older `module load <spec>` commands.
+These variables can be unset (unloaded) too:
+
+```
+$ eval $( spack unload --sh <spec> )
+```
+
+These commands are similar in function to the older `module load/unload` commands.
 
 See [the official spack documentation](https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies) for more information on specs.
 

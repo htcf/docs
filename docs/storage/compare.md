@@ -1,3 +1,4 @@
+# Storage Comparison
 <style type="text/css">
 
 .md-typeset table:not([class]) th:nth-child(2) {
@@ -97,9 +98,6 @@ max-width: 100%;
 </style>
 
 
---8<-- "includes/coming_soon.md"
-
-
 |  | Home | HTS | LTS | LTS | LTS |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |  | Home Directory (/home) | Scratch Space (/scratch) | Filesystem (/lts) | Object Store (LTOS) | Reference (/ref) |
@@ -108,8 +106,8 @@ max-width: 100%;
 | Increase Cost | NA |  | ${{ lts.price }}/TB/Month | ${{ lts.price }}/TB/Month | ${{ lts.price }}/TB/Month |
 | Size Limit | 20G | Temporary increase available as resources allow. Please provide # TBs needed and duration of need | 10 TB per bucket  No limit on # of  buckets | - | - |
 | Access from | All HTCF Nodes | All HTCF Nodes | Login Node Only | All HTCF Nodes | All HTCF Nodes |
-| Access Type | Standard Filesystem | Standard Filesystem | Standard Filesystem  / lts /<lab>/<bucket> | HTTP interface  compatible with (but not  using) Amazon S3 API | Standard Filesystem  /ref/<lab>/data  /ref/<lab>/software  /ref/<lab>/modules |
-| Access Speed | Slow | 10+ GB/s (aggregate) | Max 200 MB/s | 1000+ MB/s (aggregate) | 100 MB/s (aggregate) |
-| Backup Policy | Onsite  daily/weekly/monthly  snapshots as resources  allow  Offsite backup daily | NO BACKUPS | Onsite  daily/weekly/mont hly snapshots as  resources allow  Offsite backup  daily | continually synced  offsite     user customizable:  versioning of objects   schedule removal of  old objects | NO BACKUPS |
+| Access Type | Standard Filesystem | Standard Filesystem | Standard Filesystem <br> `/lts/<lab>/<bucket>` | HTTP interface  compatible with (but not  using) Amazon S3 API | Standard Filesystem <br> `/ref/<lab>/data` <br> `/ref/<lab>/software` |
+| Est. Access Speed | Slow | 10+ GB/s (aggregate) | 200 MB/s | 1+ GB/s (aggregate) | 100 MB/s (aggregate) |
+| Backup Policy | Onsite  daily/weekly/monthly  snapshots as resources  allow  Offsite backup daily | NO BACKUPS | Onsite daily/weekly/monthly snapshots as resources allow.  Offsite backup daily. | mirrored offsite. User customizable:  versioning of objects, schedule removal of old objects | NO BACKUPS |
 | Cleaning Policy | - | [See the scratch data cleaning policy](../policies.md#scratch-data-cleaning) | - | - | - |
 

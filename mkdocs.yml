@@ -39,7 +39,7 @@ plugins:
   
 extra:
   lts:
-    price: 6.73
+    price: 7.77
 
 nav:
 - About: 'index.md'
@@ -56,6 +56,7 @@ nav:
     #  #- runningjobs.md
 - 'policies.md'
 - 'storage/index.md'
+- 'storage/compare.md'
 #- Storage: 
     #- Overview: 'storage/index.md'
     #- HTS: 'storage/hts.md'

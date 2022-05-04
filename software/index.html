@@ -413,10 +413,13 @@
 <p>To view the environment variables that would be set:</p>
 <div class="highlight"><pre><span></span><code>$ spack load --sh &lt;spec&gt;
 </code></pre></div>
-<p>To actually set the environment varibles:</p>
+<p>To actually set the environment varibles (and "load" the software):</p>
 <div class="highlight"><pre><span></span><code>$ eval $( spack load --sh &lt;spec&gt; )
 </code></pre></div>
-<p>This command is similar in function to the older <code>module load &lt;spec&gt;</code> commands.</p>
+<p>These variables can be unset (unloaded) too:</p>
+<div class="highlight"><pre><span></span><code>$ eval $( spack unload --sh &lt;spec&gt; )
+</code></pre></div>
+<p>These commands are similar in function to the older <code>module load/unload</code> commands.</p>
 <p>See <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">the official spack documentation</a> for more information on specs.</p>
 <p>These commands can be placed in an sbatch file to be used in a job.</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash

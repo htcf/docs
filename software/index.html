@@ -412,10 +412,10 @@
 
 <h1 id="software">Software</h1>
 <p>Software-wise, the HTCF starts as a blank slate for each lab.  However, this doesn't mean labs can't get up and running in a matter of minutes.</p>
-<p>Each lab has its own dedicated space to install and manage software.  This <a href="../storage/ref/">reference space</a> is located in <a href="../storage/ref/#software"><code>/ref/&lt;lab&gt;/software</code></a>.</p>
+<p>Each lab has its own dedicated space to install and manage software.  This <a href="storage/ref.md">reference space</a> is located in <a href="storage/ref.md#software"><code>/ref/&lt;lab&gt;/software</code></a>.</p>
 <h2 id="self-service-installation">Self-service Installation</h2>
 <p>Software building and installation on the HTCF is primarily self-service.</p>
-<p>Labs are free to use their <a href="../storage/ref/">/ref software</a> directory to install software using whatever means is most comfortable.</p>
+<p>Labs are free to use their <a href="storage.md#ref">/ref software</a> directory to install software using whatever means is most comfortable.</p>
 <p>At the lab level, <strong>use of <a href="#spack">Spack</a> to install common software is encouraged</strong>.  Virtual environments can also be used if the software is well suited.</p>
 <h3 id="spack">Spack</h3>
 <p><a href="https://spack.readthedocs.io">Spack</a> is a package management tool designed to support multiple versions and configurations of software on a wide variety of platforms and environments.</p>
@@ -506,11 +506,11 @@ $ eval $( spack load --sh samtools )
 </code></pre></div>
 <div class="admonition remember">
 <p class="admonition-title">Remember</p>
-<p>The best place to install software is your <a href="../storage/ref/">reference storage</a> <code>/ref/lab/sofware</code>.</p>
+<p>The best place to install software is your <a href="storage/ref.md">reference storage</a> <code>/ref/lab/sofware</code>.</p>
 </div>
 <p>After manual software installation, it's good practice to then create a <a href="#manual-module-files">module file</a></p>
 <h4 id="manual-module-files">Manual module files</h4>
-<p>Module files that are manually created go in your <a href="../storage/ref/">reference storage</a> in <code>/ref/&lt;lab&gt;/software/modules</code>.</p>
+<p>Module files that are manually created go in your <a href="storage/ref.md">reference storage</a> in <code>/ref/&lt;lab&gt;/software/modules</code>.</p>
 <p><a href="https://lmod.readthedocs.io/en/latest/015_writing_modules.html">The lmod documentation</a> is the best place to learn about creating module files.</p>
 
               

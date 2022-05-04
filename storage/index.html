@@ -393,7 +393,19 @@
 <h3 id="ltos">LTOS</h3>
 <p><em>Coming Soon</em></p>
 <h3 id="ref">REF</h3>
-<p><em>Coming Soon</em></p>
+<p><code>/ref</code> is storage space for software and reference databases (such as NCBI databases or software-provided reference sequences).  Each lab has an initial 1TB of reference space, and this space can be expanded at LTS prices.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>/ref</code> is not currently backed up, therefore <strong>Any data in <code>/ref</code> that cannot be recreated should be copied to long term storage (LTS) for safe-keeping.</strong></p>
+</div>
+<div class="highlight"><pre><span></span><code>/ref
+├── &lt;lab&gt;
+    ├── data
+    └── software
+</code></pre></div>
+<p>The <code>data</code> directory is well suited for modestly sized reference data such as <a href="ftp://ftp.ncbi.nlm.nih.gov/blast/db/">NCBI blast databases</a>.
+Larger datasets (&gt; 500GB) are probably better suited for <a href="#ltos">Long Term Object Storage</a></p>
+<p>The <code>software</code> directory is suited for software installation using tools such as <a href="software.md#spack">spack</a></p>
 <h3 id="hts">HTS</h3>
 <p>High Throughput Storage (<code>/scratch</code>) is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is <em>temporary scratch space</em> and is <strong>not</strong> backed up.  Once data is removed from /scratch, it cannot be recovered.</p>
 <p><em>Data stored in /scratch is subject to the <a href="../policies/#scratch-data-cleaning">Scratch Data Cleaning Policy</a>.</em></p>

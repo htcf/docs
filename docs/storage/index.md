@@ -34,7 +34,23 @@ To check LTS usage:
 
 ### REF
 
-*Coming Soon*
+`/ref` is storage space for software and reference databases (such as NCBI databases or software-provided reference sequences).  Each lab has an initial 1TB of reference space, and this space can be expanded at LTS prices.
+
+!!!Note
+    `/ref` is not currently backed up, therefore **Any data in `/ref` that cannot be recreated should be copied to long term storage (LTS) for safe-keeping.**
+
+```
+/ref
+├── <lab>
+    ├── data
+    └── software
+```
+
+The `data` directory is well suited for modestly sized reference data such as [NCBI blast databases](ftp://ftp.ncbi.nlm.nih.gov/blast/db/).
+Larger datasets (> 500GB) are probably better suited for [Long Term Object Storage](#ltos)
+
+The `software` directory is suited for software installation using tools such as [spack](software.md#spack)
+
 
 ### HTS
 

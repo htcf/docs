@@ -8,7 +8,7 @@ Each lab has its own dedicated space to install and manage software.  This [refe
 
 Software building and installation on the HTCF is primarily self-service.
 
-Labs are free to use their [/ref software](storage/ref.md) directory to install software using whatever means is most comfortable.
+Labs are free to use their [/ref software](storage.md#ref) directory to install software using whatever means is most comfortable.
 
 At the lab level, **use of [Spack](#spack) to install common software is encouraged**.  Virtual environments can also be used if the software is well suited.
 

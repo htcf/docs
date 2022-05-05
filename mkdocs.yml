@@ -2,6 +2,7 @@ site_name: HTCF
 theme: 
   name: material
   logo: htcf_rev_sm.png
+  favicon: images/favicon.png
   features:
     - navigation.instant
     #- navigation.tabs

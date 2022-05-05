@@ -432,16 +432,15 @@
 <p>Once spack has built software, the bash shell needs to have the proper environment variables set to access the software.</p>
 <p>This is accomplished using the <code>spack load</code> command.  Spack packages can be "loaded" similar to the way modules are loaded.</p>
 <p>Given a <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">spec</a>, a spack command can be used to generate the appropriate environment variables to "load" spack-installed software.</p>
-<p>To view the environment variables that would be set:</p>
-<div class="highlight"><pre><span></span><code>$ spack load --sh &lt;spec&gt;
-</code></pre></div>
-<p>To actually set the environment varibles (and "load" the software):</p>
+<p>To set the environment variables (similar to <code>module load ...</code>):</p>
 <div class="highlight"><pre><span></span><code>$ eval $( spack load --sh &lt;spec&gt; )
 </code></pre></div>
-<p>These variables can be unset (unloaded) too:</p>
+<p>To unset (unload) these variables:</p>
 <div class="highlight"><pre><span></span><code>$ eval $( spack unload --sh &lt;spec&gt; )
 </code></pre></div>
-<p>These commands are similar in function to the older <code>module load/unload</code> commands.</p>
+<p>To simply view the environment variables that <strong>would be set</strong> without actually setting them:</p>
+<div class="highlight"><pre><span></span><code>$ spack load --sh &lt;spec&gt;
+</code></pre></div>
 <p>See <a href="https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies">the official spack documentation</a> for more information on specs.</p>
 <p>These commands can be placed in an sbatch file to be used in a job.</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash

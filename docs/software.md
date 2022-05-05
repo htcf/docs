@@ -151,7 +151,6 @@ To use these R libraries in an Rscript job:
 
     Rscript ........
 
-
 ## Manual Installation
 
 Sometimes it's just easier to follow the installation steps provided by software creator.
@@ -178,3 +177,10 @@ After manual software installation, it's good practice to then create a [module 
 Module files that are manually created go in reference storage in `/ref/<lab>/software/modules`.
 
 [The lmod documentation](https://lmod.readthedocs.io/en/latest/015_writing_modules.html) is the best place to learn about creating module files.
+
+## What about conda?
+
+Feel free to use conda if it is required/preferred.
+
+We are unable to support Conda.  For conda support, please see [https://docs.conda.io/en/latest/help-support.html](https://docs.conda.io/en/latest/help-support.html)
+

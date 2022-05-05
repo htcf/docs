@@ -45,25 +45,24 @@ This is accomplished using the `spack load` command.  Spack packages can be "loa
 
 Given a [spec](https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies), a spack command can be used to generate the appropriate environment variables to "load" spack-installed software.
 
-To view the environment variables that would be set:
 
-```
-$ spack load --sh <spec>
-```
-
-To actually set the environment varibles (and "load" the software):
+To set the environment variables (similar to `module load ...`):
 
 ```
 $ eval $( spack load --sh <spec> )
 ```
 
-These variables can be unset (unloaded) too:
+To unset (unload) these variables:
 
 ```
 $ eval $( spack unload --sh <spec> )
 ```
 
-These commands are similar in function to the older `module load/unload` commands.
+To simply view the environment variables that **would be set** without actually setting them:
+
+```
+$ spack load --sh <spec>
+```
 
 See [the official spack documentation](https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies) for more information on specs.
 

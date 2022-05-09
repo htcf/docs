@@ -95,6 +95,8 @@ If excess capacity is available.  A temporary increase in the scratch quota can 
 
 ### Sharing Files Publicly
 
+#### Globus
+
 Globus can be used to share data from LTS or Home directories.  The Globus "Collection" is called "HTCF Home Directories". Please see [the globus documentation for more information](https://docs.globus.org/how-to/get-started/)
 
 For long term hosting of publicly accessible data, please contact WUSTL IT.

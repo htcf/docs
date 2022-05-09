@@ -1,13 +1,11 @@
 # RStudio
 
-[^1]: The HTCF does not provide direct support for lab installed software.
-
 Rstudio Server can be run as an interactive job and accessed via an SSH tunnel.
 
 ## Support
 
 !!!Reminder
-    **Rstudio is not supported[^1] by the HTCF**
+    **The HTCF does not handle Rstudio support requests**
 
     After installation, support requests for lab-installed software such as rstudio should be directed to:
 

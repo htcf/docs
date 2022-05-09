@@ -15,7 +15,7 @@ At the lab level, **use of [Spack](#spack) to install common software is encoura
 [Spack](https://spack.readthedocs.io) is a package management tool designed to support multiple versions and configurations of software on a wide variety of platforms and environments.
 
 !!! Note
-    Installation of software on the login node is unsupported.  Please build/install software from an interactive job.
+    Do not install software while on the login node.  Please build/install software from an interactive job.
 
 ### Tutorial
 
@@ -181,5 +181,5 @@ Module files that are manually created go in reference storage in `/ref/<lab>/so
 
 Feel free to use conda if it is required/preferred.
 
-We are unable to support Conda.  For conda support, please see [https://docs.conda.io/en/latest/help-support.html](https://docs.conda.io/en/latest/help-support.html)
+The HTCF does not handle Conda support requests.  For conda support, please see [https://docs.conda.io/en/latest/help-support.html](https://docs.conda.io/en/latest/help-support.html)
 

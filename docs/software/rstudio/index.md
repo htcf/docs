@@ -5,7 +5,7 @@ Rstudio Server can be run as an interactive job and accessed via an SSH tunnel.
 ## Support
 
 !!!Reminder
-    **Rstdio is not supported by the HTCF**
+    **Rstudio is not supported by the HTCF**
 
     After installation, support requests for lab-installed software such as rstudio should be directed to:
 

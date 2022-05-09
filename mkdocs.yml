@@ -5,9 +5,7 @@ theme:
   favicon: images/favicon.png
   features:
     - navigation.instant
-    #- navigation.tabs
-    #- navigation.tracking
-    #- navigation.sections
+    - navigation.sections
     - toc.integrate
   palette:
     scheme: wustl_red

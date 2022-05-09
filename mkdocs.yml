@@ -7,7 +7,7 @@ theme:
     - navigation.instant
     #- navigation.tabs
     #- navigation.tracking
-    - navigation.sections
+    #- navigation.sections
     - toc.integrate
   palette:
     scheme: wustl_red
@@ -65,4 +65,7 @@ nav:
     #- LTS: 'storage/lts.md'
     #- LTOS: 'storage/ltos.md'
     #- Beta: 'storage/new_index.md'
-- 'software.md'
+- Software:
+  - Getting Started: 'software.md'
+  - Notes:
+    - 'software/rstudio/index.md'

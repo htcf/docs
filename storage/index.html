@@ -551,7 +551,11 @@ Larger datasets (&gt; 500GB) are probably better suited for <a href="#ltos">Long
 </ul>
 <h3 id="sharing-files-publicly">Sharing Files Publicly</h3>
 <h4 id="globus">Globus</h4>
-<p>Globus can be used to share data from LTS or Home directories.  The Globus "Collection" is called "HTCF Home Directories". Please see <a href="https://docs.globus.org/how-to/get-started/">the globus documentation for more information</a></p>
+<p>Globus can be used to share data from LTS or Home directories.  The Globus "Collection" is called "<a href="https://app.globus.org/collections?q=HTCF%40WUSTL&amp;scope=all">HTCF@WUSTL</a>". From here, selected directories can be shared as "Guest Collections".  Please see <a href="https://docs.globus.org/how-to/get-started/">the globus documentation for more information</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to share a directory, it (and all its parent directories) need to be readable by all users.</p>
+</div>
 <p>For long term hosting of publicly accessible data, please contact WUSTL IT.</p>
 <h3 id="copying-files-using-rsync">Copying Files Using Rsync</h3>
 <p>Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if it is necessary to verify that all files have been successfully copied.</p>

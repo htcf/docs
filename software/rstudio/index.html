@@ -366,6 +366,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#before-building" class="md-nav__link">
+    Before building
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#building-and-installing" class="md-nav__link">
     Building and Installing
   </a>
@@ -428,6 +435,12 @@
 <li>The software developers</li>
 </ul>
 </div>
+<h2 id="before-building">Before building</h2>
+<p>As of <strong>Spack 0.17.2</strong>, the <code>texlive</code> package needs modifying before installing rstudio-server.
+The following two lines should be commented out in the texlive package (<code>spack edit texlive</code>):</p>
+<div class="highlight"><pre><span></span><code>#    version(&#39;live&#39;, sha256=&#39;74eac0855e1e40c8db4f28b24ef354bd7263c1f76031bdc02b52156b572b7a1d&#39;,
+#        url=&#39;ftp://tug.org/historic/systems/texlive/2021/install-tl-unx.tar.gz&#39;)
+</code></pre></div>
 <h2 id="building-and-installing">Building and Installing</h2>
 <p>Note: The Spack <code>rstudio</code> package is the <strong>Destop Version</strong> of rstudio and is <strong>NOT</strong> for use on the HTCF.</p>
 <ol>

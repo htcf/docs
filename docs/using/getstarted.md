@@ -75,7 +75,7 @@ Interactive sessions are for running interactive scripts, vizualization, any tas
 
 An interactive session can be started using the Slurm `srun` command:
 
-    $ srun --mem=<MBs> --cpus-per-task=<num> -J interactive -p interactive --pty /bin/bash -l
+    $ srun --mem-per-cpu=<MBs> --cpus-per-task=<num> -J interactive -p interactive --pty /bin/bash -l
 
 ### Batch Job Submission
 

@@ -25,6 +25,19 @@ The following two lines should be commented out in the texlive package (`spack e
 
 Note: The Spack `rstudio` package is the **Destop Version** of rstudio and is **NOT** for use on the HTCF.
 
+!!!Warning
+    Compiling rstudo requires large amounts of RAM.  When setting up the Slurm jobs be sure to include:
+
+        --mem-per-cpu=12G --cpus-per-task=<NUM>
+
+    in the Slurm parameters.
+
+    *More than 1 CPU will make the building faster but could cause longer waiting in the queue.*
+
+    Also, be sure to tell Spack how many CPUs are available:
+
+        spack install -j ${SLURM_CPUS_PER_TASK} ....
+
 1. A custom [Spack](../../software.md#spack) package needs to be created: `spack create rstudio-server`
 
 2. An rstudio-server [package.py can be found here](package.py).

@@ -36,6 +36,21 @@ To create a lab instance of the spack package manager:
 
 see [the official spack documentation](https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install)
 
+!!!Warning
+    Please install software from within a Slurm job.
+
+!!!Note
+    Some compiling requires large amounts of RAM.  Using `--mem-per-cpu` with >= 4G is sometimes needed.
+
+    **In the case of software that requires the "qt" package, more than --mem-per-cpu=10G could be needed.**
+
+!!!Note
+    When installing within a slurm job, be sure to tell Spack how many CPUs are available.
+
+    For example, after [getting an interactive session](using/getstarted.md#interactive):
+
+        spack install -j ${SLURM_CPUS_PER_TASK} ..... 
+
 
 ### Using the software
 

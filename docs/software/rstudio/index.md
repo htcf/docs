@@ -2,6 +2,9 @@
 
 Rstudio Server can be run as an interactive job and accessed via an SSH tunnel.
 
+!!!Warning
+    The Spack `rstudio` package is the **Destop Version** of rstudio and is **NOT for use on the HTCF**.
+
 ## Support
 
 !!!Reminder
@@ -23,16 +26,12 @@ The following two lines should be commented out in the texlive package (`spack e
 
 ## Building and Installing
 
-Note: The Spack `rstudio` package is the **Destop Version** of rstudio and is **NOT** for use on the HTCF.
-
 !!!Warning
     Compiling rstudo requires large amounts of RAM.  When setting up the Slurm jobs be sure to include:
 
         --mem-per-cpu=12G --cpus-per-task=<NUM>
 
-    in the Slurm parameters.
-
-    *More than 1 CPU will make the building faster but could cause longer waiting in the queue.*
+    in the Slurm parameters. (*More than 1 CPU will make the building faster but could cause longer waiting in the queue.*)
 
     Also, be sure to tell Spack how many CPUs are available:
 

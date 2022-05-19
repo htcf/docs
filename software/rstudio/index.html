@@ -424,6 +424,10 @@
 
 <h1 id="rstudio">RStudio</h1>
 <p>Rstudio Server can be run as an interactive job and accessed via an SSH tunnel.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Spack <code>rstudio</code> package is the <strong>Destop Version</strong> of rstudio and is <strong>NOT for use on the HTCF</strong>.</p>
+</div>
 <h2 id="support">Support</h2>
 <div class="admonition reminder">
 <p class="admonition-title">Reminder</p>
@@ -442,14 +446,12 @@ The following two lines should be commented out in the texlive package (<code>sp
 #        url=&#39;ftp://tug.org/historic/systems/texlive/2021/install-tl-unx.tar.gz&#39;)
 </code></pre></div>
 <h2 id="building-and-installing">Building and Installing</h2>
-<p>Note: The Spack <code>rstudio</code> package is the <strong>Destop Version</strong> of rstudio and is <strong>NOT</strong> for use on the HTCF.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Compiling rstudo requires large amounts of RAM.  When setting up the Slurm jobs be sure to include:</p>
 <div class="highlight"><pre><span></span><code>--mem-per-cpu=12G --cpus-per-task=&lt;NUM&gt;
 </code></pre></div>
-<p>in the Slurm parameters.</p>
-<p><em>More than 1 CPU will make the building faster but could cause longer waiting in the queue.</em></p>
+<p>in the Slurm parameters. (<em>More than 1 CPU will make the building faster but could cause longer waiting in the queue.</em>)</p>
 <p>Also, be sure to tell Spack how many CPUs are available:</p>
 <div class="highlight"><pre><span></span><code>spack install -j ${SLURM_CPUS_PER_TASK} ....
 </code></pre></div>

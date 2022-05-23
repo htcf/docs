@@ -97,7 +97,7 @@ If excess capacity is available.  A temporary increase in the scratch quota can 
 
 #### Globus
 
-Globus can be used to share data from LTS or Home directories.  The Globus "Collection" is called "[HTCF@WUSTL](https://app.globus.org/collections?q=HTCF%40WUSTL&scope=all)". From here, selected directories can be shared as "Guest Collections".  Please see [the globus documentation for more information](https://docs.globus.org/how-to/get-started/)
+Globus can be used to share data from LTS, /scratch, or Home directories.  The Globus "Collection" is called "[HTCF@WUSTL](https://app.globus.org/collections?q=HTCF%40WUSTL&scope=all)". From here, selected directories can be shared as "Guest Collections".  Please see [the globus documentation for more information](https://docs.globus.org/how-to/get-started/)
 !!!Note
     In order to share a directory, it (and all its parent directories) need to be readable by all users.
 

@@ -5,7 +5,7 @@ The HTCF provides five types of storage:
 
 ### HDS
 
-Home Directory Storage (HDS) can be used to store scripts, development tools, etc.  Home directories are located in `/home/<WUSTLKEY_ID>` and are available on all nodes.
+Home Directory Storage (HDS) can be used to store scripts, development tools, etc.  Home directories are located in `/home/<WUSTLKEY_ID>` and are available on all nodes. Home directory space is limited to 20GB.
 
 HDS is kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.
 

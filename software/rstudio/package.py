@@ -17,7 +17,7 @@ class RstudioServer(CMakePackage):
     version('1.4.1743', sha256='f046b2e91d4b27794d989e9bb2d7ad951b913ae86ed485364fc5b7fccba9c927')
     version('1.4.1717', sha256='3af234180fd7cef451aef40faac2c7b52860f14a322244c1c7aede029814d261')
 
-    depends_on('r@3.0.1:', type=('build', 'run'))
+    depends_on('r+X@3.0.1:', type=('build', 'run'))
     depends_on('cmake@3.4.3:', type='build')
     depends_on('pkgconfig', type='build')
     depends_on('ant', type='build')

@@ -122,8 +122,12 @@ The HTCF currently has a small number of GPUs.
 
 A GPU is accessible using the following slurm parameters:
 
+    -p gpu --gpus=<num>
+
+In an sbatch:
+
 ~~~~{.language-bash}
 #SBATCH -p gpu
-#SBATCH --gres=gpu
+#SBATCH --gpus=<num>
 ~~~~
 

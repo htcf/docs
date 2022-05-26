@@ -609,8 +609,11 @@ program /scratch/lab/files/ABC.fasta /scratch/lab/files/ABC.out
 <h3 id="gpus">GPUs</h3>
 <p>The HTCF currently has a small number of GPUs.</p>
 <p>A GPU is accessible using the following slurm parameters:</p>
+<div class="highlight"><pre><span></span><code>-p gpu --gpus=&lt;num&gt;
+</code></pre></div>
+<p>In an sbatch:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH -p gpu
-#SBATCH --gres=gpu
+#SBATCH --gpus=&lt;num&gt;
 </code></pre></div>
 
               

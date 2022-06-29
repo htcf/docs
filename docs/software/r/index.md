@@ -13,6 +13,8 @@ R packages can be installed using the packages' install instructions.
 
     - Google
     - Software support forums or mailing lists
+        - [https://www.r-project.org/help.html](https://www.r-project.org/help.html)
+        - [https://www.biostars.org/](https://www.biostars.org/)
     - The software developers
     
 ## Search paths
@@ -28,6 +30,8 @@ R packages can be installed using the packages' install instructions.
 
 Unfortunately, trial and error may be required when installing R packages.
 
+### Environment variables
+
 It seems some R packages such as `Rsamtools` and `Rhtslib` require extra environment variables in order to find their dependencies during install.
 
 To do this, prior to installation, the variables `$LIBRARY_PATH` and `$C_INCLUDE_PATH` can be set as follows:
@@ -38,5 +42,11 @@ To do this, prior to installation, the variables `$LIBRARY_PATH` and `$C_INCLUDE
 This should help install some R packages.
 
 !!!Warning
-    **Most** R packages **DO NOT** need these environment variables, and they might actually *fail* to install properly if these variables are set.
+    **Most** R packages **DO NOT** need these environment variables, and they might actually **FAIL** to install properly if these variables are set.
 
+### Installing within rstudio
+
+!!!Warning
+    Some have reported problems installing software from within rstudio.
+
+    It may be best to always install software from command-line R (from within an interactive job).

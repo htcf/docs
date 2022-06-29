@@ -4,6 +4,17 @@ Labs can install R using Spack.
 
 R packages can be installed using the packages' install instructions.
 
+## Support
+
+!!!Reminder
+    Beyond basic R installation and R package installation, **the HTCF cannot handle R support requests.**
+
+    After installation, support requests for R software and packages should be directed to:
+
+    - Google
+    - Software support forums or mailing lists
+    - The software developers
+    
 ## Search paths
 
 !!!Warning
@@ -29,14 +40,3 @@ This should help install some R packages.
 !!!Warning
     **Most** R packages **DO NOT** need these environment variables, and they might actually *fail* to install properly if these variables are set.
 
-## Support
-
-!!!Reminder
-    Beyond basic R installation and R package installation, **the HTCF cannot handle R support requests.**
-
-    After installation, support requests for R software and packages should be directed to:
-
-    - Google
-    - Software support forums or mailing lists
-    - The software developers
-    

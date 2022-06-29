@@ -339,6 +339,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting-package-installation" class="md-nav__link">
+    Troubleshooting Package Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#support" class="md-nav__link">
     Support
   </a>
@@ -397,6 +404,18 @@
 <p><strong> A thorough understanding of R search paths is necessary for successful installation and use of R packages.</strong></p>
 <p>It's best to store R packages in a shared location (such as <code>/ref/&lt;lab&gt;/software/...</code>) rather than <code>$HOME/R</code>.  R packages in <code>$HOME</code> aren't as easily shared with other lab members and can quickly fill up the space in <code>$HOME</code>.</p>
 <p>Please read and understand <a href="https://rdrr.io/r/base/libPaths.html">libPaths: Search Paths for Packages</a>, <strong>specifically R_LIBS_USER and R_LIBS_SITE</strong>, before using R.  It may be best to include the R version in the path such as <code>/ref/&lt;lab&gt;/software/r_packages/%v</code></p>
+</div>
+<h2 id="troubleshooting-package-installation">Troubleshooting Package Installation</h2>
+<p>Unfortunately, trial and error may be required when installing R packages.</p>
+<p>It seems some R packages such as <code>Rsamtools</code> and <code>Rhtslib</code> require extra environment variables in order to find their dependencies during install.</p>
+<p>To do this, prior to installation, the variables <code>$LIBRARY_PATH</code> and <code>$C_INCLUDE_PATHS</code> can be set as follows:</p>
+<div class="highlight"><pre><span></span><code>export LIBRARY_PATH=$_LIBRARY_PATH
+export C_INCLUDE_PATH=$_C_INCLUDE_PATH
+</code></pre></div>
+<p>This should help install some R packages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Most</strong> R packages <strong>DO NOT</strong> need these environment variables, and they might actually <em>fail</em> to install properly if these variables are set.</p>
 </div>
 <h2 id="support">Support</h2>
 <div class="admonition reminder">

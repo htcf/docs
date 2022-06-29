@@ -350,6 +350,26 @@
     Troubleshooting Package Installation
   </a>
   
+    <nav class="md-nav" aria-label="Troubleshooting Package Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    Environment variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-within-rstudio" class="md-nav__link">
+    Installing within rstudio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -405,7 +425,11 @@
 <p>After installation, support requests for R software and packages should be directed to:</p>
 <ul>
 <li>Google</li>
-<li>Software support forums or mailing lists</li>
+<li>Software support forums or mailing lists<ul>
+<li><a href="https://www.r-project.org/help.html">https://www.r-project.org/help.html</a></li>
+<li><a href="https://www.biostars.org/">https://www.biostars.org/</a></li>
+</ul>
+</li>
 <li>The software developers</li>
 </ul>
 </div>
@@ -418,6 +442,7 @@
 </div>
 <h2 id="troubleshooting-package-installation">Troubleshooting Package Installation</h2>
 <p>Unfortunately, trial and error may be required when installing R packages.</p>
+<h3 id="environment-variables">Environment variables</h3>
 <p>It seems some R packages such as <code>Rsamtools</code> and <code>Rhtslib</code> require extra environment variables in order to find their dependencies during install.</p>
 <p>To do this, prior to installation, the variables <code>$LIBRARY_PATH</code> and <code>$C_INCLUDE_PATH</code> can be set as follows:</p>
 <div class="highlight"><pre><span></span><code>export LIBRARY_PATH=$_LIBRARY_PATH
@@ -426,7 +451,13 @@ export C_INCLUDE_PATH=$_C_INCLUDE_PATH
 <p>This should help install some R packages.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Most</strong> R packages <strong>DO NOT</strong> need these environment variables, and they might actually <em>fail</em> to install properly if these variables are set.</p>
+<p><strong>Most</strong> R packages <strong>DO NOT</strong> need these environment variables, and they might actually <strong>FAIL</strong> to install properly if these variables are set.</p>
+</div>
+<h3 id="installing-within-rstudio">Installing within rstudio</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some have reported problems installing software from within rstudio.</p>
+<p>It may be best to always install software from command-line R (from within an interactive job).</p>
 </div>
 
               

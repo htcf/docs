@@ -7,7 +7,7 @@ R packages can be installed using the packages' install instructions.
 ## Support
 
 !!!Reminder
-    Beyond basic R installation and R package installation, **the HTCF cannot handle R support requests.**
+    Beyond basic R installation and basic R package installation, **the HTCF cannot handle R support requests.**
 
     After installation, support requests for R software and packages should be directed to:
 
@@ -30,7 +30,7 @@ Unfortunately, trial and error may be required when installing R packages.
 
 It seems some R packages such as `Rsamtools` and `Rhtslib` require extra environment variables in order to find their dependencies during install.
 
-To do this, prior to installation, the variables `$LIBRARY_PATH` and `$C_INCLUDE_PATHS` can be set as follows:
+To do this, prior to installation, the variables `$LIBRARY_PATH` and `$C_INCLUDE_PATH` can be set as follows:
 
     export LIBRARY_PATH=$_LIBRARY_PATH
     export C_INCLUDE_PATH=$_C_INCLUDE_PATH

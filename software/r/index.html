@@ -401,7 +401,7 @@
 <h2 id="support">Support</h2>
 <div class="admonition reminder">
 <p class="admonition-title">Reminder</p>
-<p>Beyond basic R installation and R package installation, <strong>the HTCF cannot handle R support requests.</strong></p>
+<p>Beyond basic R installation and basic R package installation, <strong>the HTCF cannot handle R support requests.</strong></p>
 <p>After installation, support requests for R software and packages should be directed to:</p>
 <ul>
 <li>Google</li>
@@ -419,7 +419,7 @@
 <h2 id="troubleshooting-package-installation">Troubleshooting Package Installation</h2>
 <p>Unfortunately, trial and error may be required when installing R packages.</p>
 <p>It seems some R packages such as <code>Rsamtools</code> and <code>Rhtslib</code> require extra environment variables in order to find their dependencies during install.</p>
-<p>To do this, prior to installation, the variables <code>$LIBRARY_PATH</code> and <code>$C_INCLUDE_PATHS</code> can be set as follows:</p>
+<p>To do this, prior to installation, the variables <code>$LIBRARY_PATH</code> and <code>$C_INCLUDE_PATH</code> can be set as follows:</p>
 <div class="highlight"><pre><span></span><code>export LIBRARY_PATH=$_LIBRARY_PATH
 export C_INCLUDE_PATH=$_C_INCLUDE_PATH
 </code></pre></div>

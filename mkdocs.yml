@@ -65,5 +65,5 @@ nav:
     #- Beta: 'storage/new_index.md'
 - Software:
   - Getting Started: 'software.md'
-  - Notes:
-    - 'software/rstudio/index.md'
+  - 'software/r/index.md'
+  - 'software/rstudio/index.md'

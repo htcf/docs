@@ -13,6 +13,22 @@ R packages can be installed using the packages' install instructions.
 
     Please read and understand [libPaths: Search Paths for Packages](https://rdrr.io/r/base/libPaths.html), **specifically R_LIBS_USER and R_LIBS_SITE**, before using R.  It may be best to include the R version in the path such as `/ref/<lab>/software/r_packages/%v`
 
+## Troubleshooting Package Installation
+
+Unfortunately, trial and error may be required when installing R packages.
+
+It seems some R packages such as `Rsamtools` and `Rhtslib` require extra environment variables in order to find their dependencies during install.
+
+To do this, prior to installation, the variables `$LIBRARY_PATH` and `$C_INCLUDE_PATHS` can be set as follows:
+
+    export LIBRARY_PATH=$_LIBRARY_PATH
+    export C_INCLUDE_PATH=$_C_INCLUDE_PATH
+
+This should help install some R packages.
+
+!!!Warning
+    **Most** R packages **DO NOT** need these environment variables, and they might actually *fail* to install properly if these variables are set.
+
 ## Support
 
 !!!Reminder

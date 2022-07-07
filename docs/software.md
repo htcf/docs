@@ -138,32 +138,7 @@ When needed software is not readily accessible via Spack, there are a few option
 
 ## R considerations
 
-For R software libraries, it's best to install R using Spack, then install R libraries using the R command line interface.
-
-This is the best way to ensure the proper installation of the latest (or most appropriate) versions of the R libraries.
-
-To create an R library directory that can be used by multiple people, the `$R_LIBS_SITE` variable can be used.
-For example, to install R version 4.1.1 and create a shared R library directory:
-
-    $ spack install r@4.1.1
-    ...
-    $ export R_LIBS_SITE=/ref/<labname>/software/r-envs/<project_name>/4.1.1
-    $ mkdir -p $R_LIBS_SITE
-    $ eval $( spack load --sh r@4.1.1 )
-    $ R
-    ...
-    > install.packages('<pkgname>')
-    > install.packages('<another_pkgname>')
-    > install.packages(c('<and_another_pkgname>', '<one_more_pkgname>'))
-
-To use these R libraries in an Rscript job:
-
-    #!/bin/bash
-
-    export R_LIBS_SITE=/ref/<labname>/software/r-envs/<project_name>/4.1.1
-    eval $( spack load --sh r@4.1.1 )
-
-    Rscript ........
+[Please see the R page for more information.](./r)
 
 ## Manual Installation
 

@@ -1,8 +1,8 @@
 # R
 
-Labs can install R using Spack. 
+It's best to install R using Spack, then [after setting up the R search path](#search-paths), install R packages using the R command line interface, following the packages' install instructions.
 
-R packages can be installed using the packages' install instructions.
+This is the best way to ensure the proper installation of the latest (or most appropriate) versions of the R libraries.
 
 ## Support
 
@@ -24,7 +24,27 @@ R packages can be installed using the packages' install instructions.
 
     It's best to store R packages in a shared location (such as `/ref/<lab>/software/...`) rather than `$HOME/R`.  R packages in `$HOME` aren't as easily shared with other lab members and can quickly fill up the space in `$HOME`.
 
+    **The shared location must exist (`mkdir <dir>`) prior to starting the R command line.**
+
     Please read and understand [libPaths: Search Paths for Packages](https://rdrr.io/r/base/libPaths.html), **specifically R_LIBS_USER and R_LIBS_SITE**, before using R.  It may be best to include the R version in the path such as `/ref/<lab>/software/r_packages/%v`
+
+For example, to set up a shared directory of R (version 4.1.X) packages and install into it:
+
+    $ mkdir -p /ref/<labname>/software/r-envs/<project_name>/4.1
+    $ export R_LIBS_SITE=/ref/<labname>/software/r-envs/<project_name>/%v
+    $ eval $( spack load --sh r@4.1.1 )
+    $ R
+    ...
+    > install.packages('<pkgname>')
+
+To use these R libraries in an Rscript job:
+
+    #!/bin/bash
+
+    export R_LIBS_SITE=/ref/<labname>/software/r-envs/<project_name>/%v
+    eval $( spack load --sh r@4.1.1 )
+
+    Rscript ........
 
 ## Troubleshooting Package Installation
 

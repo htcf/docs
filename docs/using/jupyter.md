@@ -15,7 +15,7 @@ port=$(shuf -i9000-9999 -n1)
 echo -e "
     Run in a new local terminal window to create an SSH tunnel to $host
     -----------------------------------------------------------------
-    ssh -N -L $port:$host:$port $USER@htcf.wustl.edu
+    ssh -N -L $port:$HOSTNAME:$port $USER@htcf.wustl.edu
     -----------------------------------------------------------------
 
     Then in the desktop browser, follow the http://127.0.0.1..... address shown at the bottom of the jupyter lab command

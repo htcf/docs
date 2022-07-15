@@ -77,6 +77,8 @@ An interactive session can be started using the Slurm `srun` command:
 
     $ srun --mem-per-cpu=<MBs> --cpus-per-task=<num> -J interactive -p interactive --pty /bin/bash -l
 
+When necessary, the general (non-interactive) partition can be used for interactive jobs as long as a time limit of 8 hours (`srun -t 8:0:0 ...`) is added to the srun request.
+
 ### Batch Job Submission
 
  * Determine resources

@@ -51,6 +51,14 @@ see [the official spack documentation](https://spack.readthedocs.io/en/latest/ba
 
         spack install -j ${SLURM_CPUS_PER_TASK} ..... 
 
+!!!Note
+    Some software can take an extremely long time to install (such as qt and llvm).  In these cases, an sbatch job will be needed rather than an interactive job:
+    
+        #!/bin/bash
+        #SBATCH -c <num>
+        #SBATCH --mem-per-cpu=<num>G
+        spack install -j ${SLURM_CPUS_PER_TASK} ....
+        
 
 ### Using the software
 

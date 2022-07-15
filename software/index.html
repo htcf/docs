@@ -508,6 +508,15 @@
 <div class="highlight"><pre><span></span><code>spack install -j ${SLURM_CPUS_PER_TASK} .....
 </code></pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some software can take an extremely long time to install (such as qt and llvm).  In these cases, an sbatch job will be needed rather than an interactive job:</p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH -c &lt;num&gt;
+#SBATCH --mem-per-cpu=&lt;num&gt;G
+spack install -j ${SLURM_CPUS_PER_TASK} ....
+</code></pre></div>
+</div>
 <h3 id="using-the-software">Using the software</h3>
 <p>Once spack has built software, the bash shell needs to have the proper environment variables set to access the software.</p>
 <p>This is accomplished using the <code>spack load</code> command.  Spack packages can be "loaded" similar to the way modules are loaded.</p>

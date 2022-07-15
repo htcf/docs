@@ -555,6 +555,7 @@ It appears that jupyter notebooks can also be run in a <a href="http://tritemio.
 <p>An interactive session can be started using the Slurm <code>srun</code> command:</p>
 <div class="highlight"><pre><span></span><code>$ srun --mem-per-cpu=&lt;MBs&gt; --cpus-per-task=&lt;num&gt; -J interactive -p interactive --pty /bin/bash -l
 </code></pre></div>
+<p>When necessary, the general (non-interactive) partition can be used for interactive jobs as long as a time limit of 8 hours (<code>srun -t 8:0:0 ...</code>) is added to the srun request.</p>
 <h3 id="batch-job-submission">Batch Job Submission</h3>
 <ul>
 <li>Determine resources</li>

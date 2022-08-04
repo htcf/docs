@@ -18,8 +18,8 @@ Rstudio Server can be run as an interactive job and accessed via an SSH tunnel.
     
 ## Before building
 
-Before **Spack 0.18.0**, the `texlive` package needs modifying before installing rstudio-server.
-The following two lines should be commented out in the texlive package (`spack edit texlive`):
+The `texlive` package may need modifying before installing rstudio-server.
+If there is a texlive error during install, the following two lines should be commented out in the texlive package (`spack edit texlive`):
 
     #    version('live', sha256='74eac0855e1e40c8db4f28b24ef354bd7263c1f76031bdc02b52156b572b7a1d',
     #        url='ftp://tug.org/historic/systems/texlive/2021/install-tl-unx.tar.gz')

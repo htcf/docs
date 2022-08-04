@@ -58,6 +58,7 @@ To do this, prior to installation, the variables `$LIBRARY_PATH` and `$C_INCLUDE
 
     export LIBRARY_PATH=$_LIBRARY_PATH
     export C_INCLUDE_PATH=$_C_INCLUDE_PATH
+    export CPLUS_INCLUDE_PATH=$_CPLUS_INCLUDE_PATH
 
 This should help install some R packages.
 

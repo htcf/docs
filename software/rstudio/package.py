@@ -6,7 +6,7 @@
 import os
 
 from spack import *
-
+from spack.pkg.builtin.boost import Boost
 
 class RstudioServer(CMakePackage):
     """RStudio Server is an integrated development environment (IDE) for R."""
@@ -14,15 +14,13 @@ class RstudioServer(CMakePackage):
     homepage = "www.rstudio.com/products/rstudio/"
     url      = "https://github.com/rstudio/rstudio/archive/refs/tags/v1.4.1717.tar.gz"
 
-    version('1.4.1743', sha256='f046b2e91d4b27794d989e9bb2d7ad951b913ae86ed485364fc5b7fccba9c927')
-    version('1.4.1717', sha256='3af234180fd7cef451aef40faac2c7b52860f14a322244c1c7aede029814d261')
+    version('v2021.09.0', sha256='1fd0c40e9064501a276e0c9a64c1d54bed2957bf4f93174436e309b138222d2d', url="https://github.com/rstudio/rstudio/archive/refs/tags/v2021.09.0+351.tar.gz")
 
-    depends_on('r+X@3.0.1:', type=('build', 'run'))
+    depends_on('r@3.0.1:', type=('build', 'run'))
     depends_on('cmake@3.4.3:', type='build')
     depends_on('pkgconfig', type='build')
     depends_on('ant', type='build')
-    depends_on('boost+pic@1.69:')
-    depends_on('qt+webkit@5.12:')
+    depends_on(Boost.with_default_variants + "+pic@1.69:")
     depends_on('patchelf@0.9:')
     depends_on('yaml-cpp@:0.6.3')  # find_package fails with newest version
     depends_on('node-js')

@@ -99,7 +99,7 @@ In the `.sbatch` job:
     #SBATCH --mem-per-cpu=XG
     #SBATCH --cpus-per-task=X
 
-    eval $(spack load r-rmpi ^r@<version> ^mpich)
+    eval $(spack load --sh r-rmpi ^r@<version> ^mpich)
     export R_LIBS_SITE=/ref/jdlab/software/projecta
     
     mpiexec -usize $SLURM_NTASKS -np 1 Rscript /path/to/rscript.R

@@ -68,4 +68,5 @@ nav:
   - 'software/r/index.md'
   - 'software/rstudio/index.md'
   - Examples:
-    - R+MPI: 'software/examples/r_with_mpi.md'
+    - 'software/examples/r_mpi/index.md'
+# - R+MPI: 'software/examples/r_with_mpi.md'

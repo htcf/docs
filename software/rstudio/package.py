@@ -27,7 +27,7 @@ class RstudioServer(CMakePackage):
     depends_on('yarn')
     depends_on('pandoc@2.11.4:')
     depends_on('icu4c')
-    depends_on('soci~static+boost+postgresql+sqlite')
+    depends_on('soci~static+boost+postgresql+sqlite cxxstd=11')
     depends_on('java@8:')
     depends_on('openssl')
 

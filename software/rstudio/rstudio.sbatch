@@ -51,4 +51,4 @@ echo -e "
     "
 
 # Launch rstudio server
-rserver --www-port $port --secure-cookie-key-file ${TMPDIR}/secure-cookie-key --server-data-dir ${TMPDIR}/data --server-pid-file ${TMPDRI}/rstudio.pid --database-config-file ${TMPDIR}/rstudio-database.conf --server-user=$USER
+rserver --www-port $port --secure-cookie-key-file ${TMPDIR}/secure-cookie-key --server-data-dir ${TMPDIR}/data --server-pid-file ${TMPDIR}/rstudio.pid --database-config-file ${TMPDIR}/rstudio-database.conf --server-user=$USER

@@ -72,6 +72,8 @@ The best use of the HTS is to use a workflow similar to the following:
 
 Results that are generated on this storage need to be promptly copied to LTS. 
 
+#### Scratch Quotas
+
 There is a quota of 2TB per user in /scratch to prevent the filesystem from filling up.  At >85% /scratch can become very slow.  To check the amount of space being used, use the following command:
 
     $ beegfs-ctl --getquota --uid $USER

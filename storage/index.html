@@ -298,6 +298,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#scratch-quotas" class="md-nav__link">
+    Scratch Quotas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#quota-increase-requests" class="md-nav__link">
     Quota Increase Requests
   </a>
@@ -562,6 +569,7 @@ Larger datasets (&gt; 500GB) are probably better suited for <a href="#ltos">Long
 <li>Remove all working data from HTS</li>
 </ol>
 <p>Results that are generated on this storage need to be promptly copied to LTS. </p>
+<h4 id="scratch-quotas">Scratch Quotas</h4>
 <p>There is a quota of 2TB per user in /scratch to prevent the filesystem from filling up.  At &gt;85% /scratch can become very slow.  To check the amount of space being used, use the following command:</p>
 <div class="highlight"><pre><span></span><code>$ beegfs-ctl --getquota --uid $USER
 </code></pre></div>

@@ -76,10 +76,14 @@ There is a quota of 2TB per user in /scratch to prevent the filesystem from fill
 
     $ beegfs-ctl --getquota --uid $USER
 
+or check group quotas with:
+
+    $ beegfs-ctl --getquota --gid GROUPNAME
+
 #### Quota Increase Requests
 
 !!!Note
-    A quota increase is not garaunteed.  If excess capacity is not available, a quota increase cannot be granted.
+    A quota increase is not guaranteed.  If excess capacity is not available, a quota increase cannot be granted.
 
 If excess capacity is available.  A temporary increase in the scratch quota can be requested.  To request more scratch space, email following information:
 

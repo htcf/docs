@@ -1,5 +1,10 @@
 # Jupyter Lab
 
+Jupyter Lab can be installed via Spack:
+
+    spack install py-jupyterlab
+
+Example sbatch script:
 
 ```
 #!/bin/bash

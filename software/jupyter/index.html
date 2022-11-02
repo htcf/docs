@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
@@ -439,6 +439,7 @@ fi
 
 eval $(spack load --sh py-jupyterlab)
 
+host=$(hostname)
 port=$(shuf -i9000-9999 -n1)
 
 echo -e &quot;
@@ -451,7 +452,7 @@ echo -e &quot;
     &quot;
 
 # Launch jupyter lab
-jupyter lab --no-browser --port=$port --ip=$HOSTNAME
+jupyter lab --no-browser --port=$port --ip=$host
 </code></pre></div>
 
 

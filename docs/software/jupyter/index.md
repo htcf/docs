@@ -27,6 +27,7 @@ fi
 
 eval $(spack load --sh py-jupyterlab)
 
+host=$(hostname)
 port=$(shuf -i9000-9999 -n1)
 
 echo -e "
@@ -39,5 +40,5 @@ echo -e "
     "
 
 # Launch jupyter lab
-jupyter lab --no-browser --port=$port --ip=$HOSTNAME
+jupyter lab --no-browser --port=$port --ip=$host
 ```

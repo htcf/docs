@@ -114,6 +114,18 @@ For long term hosting of publicly accessible data, please contact WUSTL IT.
 Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if it is necessary to verify that all files have been successfully copied.
 
 When using this command, please note that the absense of a trailing slash means the directory, with a trailing slash means the contents of that directory.  Here are a few examples:
+
+~~~~
+~$ rsync -aHv --progress /directory/to/transfer /destination/directory/location/
+~~~~
+
+The above example would put the directory named "transfer" into the directory named "location"
+
+~~~~
+~$ rsync -aHv --progress /directory/to/transfer/ /destination/directory/location/
+~~~~
+
+The above example would put the contents of the directory named "transfer" into the directory named "location".
 [More info...](https://stackoverflow.com/questions/31278098/slashes-and-the-rsync-command)
 
 ### Disk Quota Exceeded Errors

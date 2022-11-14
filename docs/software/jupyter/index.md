@@ -27,18 +27,17 @@ fi
 
 eval $(spack load --sh py-jupyterlab)
 
-host=$(hostname)
 port=$(shuf -i9000-9999 -n1)
 
 echo -e "
-    In a local terminal, create SSH tunnel to $host
+    In a local terminal, create SSH tunnel to $HOSTNAME
     -----------------------------------------------------------------
-    ssh $USER@login.htcf.wustl.edu -N -L $port:$host:$port
+    ssh $USER@login.htcf.wustl.edu -N -L $port:$HOSTNAME:$port
     -----------------------------------------------------------------
 
     Then in the desktop browser, follow the http://127.0.0.1..... address shown at the bottom of the jupyter lab command
     "
 
 # Launch jupyter lab
-jupyter lab --no-browser --port=$port --ip=$host
+jupyter lab --no-browser --port=$port --ip=$HOSTNAME
 ```

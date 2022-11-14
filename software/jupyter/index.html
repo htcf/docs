@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
         
       
       
@@ -439,20 +439,19 @@ fi
 
 eval $(spack load --sh py-jupyterlab)
 
-host=$(hostname)
 port=$(shuf -i9000-9999 -n1)
 
 echo -e &quot;
-    In a local terminal, create SSH tunnel to $host
+    In a local terminal, create SSH tunnel to $HOSTNAME
     -----------------------------------------------------------------
-    ssh $USER@login.htcf.wustl.edu -N -L $port:$host:$port
+    ssh $USER@login.htcf.wustl.edu -N -L $port:$HOSTNAME:$port
     -----------------------------------------------------------------
 
     Then in the desktop browser, follow the http://127.0.0.1..... address shown at the bottom of the jupyter lab command
     &quot;
 
 # Launch jupyter lab
-jupyter lab --no-browser --port=$port --ip=$host
+jupyter lab --no-browser --port=$port --ip=$HOSTNAME
 </code></pre></div>
 
 
@@ -530,7 +529,7 @@ jupyter lab --no-browser --port=$port --ip=$host
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "toc.integrate"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
     
   </body>

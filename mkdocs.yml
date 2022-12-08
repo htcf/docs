@@ -61,7 +61,6 @@ nav:
     #- HTS: 'storage/hts.md'
     #- REF: 'storage/ref.md'
     #- LTS: 'storage/lts.md'
-    #- LTOS: 'storage/ltos.md'
     #- Beta: 'storage/new_index.md'
 - Software:
   - Getting Started: 'software.md'

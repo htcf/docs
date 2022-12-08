@@ -28,9 +28,60 @@ To check LTS usage:
 
     $ df -h /lts/<lab_name>/<bucket_name>
 
-### LTOS
+### LTOS - Long Term Object Storage
 
-*Coming Soon*
+LTOS is an architecture that manages data as [objects](https://en.wikipedia.org/wiki/Object_storage), as opposed to traditional LTS which uses file systems and block storage.
+
+LTOS is located onsite and **is not** [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3), but is a [a subset](https://docs.ceph.com/en/latest/radosgw/s3/), and works in a similar way as Amazon S3. 
+
+Unlike LTS, which is only accessible from the login server, LTOS is accessible externally and from all HTCF nodes.
+
+#### Purpose
+
+LTOS can be a good alternative to LTS any time the data in question doesn't need to be heavily manipulated or modified.
+
+Good Candidates for LTOS:
+
+- Raw sequence data and finished analysis data
+- Archived or rarely referenced data such as alumni files.
+- Data that is not often modified, once created.
+
+#### Using
+
+When purchasing LTOS, please indicate whether the storage needs to be backed up offsite or only one copy is needed onsite.
+The per-TB cost of LTOS with an offsite copy is the same as LTS.  If offsite storage is not needed, the cost is about 1/3.
+
+An "access key" and "secret key" will be assigned and can be used to connect to the storage.
+Buckets can be created and data can be transferred in/out using a command line s3 transfer tool. 
+The [s3cmd](https://s3tools.org/s3cmd) tool is recommended. It's available via spack as "py-s3cmd".
+
+After s3cmd is installed, a config file needs to be created.
+
+For LTOS with an offsite copy:
+
+    cat > s3cmd-mystorage.conf <<EOF
+    [default]
+    host_base = s3-obs2.htcf.wustl.edu
+    host_bucket = s3-obs2.htcf.wustl.edu
+    access_key = ...
+    secret_key = ...
+    EOF
+
+For LTOS with no offsite copy:
+
+    cat > s3cmd-mystorage.conf <<EOF
+    [default]
+    host_base = s3-obs1.htcf.wustl.edu
+    host_bucket = s3-obs1.htcf.wustl.edu
+    access_key = ...
+    secret_key = ...
+    EOF
+
+s3cmd can reference the config via a parameter:
+
+    s3cmd -c s3cmd-mystorage.conf <cmd>
+    
+To integrate LTOS access into software, there are many [s3 API libraries](https://docs.ceph.com/en/latest/radosgw/s3/) for various programming languages.
 
 ### REF
 

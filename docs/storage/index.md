@@ -32,7 +32,7 @@ To check LTS usage:
 
 LTOS is an architecture that manages data as [objects](https://en.wikipedia.org/wiki/Object_storage), as opposed to traditional LTS which uses file systems and block storage.
 
-LTOS is located onsite and **is not** [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3), but is a [a subset](https://docs.ceph.com/en/latest/radosgw/s3/), and works in a similar way as Amazon S3. 
+LTOS is located onsite and **is not** [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3), but is [a subset](https://docs.ceph.com/en/latest/radosgw/s3/), and works in a similar way as Amazon S3. 
 
 Unlike LTS, which is only accessible from the login server, LTOS is accessible externally and from all HTCF nodes.
 

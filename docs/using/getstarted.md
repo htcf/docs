@@ -134,5 +134,24 @@ In an sbatch:
 You can verify the GPU is being utilized by the job with the nvidia-smi command, this example runs within your job allocation:
 
 ~~~~{.language-bash}
-srun --ntasks-per-node=1 --jobid={jobid}  nvidia-smi
+$ srun --ntasks-per-node=1 --jobid={jobid} nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 525.60.13    Driver Version: 525.60.13    CUDA Version: 12.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A100 80G...  Off  | 00000000:17:00.0 Off |                    0 |
+| N/A   39C    P0    62W / 300W |      0MiB / 81920MiB |     23%      Default |
+|                               |                      |             Disabled |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0                12043      C   guppy_basecaller                 4753MiB |
++-----------------------------------------------------------------------------+
 ~~~~

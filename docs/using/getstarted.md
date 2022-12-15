@@ -134,7 +134,7 @@ In an sbatch:
 You can verify the GPU is being utilized by the job with the nvidia-smi command, this example runs within your job allocation:
 
 ~~~~{.language-bash}
-$ srun --ntasks-per-node=1 --jobid={jobid} nvidia-smi
+$ srun --ntasks-per-node=1 --jobid=12345 nvidia-smi
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 525.60.13    Driver Version: 525.60.13    CUDA Version: 12.0     |
 |-------------------------------+----------------------+----------------------+

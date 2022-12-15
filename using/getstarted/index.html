@@ -653,13 +653,16 @@ program /scratch/lab/files/ABC.fasta /scratch/lab/files/ABC.out
 <div class="highlight"><pre><span></span><code>$ squeue
 </code></pre></div>
 <h3 id="gpus">GPUs</h3>
-<p>The HTCF currently has a small number of GPUs.</p>
+<p>The HTCF currently has a small number of GPUs, currently 6 NVIDIA A100 80GB and 2 V100 32GB.</p>
 <p>A GPU is accessible using the following slurm parameters:</p>
 <div class="highlight"><pre><span></span><code>-p gpu --gpus=&lt;num&gt;
 </code></pre></div>
 <p>In an sbatch:</p>
 <div class="highlight"><pre><span></span><code>#SBATCH -p gpu
 #SBATCH --gpus=&lt;num&gt;
+</code></pre></div>
+<p>You can verify the GPU is being utilized by the job with the nvidia-smi command, this example runs within your job allocation:</p>
+<div class="highlight"><pre><span></span><code>srun --ntasks-per-node=1 --jobid={jobid}  nvidia-smi
 </code></pre></div>
 
 

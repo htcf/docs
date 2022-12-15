@@ -118,7 +118,7 @@ View the job in the queue:
 
 ### GPUs
 
-The HTCF currently has a small number of GPUs.
+The HTCF currently has a small number of GPUs, currently 6 NVIDIA A100 80GB and 2 V100 32GB.
 
 A GPU is accessible using the following slurm parameters:
 
@@ -131,3 +131,8 @@ In an sbatch:
 #SBATCH --gpus=<num>
 ~~~~
 
+You can verify the GPU is being utilized by the job with the nvidia-smi command, this example runs within your job allocation:
+
+~~~~{.language-bash}
+srun --ntasks-per-node=1 --jobid={jobid}  nvidia-smi
+~~~~

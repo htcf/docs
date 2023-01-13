@@ -172,4 +172,4 @@ $ srun --ntasks-per-node=1 --jobid=12345 nvidia-smi
 The number of CPUs and MBs of RAM per node can be found using the Slurm sinfo command:
 
     $ sinfo -N -p general -o '%n %c %m'
->>>>>>> adding a new page and an update to the first things first...
+    

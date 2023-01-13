@@ -70,3 +70,4 @@ nav:
   - Examples:
     - 'software/examples/r_mpi/index.md'
 # - R+MPI: 'software/examples/r_with_mpi.md'
+- "Use Examples": 'using/community_examples.md'

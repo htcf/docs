@@ -8,8 +8,10 @@
       
       
       
+      
+      
       <link rel="icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
     
     
       
@@ -17,11 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -131,7 +132,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -261,12 +262,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
           Software
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -343,12 +345,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6_5">
+        <label class="md-nav__link" for="__nav_6_5" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -402,17 +405,18 @@
                   
 
 
+
   <h1>Runningjobs</h1>
 
 <p>Many times you might have a command that you’d like to run on a lot of samples.  To run these sequentially, you might have a script like this:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-module load spades
+module<span class="w"> </span>load<span class="w"> </span>spades
 
-spades.py --careful --pe1-1 samp1-r1.fastq --pe1-2 samp1-r2.fastq -o assembly_1
-spades.py --careful --pe1-1 samp2-r1.fastq --pe1-2 samp2-r2.fastq -o assembly_2
+spades.py<span class="w"> </span>--careful<span class="w"> </span>--pe1-1<span class="w"> </span>samp1-r1.fastq<span class="w"> </span>--pe1-2<span class="w"> </span>samp1-r2.fastq<span class="w"> </span>-o<span class="w"> </span>assembly_1
+spades.py<span class="w"> </span>--careful<span class="w"> </span>--pe1-1<span class="w"> </span>samp2-r1.fastq<span class="w"> </span>--pe1-2<span class="w"> </span>samp2-r2.fastq<span class="w"> </span>-o<span class="w"> </span>assembly_2
 …
-spades.py --careful --pe1-1 samp2000-r1.fastq --pe1-2 samp2000-r2.fastq -o assembly_2000
+spades.py<span class="w"> </span>--careful<span class="w"> </span>--pe1-1<span class="w"> </span>samp2000-r1.fastq<span class="w"> </span>--pe1-2<span class="w"> </span>samp2000-r2.fastq<span class="w"> </span>-o<span class="w"> </span>assembly_2000
 </code></pre></div>
 <p>By submitting this on the HTCF as an “array job”, you have the potential of running each of these commands in parallel (all at the same time) rather than sequentially (one at a time).  The best case scenario could be that all 2000 commands finish in the time it takes 1 command to run!  More information regarding SLURM job arrays is available at <a href="http://slurm.schedmd.com/job_array.html">http://slurm.schedmd.com/job_array.html</a>.</p>
 <hr />
@@ -453,11 +457,11 @@ spades.py --careful --pe1-1 samp2000-r1.fastq --pe1-2 samp2000-r2.fastq -o assem
 
 <span class="c1">#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run</span>
 
-module load spades
+module<span class="w"> </span>load<span class="w"> </span>spades
 
-<span class="nv">ID</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>  <span class="c1"># Number between 1 and 2000 </span>
+<span class="nv">ID</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span><span class="w">  </span><span class="c1"># Number between 1 and 2000 </span>
 
-spades.py --careful --pe1-1 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r1.fastq --pe1-2 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r2.fastq -o assembly_<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>
+spades.py<span class="w"> </span>--careful<span class="w"> </span>--pe1-1<span class="w"> </span>samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r1.fastq<span class="w"> </span>--pe1-2<span class="w"> </span>samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r2.fastq<span class="w"> </span>-o<span class="w"> </span>assembly_<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>
 </code></pre></div>
 <h5 id="run-a-command-or-set-of-commands-on-file-names-that-arent-numbered-sequentially">Run a command or set of commands on file names that aren’t numbered sequentially</h5>
 <hr />
@@ -507,11 +511,11 @@ Step 2: Create an sbatch file, grabbing the “ID” in line $SLURM_ARRAY_TASK_I
 
 <span class="c1">#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run</span>
 
-module load spades
+module<span class="w"> </span>load<span class="w"> </span>spades
 
-<span class="nv">ID</span><span class="o">=</span><span class="k">$(</span> sed -n <span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>p lookup.txt <span class="k">)</span>
+<span class="nv">ID</span><span class="o">=</span><span class="k">$(</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>p<span class="w"> </span>lookup.txt<span class="w"> </span><span class="k">)</span>
 
-spades.py --careful --pe1-1 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r1.fastq --pe1-2 samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r2.fastq -o assembly_<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>
+spades.py<span class="w"> </span>--careful<span class="w"> </span>--pe1-1<span class="w"> </span>samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r1.fastq<span class="w"> </span>--pe1-2<span class="w"> </span>samp<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>-r2.fastq<span class="w"> </span>-o<span class="w"> </span>assembly_<span class="si">${</span><span class="nv">ID</span><span class="si">}</span>
 </code></pre></div></p>
 <h5 id="run-a-command-or-set-of-commands-using-a-complex-lookup-file">Run a command or set of commands using a complex lookup file</h5>
 <hr />
@@ -530,11 +534,11 @@ Step 3: Create an sbatch file, each job is created using the template with infor
 
 <span class="c1">#SBATCH --array=1-2000%20   # This will create 2000 tasks numbered 1-2000 and allow 20 concurrent jobs to run</span>
 
-module load seqtk
+module<span class="w"> </span>load<span class="w"> </span>seqtk
 
-<span class="nb">read</span> part1 part2 part3 part4 &lt; &lt;<span class="o">(</span> sed -n <span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>p lookup.txt <span class="o">)</span>
+<span class="nb">read</span><span class="w"> </span>part1<span class="w"> </span>part2<span class="w"> </span>part3<span class="w"> </span>part4<span class="w"> </span>&lt;<span class="w"> </span>&lt;<span class="o">(</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span>p<span class="w"> </span>lookup.txt<span class="w"> </span><span class="o">)</span>
 
-seqtk sample -s<span class="si">${</span><span class="nv">part1</span><span class="si">}</span> /path/to/file.<span class="si">${</span><span class="nv">part2</span><span class="si">}</span>.fastq <span class="si">${</span><span class="nv">part3</span><span class="si">}</span> &gt; /path/to/file.<span class="si">${</span><span class="nv">part2</span><span class="si">}</span>_<span class="si">${</span><span class="nv">part4</span><span class="si">}</span>.fastq
+seqtk<span class="w"> </span>sample<span class="w"> </span>-s<span class="si">${</span><span class="nv">part1</span><span class="si">}</span><span class="w"> </span>/path/to/file.<span class="si">${</span><span class="nv">part2</span><span class="si">}</span>.fastq<span class="w"> </span><span class="si">${</span><span class="nv">part3</span><span class="si">}</span><span class="w"> </span>&gt;<span class="w"> </span>/path/to/file.<span class="si">${</span><span class="nv">part2</span><span class="si">}</span>_<span class="si">${</span><span class="nv">part4</span><span class="si">}</span>.fastq
 </code></pre></div></p>
 
 
@@ -573,12 +577,11 @@ seqtk sample -s<span class="si">${</span><span class="nv">part1</span><span clas
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "toc.integrate"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "toc.integrate"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
       
-    
     
   </body>
 </html>

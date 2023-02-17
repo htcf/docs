@@ -20,6 +20,8 @@ The login server, `login.htcf.wustl.edu` is accessible via ssh.
 
 Before using the HTCF, it's important to read through and understand:
 
+1. The difference between [login, interactive and compute](#jobs) nodes
+
 1. The [HTCF Storage](../storage/index.md)
 
 2. Using [software](../software.md) on the HTCF
@@ -48,11 +50,20 @@ High Throughput Storage is a distrubuted file system able to handle tens of GBs/
 
 ## Jobs
 
-### Resources
+When you first log in to HTCF, you are interacting with a part of the cluster 
+which is specifically designated for users to log in, log off, submit jobs and 
+move data between storage spaces (eg `scratch` and `lts`).  
 
-The number of CPUs and MBs of RAM per node can be found using the Slurm sinfo command:
+!!! Note
+    Do not do any analysis or computation on the login node
 
-    $ sinfo -N -p general -o '%n %c %m'
+If you need to prototype or do some interactive work (eg, exploratory data analysis) 
+on HTCF, then you should use an [interative session](#Interactive)  
+
+The ultimate goal this type of interactive work is to automate tasks such that 
+they may be submitted to the SLURM scheduler and run on the `compute` nodes. 
+The majority of the compute resources on HTCF are these general compute nodes. 
+Scheduling on these nodes is achieved using the command `sbatch`.
 
 ### Interactive 
 
@@ -158,3 +169,10 @@ $ srun --ntasks-per-node=1 --jobid=12345 nvidia-smi
 |    0                12043      C   guppy_basecaller                 4753MiB |
 +-----------------------------------------------------------------------------+
 ~~~~
+
+### Resources
+
+The number of CPUs and MBs of RAM per node can be found using the Slurm sinfo command:
+
+    $ sinfo -N -p general -o '%n %c %m'
+    

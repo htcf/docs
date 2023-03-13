@@ -119,6 +119,7 @@ View the job in the queue:
 ### GPUs
 
 The HTCF currently has a small number of GPUs, currently 6 NVIDIA A100 80GB and 2 V100 32GB.
+The default time limit of a GPU job is set to 8 hours.
 
 A GPU is accessible using the following slurm parameters:
 

@@ -69,4 +69,5 @@ nav:
   - 'software/jupyter/index.md'
   - Examples:
     - 'software/examples/r_mpi/index.md'
-# - R+MPI: 'software/examples/r_with_mpi.md'
+- Talks:
+  - HTCF Basics: 'talks/2023-03-27 - HTCF Basics.pdf'

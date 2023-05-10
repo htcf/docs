@@ -16,9 +16,9 @@ HDS is kept on fault-tolerant storage and frequent snapshops are taken to preven
 
 By default, home directories will not be readable or writeable by other users of HTCF.  Feel free to change this default, if desired.
 
-To check home directory usage:
+`/home/usage.txt` contains home directory usage:
 
-    $ du -sh $HOME
+    $ grep $USER /home/usage.txt
 
 ### LTS
 

@@ -36,7 +36,7 @@ Rstudio Server can be run as an interactive job and accessed via an SSH tunnel.
 
 1. A custom [Spack](../../software.md#spack) package needs to be created: `spack create rstudio-server`
 
-2. An example [rstudio-server package.py (tested against Spack-0.18.0) can be found here](package.py).
+2. An example [rstudio-server package.py (tested against Spack-0.18.0) can be found here](0.18.0/package.py). ([Older Spack-0.17.2 version here](0.17.2/package.py))
 
 !!!Note
 

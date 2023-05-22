@@ -262,47 +262,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-data-storage" class="md-nav__link">
-    Data &amp; Data Storage
-  </a>
-  
-    <nav class="md-nav" aria-label="Data &amp; Data Storage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#home-directories" class="md-nav__link">
-    Home Directories
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#long-term-storage" class="md-nav__link">
-    Long Term Storage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#high-throughput-storage" class="md-nav__link">
-    High Throughput Storage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gui-software" class="md-nav__link">
-    GUI Software
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#jobs" class="md-nav__link">
     Jobs
   </a>
@@ -622,17 +581,10 @@
 <h1 id="your-htcf-account">Your HTCF Account</h1>
 <h2 id="account-creation">Account Creation</h2>
 <p>To request a user account on the HTCF, please send an email containing the WUSTLKey username and department ID (Workday 'CC' number), for billing purposes.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As stated in the <a href="../../policies/#account-usage">WUSTL and HTCF Policies</a>, <strong>accounts and passwords cannot be shared. All users must have their own account.</strong></p>
-</div>
 <h2 id="logging-in">Logging In</h2>
-<p><strong>WUSTLKey credentials</strong> are used for authentication (<a href="http://wustlkey.wustl.edu">http://wustlkey.wustl.edu/</a>)</p>
+<p><strong><a href="http://wustlkey.wustl.edu">WUSTLKey credentials</a></strong> are used for authentication.</p>
 <p>The login server, <code>login.htcf.wustl.edu</code> is accessible via ssh.  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p>As stated in the <a href="../../policies/#account-usage">WUSTL and HTCF Policies</a>, <strong>accounts and passwords cannot be shared. All users must have their own account.</strong></p>
-</div>
 <h2 id="first-things-first">First things first...</h2>
 <p>Before using the HTCF, it's important to read through and understand:</p>
 <ol>
@@ -643,21 +595,6 @@
 <p>Using <a href="../../software/">software</a> on the HTCF</p>
 </li>
 </ol>
-<h2 id="data-data-storage">Data &amp; Data Storage</h2>
-<h3 id="home-directories">Home Directories</h3>
-<p>Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.<br />
-<a href="../../storage/#hds">More info...</a></p>
-<h3 id="long-term-storage">Long Term Storage</h3>
-<p>LTS is used to store raw and "finished" project data.  The LTS directories are not available on the cluster nodes.  It is kept on fault-tolerant storage with snapshops.<br />
-<a href="../../storage/#lts">More info...</a></p>
-<h3 id="high-throughput-storage">High Throughput Storage</h3>
-<p>High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.</p>
-<p><a href="../../storage/#hts">More info...</a></p>
-<h3 id="gui-software">GUI Software</h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As the HTCF is primarily a batch queuing system for high-throughput processing of data, use of GUI applications are not directly supported.  While use of GUI applications is possible using X forwarding, this can sometimes require significant desktop preparation and configuration which is beyond the scope of support.</p>
-</div>
 <h2 id="jobs">Jobs</h2>
 <h3 id="resources">Resources</h3>
 <p>The number of CPUs and MBs of RAM per node can be found using the Slurm sinfo command:</p>

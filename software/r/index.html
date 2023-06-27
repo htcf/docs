@@ -15,7 +15,7 @@
         <link rel="next" href="../rstudio/">
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -585,10 +585,11 @@ Rscript ........
 <p>Unfortunately, trial and error may be required when installing R packages.</p>
 <h3 id="environment-variables">Environment variables</h3>
 <p>It seems some R packages such as <code>Rsamtools</code> and <code>Rhtslib</code> require extra environment variables in order to find their dependencies during install.</p>
-<p>To do this, prior to installation, the variables <code>$LIBRARY_PATH</code> and <code>$C_INCLUDE_PATH</code> can be set as follows:</p>
-<div class="highlight"><pre><span></span><code>export LIBRARY_PATH=$_LIBRARY_PATH
-export C_INCLUDE_PATH=$_C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=$_CPLUS_INCLUDE_PATH
+<p>To do this, prior to installation, one or more of the following variables might need to be set:</p>
+<div class="highlight"><pre><span></span><code>export LIBRARY_PATH=$SPACK_LIBRARY_PATH
+export C_INCLUDE_PATH=$SPACK_C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$SPACK_CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$SPACK_LD_LIBRARY_PATH
 </code></pre></div>
 <p>This should help install some R packages.</p>
 <div class="admonition warning">
@@ -641,7 +642,7 @@ export CPLUS_INCLUDE_PATH=$_CPLUS_INCLUDE_PATH
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "toc.integrate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
     
   </body>

@@ -49,7 +49,7 @@ see [the official spack documentation](https://spack.readthedocs.io/en/latest/ba
 
     For example, after [getting an interactive session](using/getstarted.md#interactive):
 
-        spack install -j ${SLURM_CPUS_ON_HOST} ..... 
+        spack install -j ${SLURM_CPUS_ON_NODE} ..... 
 
 !!!Note
     Some software can take an extremely long time to install (such as qt and llvm).  In these cases, an sbatch job will be needed rather than an interactive job:
@@ -57,7 +57,7 @@ see [the official spack documentation](https://spack.readthedocs.io/en/latest/ba
         #!/bin/bash
         #SBATCH -c <num>
         #SBATCH --mem-per-cpu=<num>G
-        spack install -j ${SLURM_CPUS_ON_HOST} ....
+        spack install -j ${SLURM_CPUS_ON_NODE} ....
         
 
 ### Using the software

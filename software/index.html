@@ -15,7 +15,7 @@
         <link rel="next" href="r/">
       
       <link rel="icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
@@ -629,7 +629,7 @@
 <p class="admonition-title">Note</p>
 <p>When installing within a slurm job, be sure to tell Spack how many CPUs are available.</p>
 <p>For example, after <a href="../using/getstarted/#interactive">getting an interactive session</a>:</p>
-<div class="highlight"><pre><span></span><code>spack install -j ${SLURM_CPUS_ON_HOST} .....
+<div class="highlight"><pre><span></span><code>spack install -j ${SLURM_CPUS_ON_NODE} .....
 </code></pre></div>
 </div>
 <div class="admonition note">
@@ -638,7 +638,7 @@
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 #SBATCH -c &lt;num&gt;
 #SBATCH --mem-per-cpu=&lt;num&gt;G
-spack install -j ${SLURM_CPUS_ON_HOST} ....
+spack install -j ${SLURM_CPUS_ON_NODE} ....
 </code></pre></div>
 </div>
 <h3 id="using-the-software">Using the software</h3>

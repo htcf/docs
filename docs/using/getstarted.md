@@ -4,17 +4,13 @@
 
 To request a user account on the HTCF, please send an email containing the WUSTLKey username and department ID (Workday 'CC' number), for billing purposes.
 
-!!! Note
-    As stated in the [WUSTL and HTCF Policies](../policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
-
 ## Logging In
 
-**WUSTLKey credentials** are used for authentication ([http://wustlkey.wustl.edu/](http://wustlkey.wustl.edu))
+**[WUSTLKey credentials](http://wustlkey.wustl.edu)** are used for authentication.
 
 The login server, `login.htcf.wustl.edu` is accessible via ssh.  
 
-!!! Note
-    As stated in the [WUSTL and HTCF Policies](../policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
+As stated in the [WUSTL and HTCF Policies](../policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
 
 ## First things first...
 
@@ -23,28 +19,6 @@ Before using the HTCF, it's important to read through and understand:
 1. The [HTCF Storage](../storage/index.md)
 
 2. Using [software](../software.md) on the HTCF
-
-## Data & Data Storage
-
-### Home Directories
-Home directories are a small, fixed amount of storage per account.  They are kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.  
-[More info...](../storage/index.md#hds)
-
-### Long Term Storage
-LTS is used to store raw and "finished" project data.  The LTS directories are not available on the cluster nodes.  It is kept on fault-tolerant storage with snapshops.  
-[More info...](../storage/index.md#lts)
-
-### High Throughput Storage
-High Throughput Storage is a distrubuted file system able to handle tens of GBs/sec of total throughput.
-
-[More info...](../storage/index.md#hts)
-
-
-### GUI Software
-
-!!! Note
-    As the HTCF is primarily a batch queuing system for high-throughput processing of data, use of GUI applications are not directly supported.  While use of GUI applications is possible using X forwarding, this can sometimes require significant desktop preparation and configuration which is beyond the scope of support.
-
 
 ## Jobs
 

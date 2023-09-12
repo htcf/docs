@@ -54,12 +54,11 @@ Unfortunately, trial and error may be required when installing R packages.
 
 It seems some R packages such as `Rsamtools` and `Rhtslib` require extra environment variables in order to find their dependencies during install.
 
-To do this, prior to installation, one or more of the following variables might need to be set:
+To do this, prior to installation, the variables `$LIBRARY_PATH` and `$C_INCLUDE_PATH` can be set as follows:
 
-    export LIBRARY_PATH=$SPACK_LIBRARY_PATH
-    export C_INCLUDE_PATH=$SPACK_C_INCLUDE_PATH
-    export CPLUS_INCLUDE_PATH=$SPACK_CPLUS_INCLUDE_PATH
-    export LD_LIBRARY_PATH=$SPACK_LD_LIBRARY_PATH
+    export LIBRARY_PATH=$_LIBRARY_PATH
+    export C_INCLUDE_PATH=$_C_INCLUDE_PATH
+    export CPLUS_INCLUDE_PATH=$_CPLUS_INCLUDE_PATH
 
 This should help install some R packages.
 

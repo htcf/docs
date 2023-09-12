@@ -677,11 +677,10 @@ Rscript ........
 <p>Unfortunately, trial and error may be required when installing R packages.</p>
 <h3 id="environment-variables">Environment variables</h3>
 <p>It seems some R packages such as <code>Rsamtools</code> and <code>Rhtslib</code> require extra environment variables in order to find their dependencies during install.</p>
-<p>To do this, prior to installation, one or more of the following variables might need to be set:</p>
-<div class="highlight"><pre><span></span><code>export LIBRARY_PATH=$SPACK_LIBRARY_PATH
-export C_INCLUDE_PATH=$SPACK_C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=$SPACK_CPLUS_INCLUDE_PATH
-export LD_LIBRARY_PATH=$SPACK_LD_LIBRARY_PATH
+<p>To do this, prior to installation, the variables <code>$LIBRARY_PATH</code> and <code>$C_INCLUDE_PATH</code> can be set as follows:</p>
+<div class="highlight"><pre><span></span><code>export LIBRARY_PATH=$_LIBRARY_PATH
+export C_INCLUDE_PATH=$_C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$_CPLUS_INCLUDE_PATH
 </code></pre></div>
 <p>This should help install some R packages.</p>
 <div class="admonition warning">

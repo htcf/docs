@@ -721,7 +721,7 @@
 <p class="admonition-title">Note</p>
 <p>When installing within a slurm job, be sure to tell Spack how many CPUs are available.</p>
 <p>For example, after <a href="../using/getstarted/#interactive">getting an interactive session</a>:</p>
-<div class="highlight"><pre><span></span><code>spack install -j ${SLURM_CPUS_ON_NODE} .....
+<div class="highlight"><pre><span></span><code>spack install -j ${SLURM_CPUS_PER_TASK} .....
 </code></pre></div>
 </div>
 <div class="admonition note">
@@ -730,7 +730,7 @@
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 #SBATCH -c &lt;num&gt;
 #SBATCH --mem-per-cpu=&lt;num&gt;G
-spack install -j ${SLURM_CPUS_ON_NODE} ....
+spack install -j ${SLURM_CPUS_PER_TASK} ....
 </code></pre></div>
 </div>
 <h3 id="using-the-software">Using the software</h3>

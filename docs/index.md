@@ -6,9 +6,11 @@ The Center for Genome Sciences and Systems Biology is the proud home of The High
 An HTCF description for grant writing purposes
 
 
-> The CGSSB provides a computational cluster for high-throughput bioinformatics. The cluster consists of around 2000 processors and over 30TB of RAM.  It supports the Center's Illumina sequencing platforms and real time sequencing analysis. Long term data storage is handled by our 40 GbE connected storage arrays. These arrays are currently over 4 petabytes in size. All user data is backed up and stored daily, weekly and monthly. A disaster recovery copy of select data is stored offsite.
->
-> The HTCF also includes a 750TB high-speed distributed file system. This, coupled with its 100Gb network backbone, delivering 10Gb of bandwidth to cluster nodes, the HTCF can provide exceptionally high-speed transfer of large amounts of data.
+> The Center of Genome Sciences and Systems Biology offers access to its advanced High-Throughput Computing Facility (HTCF), a computational cluster tailored for bioinformatics research, catering to the computational demands of the Center's sequencing platforms and users.
+> 
+> The HTCF cluster comprises over 2500 processors and a 40TB RAM capacity, optimized to handle high-throughput bioinformatics workflows. These resources support real-time sequencing analysis and ensure efficient execution of computational tasks.
+> 
+> Cluster storage is accessed via dozens of 25 GbE-connected storage arrays, supported by a 100GbE network backbone, and totaling over 7 petabytes in capacity. Comprehensive backup procedures, including daily and monthly snapshots, are in place to safeguard research data. Additionally, disaster recovery copies of long-term data are securely stored offsite.  A 750TB distributed scratch file system is also available.
 
 
 --8<-- "includes/abbreviations.md"

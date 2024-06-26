@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -144,7 +144,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -730,16 +730,16 @@
 <h3 id="tutorial">Tutorial</h3>
 <p>See <a href="https://spack-tutorial.readthedocs.io/en/latest/">the official spack tutorial</a></p>
 <h3 id="initialization">Initialization</h3>
-<p>To create a lab instance of the spack package manager:</p>
+<p>To create a lab (or personal) instance of the spack package manager:</p>
 <ol>
 <li>
-<p>Download and untar <a href="https://github.com/spack/spack/releases">a spack release</a> into <code>/ref/&lt;lab_name&gt;/software</code></p>
+<p>Follow the installation instructions in the <a href="https://spack.readthedocs.io/en/latest/">spack documentation</a>, placing spack in a directory under <code>/ref/&lt;lab_name&gt;/software</code></p>
 </li>
 <li>
-<p>Rename (or make a symlink from) <code>/ref/&lt;lab_name&gt;/software/spack-VERSION</code> to <code>/ref/&lt;lab_name&gt;/software/spack</code>.</p>
+<p>As a convenience, if the path <code>/ref/&lt;lab_name&gt;/software/spack/bin</code> exists, it will automatically be added to <code>$PATH</code> on login.   You may wish to make a symlink from <code>/ref/&lt;lab_name&gt;/software/&lt;my_spack_dir_name&gt;</code> to <code>/ref/&lt;lab_name&gt;/software/spack</code>, to take advantage of the automatic <code>$PATH</code> addition.  Alternatively, feel free to place spack instances in other locations (and add those instance <code>bin/</code> paths to your <code>$PATH</code> in <code>$HOME/.bashrc</code>).  </p>
 </li>
 <li>
-<p>Logout and log back in.  This will ensure the spack command is available in the PATH.</p>
+<p>After installing spack (and updating your <code>.bashrc</code> if necessary), logout and log back in.  This will ensure the spack command is available in the <code>$PATH</code>.</p>
 </li>
 </ol>
 <h3 id="installing-software">Installing Software</h3>
@@ -900,7 +900,7 @@ $ eval $( spack load --sh samtools )
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "toc.integrate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
     
   </body>

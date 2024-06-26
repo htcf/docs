@@ -23,13 +23,13 @@ See [the official spack tutorial](https://spack-tutorial.readthedocs.io/en/lates
 
 ### Initialization
 
-To create a lab instance of the spack package manager:
+To create a lab (or personal) instance of the spack package manager:
 
-1.  Download and untar [a spack release](https://github.com/spack/spack/releases) into `/ref/<lab_name>/software`
+1.  Follow the installation instructions in the [spack documentation](https://spack.readthedocs.io/en/latest/), placing spack in a directory under `/ref/<lab_name>/software`
 
-2.  Rename (or make a symlink from) `/ref/<lab_name>/software/spack-VERSION` to `/ref/<lab_name>/software/spack`.
+2.  As a convenience, if the path `/ref/<lab_name>/software/spack/bin` exists, it will automatically be added to `$PATH` on login.   You may wish to make a symlink from `/ref/<lab_name>/software/<my_spack_dir_name>` to `/ref/<lab_name>/software/spack`, to take advantage of the automatic `$PATH` addition.  Alternatively, feel free to place spack instances in other locations (and add those instance `bin/` paths to your `$PATH` in `$HOME/.bashrc`).  
 
-3.  Logout and log back in.  This will ensure the spack command is available in the PATH.
+3.  After installing spack (and updating your `.bashrc` if necessary), logout and log back in.  This will ensure the spack command is available in the `$PATH`.
 
 
 ### Installing Software

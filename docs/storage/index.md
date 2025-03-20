@@ -5,7 +5,7 @@ The HTCF provides five types of storage:
 
 ### HDS
 
-Home Directory Storage (HDS) can be used to store scripts, development tools, etc.  Home directories are located in `/home/<WUSTLKEY_ID>` and are available on all nodes. Home directory space is limited to 20GB.
+Home Directory Storage (HDS) can be used to store scripts, development tools, etc.  Home directories are located in `/home/<WASHU_ID>` and are available on all nodes. Home directory space is limited to 20GB.
 
 HDS is kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.
 
@@ -158,7 +158,7 @@ Globus can be used to share data from LTS, /scratch, or Home directories.  The G
 !!!Note
     In order to share a directory, it (and all its parent directories) need to be readable by all users.
 
-For long term hosting of publicly accessible data, please contact WUSTL IT.
+For long term hosting of publicly accessible data, please contact WashU IT.
 
 ### Copying Files Using Rsync
 

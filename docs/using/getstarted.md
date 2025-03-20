@@ -2,15 +2,15 @@
 
 ## Account Creation
 
-To request a user account on the HTCF, please send an email containing the WUSTLKey username and department ID (Workday 'CC' number), for billing purposes.
+To request a user account on the HTCF, please send an email containing the WashU Key username and department ID (Workday 'CC' number), for billing purposes.
 
 ## Logging In
 
-**[WUSTLKey credentials](http://wustlkey.wustl.edu)** are used for authentication.
+**[WashU Key credentials](http://wustlkey.wustl.edu)** are used for authentication.
 
 The login server, `login.htcf.wustl.edu` is accessible via ssh.  
 
-As stated in the [WUSTL and HTCF Policies](../policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
+As stated in the [WashU and HTCF Policies](../policies.md#account-usage), **accounts and passwords cannot be shared. All users must have their own account.**
 
 ## First things first...
 

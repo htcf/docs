@@ -22,7 +22,7 @@ By default, home directories will not be readable or writeable by other users of
 
 ### LTS
 
-Long Term Storage (LTS) is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes. 
+Long Term Storage (LTS) is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest monthly snapshots are kept offsite for disaster recovery purposes. 
 
 To check LTS usage:
 

@@ -85,7 +85,7 @@ To integrate LTOS access into software, there are many [s3 API libraries](https:
 
 ### REF
 
-`/ref` is storage space for software and reference databases (such as NCBI databases or software-provided reference sequences).  Each lab has an initial 1TB of reference space, and this space can be expanded at LTS prices.
+`/ref` is storage space for software and reference databases (such as NCBI databases or software-provided reference sequences).
 
 !!!Note
     `/ref` is not currently backed up, therefore **Any data in `/ref` that cannot be recreated should be copied to long term storage (LTS or LTOS) for safe-keeping.**

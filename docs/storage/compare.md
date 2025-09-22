@@ -108,6 +108,6 @@ max-width: 100%;
 | Access from | All HTCF Nodes | All HTCF Nodes | Login Node Only | All HTCF Nodes | All HTCF Nodes |
 | Access Type | Standard Filesystem | Standard Filesystem | Standard Filesystem <br> `/lts/<lab>` | HTTP interface  compatible with (but not  using) Amazon S3 API | Standard Filesystem <br> `/ref/<lab>/data` <br> `/ref/<lab>/software` |
 | Est. Access Speed | Slow | 10+ GB/s (aggregate) | 10+ GB/s (aggregate) | 1+ GB/s (aggregate) | 10+ GB/s (aggregate) |
-| Backup Policy | Onsite  daily/weekly/monthly  snapshots as resources  allow  Offsite backup daily | NO BACKUPS | Onsite daily/weekly/monthly snapshots as resources allow.  Offsite backup daily. | mirrored offsite. User customizable:  versioning of objects, schedule removal of old objects | NO BACKUPS |
+| Backup Policy | Onsite  daily/weekly/monthly  snapshots as resources  allow  Offsite backup monthly | NO BACKUPS | Onsite daily/weekly/monthly snapshots as resources allow.  Offsite backup monthly. | mirrored offsite. User customizable:  versioning of objects, schedule removal of old objects | NO BACKUPS |
 | Cleaning Policy | - | [See the scratch data cleaning policy](../policies.md#scratch-data-cleaning) | - | - | - |
 

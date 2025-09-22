@@ -39,6 +39,8 @@ plugins:
 extra:
   lts:
     price: 11.61
+  ref:
+    price: 3.87
 
 nav:
 - About: 'index.md'

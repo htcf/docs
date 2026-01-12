@@ -34,7 +34,7 @@ Rstudio Server can be run as an interactive job and accessed via an SSH tunnel.
 
     in the Slurm parameters. (*More than 1 CPU will make the building faster but could cause longer waiting in the queue.*)
 
-1. A custom [Spack](../../software.md#spack) package needs to be created: `spack create rstudio-server`
+1. A custom [Spack](../index.md#spack) package needs to be created: `spack create rstudio-server`
 
 2. An example [rstudio-server package.py (tested against Spack-0.18.0) can be found here](0.18.0/package.py). ([Older Spack-0.17.2 version here](0.17.2/package.py))
 

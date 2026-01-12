@@ -2,12 +2,11 @@
 
 The HTCF provides five types of storage:
 
-
 ### HDS
 
 Home Directory Storage (HDS) can be used to store scripts, development tools, etc.  Home directories are located in `/home/<WASHU_ID>` and are available on all nodes. Home directory space is limited to 20GB.
 
-HDS is kept on fault-tolerant storage and frequent snapshops are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.
+HDS is kept on fault-tolerant storage and frequent snapshots are taken to prevent accidental data loss.  Copies of the latest daily snapshots are kept offsite for disaster recovery purposes.
 
 !!!Note
     Home directory space is not a high-speed resource like /scratch space.
@@ -16,25 +15,28 @@ HDS is kept on fault-tolerant storage and frequent snapshops are taken to preven
 
 By default, home directories will not be readable or writeable by other users of HTCF.  Feel free to change this default, if desired.
 
-`/home/usage.txt` contains home directory usage:
+To check home directory usage:
 
-    $ grep $USER /home/usage.txt
+    $ storage-info
 
 ### LTS
 
-Long Term Storage (LTS) is lab project space to store raw sequencing and completed data, the directories are not available on nodes for computational use.  It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshops.  Copies of the latest monthly snapshots are kept offsite for disaster recovery purposes. 
+Long Term Storage (LTS) is lab project space to store raw sequencing and completed data. It is available in terabyte increments billed monthly.  It is kept on fault-tolerant storage with snapshots.  Copies of the latest monthly snapshots are kept offsite for disaster recovery purposes.
 
-To check LTS usage:
+!!! note "LTS Access from Compute Nodes"
+    LTS directories are available **read-only** on compute nodes. Jobs can read input data directly from LTS. For jobs that write intermediate or temporary files, use `/scratch` for better performance. Write final results back to LTS from the login node after job completion.
 
-    $ df -h /lts/<lab_name>/<bucket_name>
+To check storage usage (home directory, scratch, and LTS):
+
+    $ storage-info
 
 ### LTOS - Long Term Object Storage
 
 LTOS is an architecture that manages data as [objects](https://en.wikipedia.org/wiki/Object_storage), as opposed to traditional LTS which uses file systems and block storage.
 
-LTOS is located onsite and **is not** [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3), but is [a subset](https://docs.ceph.com/en/latest/radosgw/s3/), and works in a similar way as Amazon S3. 
+LTOS is located onsite and **is not** [Amazon S3](https://en.wikipedia.org/wiki/Amazon_S3), but is [a subset](https://docs.ceph.com/en/latest/radosgw/s3/), and works in a similar way as Amazon S3.
 
-Unlike LTS, which is only accessible from the login server, LTOS is accessible externally and from all HTCF nodes.
+LTOS is accessible externally and from all HTCF nodes with read/write access.
 
 #### Purpose
 
@@ -51,9 +53,9 @@ Good Candidates for LTOS:
 When purchasing LTOS, please indicate whether the storage needs to be backed up offsite or only one copy is needed onsite.
 The per-TB cost of LTOS with an offsite copy is the same as LTS.  If offsite storage is not needed, the cost is about 1/3.
 
-An "access key" and "secret key" will be assigned and can be used to connect to the storage.
-Buckets can be created and data can be transferred in/out using a command line s3 transfer tool. 
-The [s3cmd](https://s3tools.org/s3cmd) tool is recommended. It's available via spack as "py-s3cmd".
+To request LTOS access, post in **#general** on Slack with the lab name and storage requirements. An "access key" and "secret key" will be provided and can be used to connect to the storage.
+Buckets can be created and data can be transferred in/out using a command line s3 transfer tool.
+The [s3cmd](https://s3tools.org/s3cmd) tool is one option. It's available via spack as "py-s3cmd".
 
 After s3cmd is installed, a config file needs to be created.
 
@@ -97,53 +99,50 @@ To integrate LTOS access into software, there are many [s3 API libraries](https:
     └── software
 ```
 
+!!! tip "Path Examples"
+    Throughout this documentation, paths like `/scratch/mylab/$USER/` and `/lts/mylab/` are examples. Replace `mylab` with your actual lab directory name.
+
 The `data` directory is well suited for modestly sized reference data such as [NCBI blast databases](ftp://ftp.ncbi.nlm.nih.gov/blast/db/).
-Larger datasets (> 500GB) are probably better suited for [Long Term Object Storage](#ltos)
+Larger datasets (> 500GB) are probably better suited for [Long Term Object Storage](#ltos-long-term-object-storage)
 
-The `software` directory is suited for software installation using tools such as [spack](../software.md#spack)
+The `software` directory is suited for software installation using tools such as [spack](../software/index.md#spack)
 
+### Scratch (High Throughput Storage)
 
-### HTS
-
-High Throughput Storage (`/scratch`) is a distrubuted file system able to handle tens of GBs/sec of total throughput.  This storage is *temporary scratch space* and is **not** backed up.  Once data is removed from /scratch, it cannot be recovered.
+Scratch storage (`/scratch`) is a distributed file system able to handle tens of GBs/sec of total throughput. This storage is *temporary scratch space* and is **not** backed up. Once data is removed from /scratch, it cannot be recovered.
 
 *Data stored in /scratch is subject to the [Scratch Data Cleaning Policy](../policies.md#scratch-data-cleaning).*
 
-Jobs utilize this space for inputs and outputs to provide the best performance possible.  Running jobs that read/write from the home directory will cause slowness and login issues for all users.
+Jobs utilize this space for inputs and outputs to provide the best performance possible. Running jobs that read/write from the home directory will cause slowness and login issues for all users.
 
 !!!Note
     Users will be asked to clean up older files on /scratch if it is needed to improve system performance.
 
-The best use of the HTS is to use a workflow similar to the following:
+The best use of scratch storage is to use a workflow similar to the following:
 
-1.  Copy starting (raw) data from LTS to HTS.
-2.  Submit jobs to the cluster that process the data, creating intermediate and/or finished data.
+1.  Jobs can read input data directly from LTS (read-only on compute nodes). For data that will be modified or when high-performance I/O is needed, copy the data from LTS to scratch first.
+2.  Submit jobs to the cluster that process the data, creating intermediate and/or finished data in scratch.
 3.  Copy the finished data (and job files used to create that data) over to LTS.
-4.  Remove all working data from HTS
+4.  Remove all working data from scratch
 
 Results that are generated on this storage need to be promptly copied to LTS. 
 
 #### Scratch Quotas
 
-There is a quota of 2TB per user in /scratch to prevent the filesystem from filling up.  At >85% /scratch can become very slow.  To check the amount of space being used, use the following command:
+There is a quota of 2TB per user in /scratch to prevent the filesystem from filling up.  At >85% /scratch can become very slow.  To check the amount of space being used:
 
-    $ beegfs-ctl --getquota --uid $USER
-
-or check group quotas with:
-
-    $ beegfs-ctl --getquota --gid GROUPNAME
+    $ storage-info
 
 #### Quota Increase Requests
 
 !!!Note
     A quota increase is not guaranteed.  If excess capacity is not available, a quota increase cannot be granted.
 
-If excess capacity is available.  A temporary increase in the scratch quota can be requested.  To request more scratch space, email following information:
+If excess capacity is available.  A temporary increase in the scratch quota can be requested.  To request more scratch space, post in **#general** on Slack with the following information:
 
 1. Reason for the increase
 2. Amount of additional space
 3. Duration additional space will be required
-
 
 #### Recommendations
 
@@ -162,9 +161,9 @@ For long term hosting of publicly accessible data, please contact WashU IT.
 
 ### Copying Files Using Rsync
 
-Using rsync to transfer to scratch and LTS is recommended.  Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes.  This will save a substantial amount of time if it is necessary to verify that all files have been successfully copied.
+rsync is one option for transferring to scratch and LTS. Rsync can resume failed copies, be re-run to ensure all of the data has been transferred, and will also transfer incremental changes. This will save a substantial amount of time if it is necessary to verify that all files have been successfully copied.
 
-When using this command, please note that the absense of a trailing slash means the directory, with a trailing slash means the contents of that directory.  Here are a few examples:
+When using this command, note that the absence of a trailing slash means the directory itself, while a trailing slash means the contents of that directory. Here are a few examples:
 
 ~~~~
 ~$ rsync -aHv --progress /directory/to/transfer /destination/directory/location/
@@ -182,3 +181,10 @@ The above example would put the contents of the directory named "transfer" into 
 ### Disk Quota Exceeded Errors
 
 If a `disk quota exceeded` error messages is encountered, please check each storage location to ensure there is enough disk space available.
+
+## See Also
+
+- [Data Workflow Tutorial](../tutorials/data-workflow.md) - Hands-on guide to moving data between storage systems
+- [Storage Comparison](comparison.md) - Compare storage options side-by-side
+- [Data Management Best Practices](../best-practices/data-management.md) - Tips for organizing and managing data
+- [Storage Errors Troubleshooting](../troubleshooting/storage-errors.md) - Common storage issues and solutions

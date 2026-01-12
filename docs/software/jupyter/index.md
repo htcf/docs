@@ -7,14 +7,14 @@ Jupyter Lab can be installed via Spack:
 Example sbatch script:
 
 ```
-#!/bin/bash
+# !/bin/bash
 
 # ------ SLURM Parameters ------
 
-# rstudio-server is interactive.  Use the interactive partition
+# jupyter-lab is interactive.  Use the interactive partition
 # Add cpu or memory slurm parameters as needed
 
-#SBATCH -p interactive
+# SBATCH -p interactive
 
 # ------ Make sure it's run as a job ------
 

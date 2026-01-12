@@ -15,8 +15,6 @@ The steps needed to submit batch jobs are:
 2.  Create a "sbatch script".  This file sets the Slurm parameters and prepares the environment for the job script.
 3.  Launch the job using the "sbatch" command
 
-
-
 **salloc** - Obtains a job allocation.
     
     --cpu-per-task - Number of CPUs required per task
@@ -29,19 +27,35 @@ The steps needed to submit batch jobs are:
 
 **srun** - Obtains job allocation and executes an application.
 
-
 ### Partitions
-Partition    |  Max Memory | Duration    | Max CPUs in Queue |
-:----------- |  :----------: | :---------: | :---------------: |
-general        |      250GB    |  no limit   |         3004      |
-interactive  |      250GB      |   8 hours   |         3004      |
+
+| Partition | Time Limit | CPUs/Node | Memory/Node | GPUs | Nodes |
+|-----------|------------|-----------|-------------|------|-------|
+| general* | unlimited | 24+ | 245 GB+ | - | 91 |
+| interactive | 16 hours | 24+ | 245 GB+ | - | 99 |
+| gpu | unlimited | 24-32 | 350-750 GB | see below | 5 |
+
+*\* default partition*
+
+#### GPU Nodes
+
+| Memory | CPUs | GPUs | Count |
+|--------|------|------|-------|
+| 750 GB | 32 | 4x L40S | 1 |
+| 500 GB | 24 | 2x A100 | 3 |
+| 350 GB | 24 | 2x A100 + 2x V100 | 1 |
+
+To check current availability:
+```bash
+sinfo -N -p general
+sinfo -p gpu -o "%n %G %m %c"
+```
 
 ### Job Management
 
 #### squeue
 
 To view your job status in the queue
-
 
 #### scancel
 
@@ -60,17 +74,17 @@ sacct is the command to view all previously run job information.  You can get a 
 sacct -e
 ~~~~
 
-To view a past jobs maximum used memory and duration
+To view a past job's statistics
 ~~~~{.language-bash}
-sacct -j JOBID --format=JobID,JobName,MaxRSS,Elapsed
+sacct -j JOBID
 ~~~~
 
-Scontrol can be used to view detailed information about your running job including the job script that was submitted.  Please send the output of this command if your currently running job is having issues. 
+Scontrol can be used to view detailed information about a running job including the job script that was submitted.  Please send the output of this command if a currently running job is having issues. 
 ~~~~
 ~$ scontrol show jobid -dd 846115
 JobId=846115 JobName=sleep.sh
    UserId=ericmartin(1002) GroupId=ericmartin(1002)
-   Priority=3070 Nice=0 Account=htcfadmin QOS=normal
+   Priority=3070 Nice=0 Account=htcfadmin
    JobState=RUNNING Reason=None Dependency=(null)
    Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
    DerivedExitCode=0:0
@@ -94,12 +108,12 @@ JobId=846115 JobName=sleep.sh
    StdIn=/dev/null
    StdOut=/scratch/htcfadmin/eric/slurm-846115.out
    BatchScript=
-#!/bin/bash
+# !/bin/bash
 
-#SBATCH -n 2
-#SBATCH -N 1
+# SBATCH -n 2
+# SBATCH -N 1
 
-module load bowtie2
+eval $(spack load --sh bowtie2)
 
 sleep 100
 ~~~~

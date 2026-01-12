@@ -1,8 +1,8 @@
 # R
 
-It's best to install R using Spack, then [after setting up the R search path](#search-paths), install R packages using the R command line interface, following the packages' install instructions.
+Install R using Spack, then [after setting up the R search path](#search-paths), install R packages using the R command line interface, following the packages' install instructions.
 
-This is the best way to ensure the proper installation of the latest (or most appropriate) versions of the R libraries.
+This approach ensures the proper installation of the latest (or most appropriate) versions of the R libraries.
 
 ## Support
 
@@ -22,11 +22,11 @@ This is the best way to ensure the proper installation of the latest (or most ap
 !!!Warning
     ** A thorough understanding of R search paths is necessary for successful installation and use of R packages.**
 
-    It's best to store R packages in a shared location (such as `/ref/<lab>/software/...`) rather than `$HOME/R`.  R packages in `$HOME` aren't as easily shared with other lab members and can quickly fill up the space in `$HOME`.
+    Store R packages in a shared location (such as `/ref/<lab>/software/...`) rather than `$HOME/R`.  R packages in `$HOME` aren't as easily shared with other lab members and can quickly fill up the space in `$HOME`.
 
     **The shared location must exist (`mkdir <dir>`) prior to starting the R command line.**
 
-    Please read and understand [libPaths: Search Paths for Packages](https://rdrr.io/r/base/libPaths.html), **specifically R_LIBS_USER and R_LIBS_SITE**, before using R.  It may be best to include the R version in the path such as `/ref/<lab>/software/r_packages/%v`
+    Please read and understand [libPaths: Search Paths for Packages](https://rdrr.io/r/base/libPaths.html), **specifically R_LIBS_USER and R_LIBS_SITE**, before using R.  Consider including the R version in the path such as `/ref/<lab>/software/r_packages/%v`
 
 For example, to set up a shared directory of R (version 4.1.X) packages and install into it:
 
@@ -71,4 +71,4 @@ This should help install some R packages.
 !!!Warning
     Some have reported problems installing software from within rstudio.
 
-    It may be best to always install software from command-line R (from within an interactive job).
+    Install software from command-line R (from within an interactive job) to avoid these issues.

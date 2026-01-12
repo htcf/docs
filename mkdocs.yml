@@ -30,10 +30,11 @@ markdown_extensions:
   - footnotes
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
-  - macros
+  - macros:
+      verbose: false
   - search
   
 extra:
@@ -44,32 +45,60 @@ extra:
 
 nav:
 - About: 'index.md'
-- 'using/getstarted.md'
-#- Doing Work:
-#    - 'using.md'
-    #- Running Jobs: runningjobs.md
-    #- The Queue: using/queue.md
-    #- Using the HTCF: 'using/index.md'
-    #- Batch Jobs: 'using/batch.md'
-    #- Interactive Jobs: 'using/interactive.md'
-    #- Job Accounting: 'using/accounting.md'
-    #  #- queue.md
-    #  #- runningjobs.md
-- 'policies.md'
-- 'storage/index.md'
-- 'storage/compare.md'
-#- Storage: 
-    #- Overview: 'storage/index.md'
-    #- HTS: 'storage/hts.md'
-    #- REF: 'storage/ref.md'
-    #- LTS: 'storage/lts.md'
-    #- Beta: 'storage/new_index.md'
+- Before You Begin: 'before-you-begin.md'
+- Getting Started: 'getting-started.md'
+- Quick Start Tutorials:
+  - Overview: 'tutorials/index.md'
+  - Your First Job: 'tutorials/first-job.md'
+  - Debugging Jobs: 'tutorials/debugging-jobs.md'
+  - Your First GPU Job: 'tutorials/first-gpu-job.md'
+  - Data Workflow: 'tutorials/data-workflow.md'
+  - Array Jobs: 'tutorials/array-jobs.md'
+- Using the HTCF:
+  - Overview: 'using/index.md'
+  - Batch Jobs: 'using/batch.md'
+  - Interactive Jobs: 'using/interactive.md'
+  - Job Accounting: 'using/accounting.md'
+  - Queue Information: 'using/queue.md'
+- GPU Computing:
+  - Overview: 'gpu/index.md'
+  - CUDA Setup: 'gpu/cuda-setup.md'
+  - Examples: 'gpu/examples.md'
+  - Monitoring: 'gpu/monitoring.md'
+- Storage:
+  - Overview: 'storage/index.md'
+  - Comparison: 'storage/comparison.md'
 - Software:
-  - Getting Started: 'software.md'
-  - 'software/r/index.md'
-  - 'software/rstudio/index.md'
-  - 'software/jupyter/index.md'
+  - Overview: 'software/index.md'
+  - Containers: 'software/containers.md'
+  - Workflow Managers: 'software/workflow-managers.md'
+  - R Guide: 'software/r/index.md'
+  - RStudio: 'software/rstudio/index.md'
+  - Jupyter Lab: 'software/jupyter/index.md'
   - Examples:
-    - 'software/examples/r_mpi/index.md'
+    - R with MPI: 'software/examples/r-mpi/index.md'
+- Advanced Workflows:
+  - Overview: 'workflows/index.md'
+  - Machine Learning: 'workflows/machine-learning.md'
+  - Bioinformatics: 'workflows/bioinformatics.md'
+  - HPC Applications: 'workflows/hpc-applications.md'
+- Best Practices:
+  - Overview: 'best-practices/index.md'
+  - Resource Estimation: 'best-practices/resource-estimation.md'
+  - Data Management: 'best-practices/data-management.md'
+  - Job Optimization: 'best-practices/job-optimization.md'
+  - Cluster Etiquette: 'best-practices/etiquette.md'
+  - Reproducibility: 'best-practices/reproducibility.md'
+- Troubleshooting:
+  - Overview: 'troubleshooting/index.md'
+  - Quick Reference: 'troubleshooting/quick-reference.md'
+  - FAQ: 'troubleshooting/faq.md'
+  - Job Errors: 'troubleshooting/job-errors.md'
+  - Storage Errors: 'troubleshooting/storage-errors.md'
+  - Software Errors: 'troubleshooting/software-errors.md'
+  - Performance Issues: 'troubleshooting/performance.md'
+- Policies:
+  - Overview: 'policies.md'
+  - AI Agents: 'policies/ai-agents.md'
 - Talks:
   - HTCF Basics: 'talks/2023-03-27 - HTCF Basics.pdf'

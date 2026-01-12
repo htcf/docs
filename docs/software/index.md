@@ -8,14 +8,14 @@ Software building and installation on the HTCF is primarily self-service.
 
 Labs are free to use their `/ref` software directory to install software using whatever means is most comfortable.
 
-At the lab level, **use of [Spack](#spack) to install common software is encouraged**.  Virtual environments can also be used if the software is well suited.
+At the lab level, options for installing common software include [Spack](#spack) and virtual environments, depending on the software requirements.
 
 ## Spack
 
 [Spack](https://spack.readthedocs.io) is a package management tool designed to support multiple versions and configurations of software on a wide variety of platforms and environments.
 
 !!! Note
-    Do not install software while on the login node.  Please build/install software from an interactive job.
+    Software compilation and installation should be done in interactive jobs, not on the login node. Use `srun` to start an interactive session before running `spack install`.
 
 ### Tutorial
 
@@ -30,7 +30,6 @@ To create a lab (or personal) instance of the spack package manager:
 2.  As a convenience, if the path `/ref/<lab_name>/software/spack/bin` exists, it will automatically be added to `$PATH` on login.   You may wish to make a symlink from `/ref/<lab_name>/software/<my_spack_dir_name>` to `/ref/<lab_name>/software/spack`, to take advantage of the automatic `$PATH` addition.  Alternatively, feel free to place spack instances in other locations (and add those instance `bin/` paths to your `$PATH` in `$HOME/.bashrc`).  
 
 3.  After installing spack (and updating your `.bashrc` if necessary), logout and log back in.  This will ensure the spack command is available in the `$PATH`.
-
 
 ### Installing Software
 
@@ -47,7 +46,7 @@ see [the official spack documentation](https://spack.readthedocs.io/en/latest/ba
 !!!Note
     When installing within a slurm job, be sure to tell Spack how many CPUs are available.
 
-    For example, after [getting an interactive session](using/getstarted.md#interactive):
+    For example, after [getting an interactive session](../getting-started.md#interactive-sessions):
 
         spack install -j ${SLURM_CPUS_ON_NODE} ..... 
 
@@ -64,12 +63,11 @@ see [the official spack documentation](https://spack.readthedocs.io/en/latest/ba
 
 Once spack has built software, the bash shell needs to have the proper environment variables set to access the software.
 
-This is accomplished using the `spack load` command.  Spack packages can be "loaded" similar to the way modules are loaded.
+This is accomplished using the `spack load` command.
 
 Given a [spec](https://spack.readthedocs.io/en/latest/basic_usage.html#specs-dependencies), a spack command can be used to generate the appropriate environment variables to "load" spack-installed software.
 
-
-To set the environment variables (similar to `module load ...`):
+To set the environment variables:
 
 ```
 $ eval $( spack load --sh <spec> )
@@ -92,41 +90,31 @@ See [the official spack documentation](https://spack.readthedocs.io/en/latest/ba
 These commands can be placed in an sbatch file to be used in a job.
 
 ```
-#!/bin/bash
+# !/bin/bash
 
 eval $( spack load --sh <spec> )
 
 ```
 
-### Example
+### Example Workflow
 
-Installing biom-format
+For a complete walkthrough of searching, installing, and loading packages with Spack, see the [Spack Basic Usage Guide](https://spack.readthedocs.io/en/latest/basic_usage.html).
 
-Search for the name of the package:
+Quick example:
 
-    $ spack list biom
-    ==> 7 packages.
-    microbiomeutil  py-biomine    r-biomart   r-biomformat
-    py-biom-format  r-biom-utils  r-biomartr
+```bash
+# Search for a package
+$ spack list <package-name>
 
-See what versions are available:
+# See available versions
+$ spack versions <package-name>
 
-    $ spack versions py-biom-format
-    ==> Safe versions (already checksummed):
-      2.1.10  2.1.9  2.1.7  2.1.6
-    ...
+# Install specific version
+$ spack install <package-name>@<version>
 
-Install:
-
-    $ spack install py-biom-format@2.1.10
-
-Load the software in a job:
-
-    #!/bin/bash
-    
-    eval $( spack load --sh py-biom-format@2.1.10 )
-
-    ...
+# Load in a job script
+eval $(spack load --sh <package-name>)
+```
 
 ## What if the software I want is not available through Spack
 
@@ -146,7 +134,7 @@ When needed software is not readily accessible via Spack, there are a few option
 
 ## R considerations
 
-[Please see the R page for more information.](./r)
+[Please see the R page for more information.](r/index.md)
 
 ## Manual Installation
 
@@ -167,17 +155,8 @@ For example, if a piece of software is not available via Spack, but requires sam
 !!! Remember
     The best place to install software is in reference storage: `/ref/<lab>/software`.
 
-After manual software installation, it's good practice to then create a [module file](#manual-module-files)
-
-### Manual module files
-
-Module files that are manually created go in reference storage in `/ref/<lab>/software/modules`.
-
-[The lmod documentation](https://lmod.readthedocs.io/en/latest/015_writing_modules.html) is the best place to learn about creating module files.
-
 ## What about conda?
 
 Feel free to use conda if it is required/preferred.
 
 The HTCF does not handle Conda support requests.  For conda support, please see [https://docs.conda.io/en/latest/help-support.html](https://docs.conda.io/en/latest/help-support.html)
-

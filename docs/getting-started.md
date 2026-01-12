@@ -36,7 +36,7 @@ The HTCF has several storage locations for different purposes:
 | Location | Purpose | Quota | Backed Up |
 |----------|---------|-------|-----------|
 | `/home/username` | Scripts, config files | 20GB | Yes |
-| `/lts/labname` | Raw data, finished results | By agreement | Yes |
+| `/lts/labname` | Raw data, finished results | None | Yes |
 | `/scratch/labname/username` | Active job I/O | 2TB | No |
 | `/ref/labname` | Reference data, software | Shared | No |
 

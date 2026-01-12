@@ -136,11 +136,15 @@ The HTCF uses Slurm to manage job submission and resource allocation.
 
 **Key concepts:**
 
-- **Batch jobs**: Submit scripts to run without interaction
-- **Interactive jobs**: Request resources for interactive work
-- **Job arrays**: Run the same script with different inputs
-- **Resources**: CPU cores, memory, time limits, GPUs
-- **Partitions**: Different queues (default, interactive, gpu)
+- **Batch jobs**: Submit scripts to run without interaction. You write a shell script containing your commands and resource requirements, then submit it with `sbatch`. The job runs when resources become available, and output is written to files you can review later. This is the primary way to run computational work on the cluster.
+
+- **Interactive jobs**: Request resources for interactive work. Use `srun` to get a shell on a compute node where you can run commands directly, useful for testing, debugging, or exploratory analysis. Interactive sessions have time limits, so they're best for short-term work rather than long computations.
+
+- **Job arrays**: Run the same script with different inputs. When you need to process many files or run the same analysis with varying parameters, job arrays let you submit hundreds of similar jobs with a single command. Each array task gets a unique index (`$SLURM_ARRAY_TASK_ID`) that you use to select different input files or parameters.
+
+- **Resources**: CPU cores, memory, time limits, GPUs. Every job must specify what resources it needs. Request only what you'll actually use—overestimating wastes resources and may increase your wait time in the queue. Underestimating can cause your job to be killed if it exceeds memory limits or runs past its time allocation.
+
+- **Partitions**: Different queues (default, interactive, gpu). Partitions group nodes with similar characteristics or purposes. The `default` partition handles most batch work, `interactive` is optimized for quick-turnaround interactive sessions, and `gpu` provides access to GPU-equipped nodes. Choose the partition that matches your job's requirements.
 
 **Official Documentation:**
 

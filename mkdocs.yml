@@ -53,8 +53,6 @@ nav:
     #- Batch Jobs: 'using/batch.md'
     #- Interactive Jobs: 'using/interactive.md'
     #- Job Accounting: 'using/accounting.md'
-    #  #- queue.md
-    #  #- runningjobs.md
 - 'policies.md'
 - 'storage/index.md'
 - 'storage/compare.md'

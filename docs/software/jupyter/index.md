@@ -11,10 +11,12 @@ Example sbatch script:
 
 # ------ SLURM Parameters ------
 
-# rstudio-server is interactive.  Use the interactive partition
+# jupyterlab is interactive.  Use the interactive partition
 # Add cpu or memory slurm parameters as needed
 
 #SBATCH -p interactive
+#SBATCH --cpus-on-node=1
+#SBATCH --mem=1G
 
 # ------ Make sure it's run as a job ------
 
@@ -34,8 +36,12 @@ echo -e "
     -----------------------------------------------------------------
     ssh $USER@login.htcf.wustl.edu -N -L $port:$HOSTNAME:$port
     -----------------------------------------------------------------
-
-    Then in the desktop browser, follow the http://127.0.0.1..... address shown at the bottom of the jupyter lab command
+    
+    Go to the following address in a web browser
+    -----------------------------------------------------------------
+    http://localhost:$port
+    -----------------------------------------------------------------
+    "
     "
 
 # Launch jupyter lab
